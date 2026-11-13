@@ -1,0 +1,12 @@
+services:
+  app:
+    image: node:22-alpine
+    container_name: architecte-notebooklm
+    working_dir: /app
+    volumes:
+      - .:/app
+    ports:
+      - "5173:5173"
+    command: sh -c "npm install && npm run dev"
+    restart: unless-stopped
+
