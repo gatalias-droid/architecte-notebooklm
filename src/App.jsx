@@ -1113,17 +1113,17 @@ AFFICHAGE PROPRE ET LISIBLE :
     <div className="min-h-screen text-[#0F172A] selection:bg-[#0F172A] selection:text-[#38BDF8] pb-20">
       {/* En-tête flottant néobrutaliste tout en rondeur */}
       <header className="sticky top-3 z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-[#0F172A] text-white border-[2.5px] border-[#0F172A] rounded-3xl shadow-[5px_5px_0px_0px_#0F172A] px-4 sm:px-6 py-3.5 flex flex-col md:flex-row md:items-center md:justify-between gap-3 backdrop-blur-sm">
+        <div className="bg-white text-[#0F172A] border-[2.5px] border-[#0F172A] rounded-3xl shadow-[5px_5px_0px_0px_#0F172A] px-4 sm:px-6 py-3.5 flex flex-col md:flex-row md:items-center md:justify-between gap-3 backdrop-blur-sm">
           <div className="flex items-center gap-3">
-            <div className="w-11 h-11 bg-[#059669] text-white border-2 border-white rounded-2xl flex items-center justify-center shadow-[3px_3px_0px_0px_#0F172A] shrink-0">
+            <div className="w-11 h-11 bg-[#059669] text-white border-2 border-[#0F172A] rounded-2xl flex items-center justify-center shadow-[3px_3px_0px_0px_#0F172A] shrink-0">
               <GraduationCap className="w-6 h-6 stroke-[2.5]" />
             </div>
             <div>
-              <div className="flex flex-wrap items-center gap-2">
-                <span className="font-mono-code text-xl font-bold uppercase tracking-widest px-2.5 py-0.5 bg-[#059669] text-white rounded-full border border-white">
+              <div className="flex flex-wrap items-center gap-2.5">
+                <span className="font-mono-code text-xs sm:text-sm font-bold uppercase tracking-wider px-3 py-1 bg-[#059669] text-white rounded-full border-2 border-[#0F172A] shadow-[2px_2px_0px_0px_#0F172A]">
                   Cortex Studio
                 </span>
-                <h1 className="text-base sm:text-lg font-bold tracking-tight text-white">
+                <h1 className="text-base sm:text-lg font-bold tracking-tight text-[#0F172A]">
                   Assistant pédagogique NotebookLM
                 </h1>
               </div>
