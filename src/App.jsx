@@ -481,6 +481,126 @@ const CYCLE_SPECIFIC_CONFIG = {
       }
     ],
     simulationsBySubject: null
+  },
+  lycee_techno: {
+    badge: 'Lycée Techno • STI2D, STL, STMG, ST2S',
+    title: 'Personnalisation Lycée Technologique',
+    cognitiveBase: "CALIBRATION COGNITIVE LYCÉE TECHNOLOGIQUE (STI2D, STL, STMG, ST2S) : Privilégie une démarche inductive et concrète. Pars systématiquement d'une étude de cas réel, d'un système technique, d'une manipulation de laboratoire ou d'un contexte d'organisation/santé avant de formaliser le concept théorique exigé au Baccalauréat Technologique.",
+    subjectNameOverrides: {
+      physique_chimie: 'Physique-Chimie & Mathématiques / SPCL / Ingénierie (STI2D, STL)',
+      svt: 'Biologie & Physiopathologie (ST2S) / Biotechnologies (STL)',
+      ses: 'Sciences de Gestion, Management, Droit & Économie (STMG)',
+      nsi_info: 'Systèmes d’Information et Numérique (SIN / SIG)'
+    },
+    scaffoldingModes: [
+      {
+        id: 'techno_inductif',
+        label: 'Approche inductive par Étude de cas ou Système réel',
+        desc: 'Part d’une situation concrète (organisation, système technique, labo, cas patient) pour remonter à la règle',
+        promptRule: "Pars toujours d'un cas concret ou d'un fonctionnement observable (entreprise, système technique, expérience de laboratoire ou dossier sanitaire) avant d'énoncer la loi, la formule ou la règle de droit/gestion."
+      },
+      {
+        id: 'techno_docs',
+        label: 'Exploitation de Dossier Documentaire & Données techniques',
+        desc: 'Entraîne à extraire les indicateurs clés d’un dossier (tableaux, schémas, annexes) sans paraphraser',
+        promptRule: "Guide l'élève pour croiser les informations d'un dossier technique ou documentaire (indicateurs chiffrés, schémas fonctionnels, textes réglementaires) et les transformer en arguments structurés."
+      },
+      {
+        id: 'techno_projet',
+        label: 'Préparation Projet Technologique & Grand Oral',
+        desc: 'Structure la démarche de projet (besoin, contraintes, indicateurs, justification des solutions)',
+        promptRule: "Structure le raisonnement selon une démarche de projet ou d'étude : identification du besoin/problème ➔ analyse des contraintes et indicateurs ➔ proposition et justification de la solution retenue."
+      }
+    ],
+    evalFocusOptions: [
+      {
+        id: 'techno_eval_dossier',
+        label: 'Barème d’Étude de cas & Analyse technologique (Contexte ➔ Règle/Formule ➔ Application)',
+        useSubjectDefault: false,
+        rule: "la méthodologie attendue aux épreuves de spécialité du Bac Technologique : 1) Qualifier précisément le contexte ou les données pertinentes du dossier, 2) Mobiliser la notion, la formule ou la règle appropriée, et 3) Appliquer au cas étudié avec les unités ou la qualification exacte"
+      },
+      {
+        id: 'techno_eval_matiere',
+        label: 'Attendus officiels de la discipline au Baccalauréat (Règle spécifique matière)',
+        useSubjectDefault: true,
+        rule: ''
+      },
+      {
+        id: 'techno_eval_argumentation',
+        label: 'Question argumentée & Prise de décision justifiée (STMG / ST2S / STI2D / STL)',
+        useSubjectDefault: false,
+        rule: "la structure d'une réponse argumentée en série technologique : formuler un diagnostic ou une prise de position claire, l'appuyer sur des indicateurs chiffrés ou scientifiques précis du dossier, et conclure sur la pertinence ou la limite de la solution"
+      }
+    ],
+    simulationsBySubject: {
+      default: {
+        studentQuestion: "En étude de cas, on me demande de calculer le taux d'évolution du chiffre d'affaires entre 2024 (200 000 €) et 2025 (230 000 €) et de l'interpréter.",
+        tutorStep1: "Pars du réflexe concret : on regarde **combien l'entreprise a gagné en plus** par rapport à sa valeur de départ.\n• Formule : **(Valeur d'arrivée − Valeur de départ) ÷ Valeur de départ × 100**\n• Ici : départ = 200 000 € et arrivée = 230 000 €.\n\nCombien vaut l'augmentation en euros (230 000 − 200 000), et que donne ce montant divisé par 200 000 ?",
+        studentReply: "Ça fait 30 000 € d'augmentation, et 30 000 divisé par 200 000 fait 0,15 soit 15 %.",
+        tutorStep2: "Exactement, **+15 %** !\n💡 **Pour avoir tous les points sur ta copie en Bac Techno :** écris toujours le calcul suivi d'une phrase d'interprétation contextualisée : « Taux d'évolution = (230 000 − 200 000) ÷ 200 000 × 100 = **+15 %**. Le **chiffre d'affaires** de l'organisation a donc progressé de 15 % entre 2024 et 2025, ce qui traduit une dynamique commerciale favorable. »\n\nMaintenant, si les charges ont augmenté de 22 % sur la même période, quel diagnostic peux-tu poser sur la rentabilité ?"
+      }
+    }
+  },
+  lycee_pro: {
+    badge: 'Lycée Pro • Bac Pro & CAP',
+    title: 'Personnalisation Lycée Professionnel',
+    cognitiveBase: "CALIBRATION COGNITIVE LYCÉE PROFESSIONNEL (Bac Pro / CAP) : Ancre chaque explication dans une situation professionnelle concrète (atelier, chantier, laboratoire, entreprise, relation client ou terrain). Va droit à l'essentiel avec un vocabulaire clair et opérationnel. Valorise le savoir-faire pratique pour donner du sens immédiat aux matières générales et professionnelles.",
+    subjectNameOverrides: {
+      mathematiques: 'Mathématiques (Groupements A, B, C — Bac Pro & CAP)',
+      physique_chimie: 'Physique-Chimie appliquée au domaine professionnel',
+      francais_philo: 'Français — Compétences de lecture, d’analyse et d’écriture (Bac Pro / CAP)',
+      histoire_geo: 'Histoire-Géographie & EMC (Voie Professionnelle)',
+      ses: 'Économie-Gestion / Économie-Droit & Prévention Santé Environnement (PSE)',
+      svt: 'Prévention Santé Environnement (PSE) & Biologie appliquée'
+    },
+    scaffoldingModes: [
+      {
+        id: 'pro_concret_metier',
+        label: 'Ancrage Métier & Situation Professionnelle concrète',
+        desc: 'Traduit chaque notion abstraite en cas pratique (devis, dosage, mesure sur plan, sécurité, client)',
+        promptRule: "Relie systématiquement la notion du cours à une situation concrète de terrain ou d'entreprise (calcul de devis, dosage, lecture de plan, diagnostic technique, relation client) pour donner du sens immédiat."
+      },
+      {
+        id: 'pro_ccf_pas_a_pas',
+        label: 'Méthode pas-à-pas spéciale CCF & Épreuves ponctuelles',
+        desc: 'Sécurise la résolution par étapes courtes (Données utiles ➔ Outil/Formule ➔ Résultat vérifié)',
+        promptRule: "Découpe chaque problème en 3 étapes courtes et rassurantes : 1) Repérer les valeurs utiles dans l'énoncé professionnel, 2) Choisir la bonne formule ou règle, 3) Calculer et vérifier la cohérence du résultat."
+      },
+      {
+        id: 'pro_chef_oeuvre',
+        label: 'Accompagnement Chef-d’œuvre, Projet & Rapport de stage (PFMP)',
+        desc: 'Aide à expliquer sa pratique professionnelle avec le vocabulaire technique attendu à l’oral et à l’écrit',
+        promptRule: "Aide l'élève à transformer son expérience de terrain (stage PFMP, atelier, chef-d'œuvre) en explications claires, structurées et valorisantes avec le vocabulaire professionnel exact."
+      }
+    ],
+    evalFocusOptions: [
+      {
+        id: 'pro_eval_ccf',
+        label: 'Grille officielle CCF & Bac Pro (Choix de la méthode + Exécution + Cohérence métier)',
+        useSubjectDefault: false,
+        rule: "les critères d'évaluation en Contrôle en Cours de Formation (CCF) et à l'examen : 1) S'approprier la problématique professionnelle, 2) Choisir et appliquer la bonne relation ou démarche, et 3) Formuler une réponse cohérente avec l'unité et le contexte métier"
+      },
+      {
+        id: 'pro_eval_pse_eco',
+        label: 'Démarche d’analyse de situation (Problème ➔ Causes/Risques ➔ Mesures/Solutions)',
+        useSubjectDefault: false,
+        rule: "la structure attendue en PSE, Économie-Gestion et matières professionnelles : identifier clairement le problème ou le risque dans la situation, en lister les causes ou facteurs, et proposer des mesures de prévention ou solutions adaptées"
+      },
+      {
+        id: 'pro_eval_francais_hg',
+        label: 'Réponse rédigée & Compétences d’écriture (Idée directe + Exemple précis du corpus)',
+        useSubjectDefault: false,
+        rule: "l'exigence des épreuves de Français et Histoire-Géo en Bac Pro : rédiger des phrases complètes et correctes, répondre directement à la question en citant un élément précis du document, et illustrer son propos par un exemple pertinent"
+      }
+    ],
+    simulationsBySubject: {
+      default: {
+        studentQuestion: "Sur un devis client, j'ai un montant Hors Taxes (HT) de 450 € avec une TVA à 20 %. Comment je calcule le montant TTC sans me tromper ?",
+        tutorStep1: "En situation professionnelle, tu peux le faire en 2 étapes ultra-simples :\n• **Étape 1 (Montant de la TVA)** : 20 % de 450 €, c'est `450 × 20 ÷ 100`.\n• **Étape 2 (Prix TTC)** : `Prix HT + Montant de la TVA`.\n\nCombien vaut la TVA (`450 × 20 ÷ 100`) ?",
+        studentReply: "450 fois 20 divisé par 100, ça fait 90 €.",
+        tutorStep2: "Bravo, **90 €** de TVA ! Il ne reste plus qu'à l'ajouter au HT : `450 + 90 = 540 € TTC`.\n💡 **Pour avoir tous les points en CCF et sur ta copie :** présente toujours le détail et la phrase de conclusion : « Montant TVA = 450 × 0,20 = 90 €. Montant TTC = 450 + 90 = **540,00 € TTC** (ou directement `450 × 1,20 = 540 €`). Le montant total à facturer au client est de 540 € TTC. »\n\nÀ toi : si tu accordes une remise commerciale de 10 % sur un matériel à 300 € HT, quel est le montant de la remise ?"
+      }
+    }
   }
 };
 
@@ -552,12 +672,12 @@ export default function App() {
   // Sélection des règles spécifiques au Cycle 2, 3 ou 4 si actif
   const activeScaffoldObj = currentCycleConfig
     ? currentCycleConfig.scaffoldingModes.find((s) => s.id === selectedCycleScaffold) ||
-      currentCycleConfig.scaffoldingModes[0]
+    currentCycleConfig.scaffoldingModes[0]
     : null;
 
   const activeCycleEvalObj = currentCycleConfig
     ? currentCycleConfig.evalFocusOptions.find((e) => e.id === selectedCycleEval) ||
-      currentCycleConfig.evalFocusOptions[0]
+    currentCycleConfig.evalFocusOptions[0]
     : null;
 
   // Génération dynamique et chirurgicale du prompt système "Zéro Friction"
@@ -755,10 +875,10 @@ AFFICHAGE PROPRE ET LISIBLE :
       {/* Contenu principal en 2 colonnes */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-7 items-start">
-          
+
           {/* COLONNE GAUCHE : Paramétrage (5 colonnes sur 12) */}
           <div className="lg:col-span-5 space-y-6">
-            
+
             {/* Bloc 1 : Cursus, Cycle & Niveau scolaire */}
             <section className="bg-white border-[2.5px] border-[#0F172A] rounded-3xl shadow-[6px_6px_0px_0px_#0F172A] p-6 space-y-5">
               <div className="flex items-center justify-between border-b-2 border-[#0F172A] pb-3">
@@ -775,34 +895,34 @@ AFFICHAGE PROPRE ET LISIBLE :
                 )}
               </div>
 
-              {/* Boutons d'accès direct aux Cycles 2, 3, 4 et Lycée Général */}
+              {/* Boutons d'accès direct aux Cycles 2, 3, 4 et Lycées (Général, Techno, Pro) */}
               <div>
                 <span className="block text-xs font-bold text-[#0F172A] mb-2">
-                  Sélection rapide des Cycles (École, Collège & Lycée Général) :
+                  Sélection rapide des Cycles & Voies (École, Collège & Lycée) :
                 </span>
                 <div className="grid grid-cols-2 gap-2.5 mb-4">
                   {[
                     { id: 'cycle_2', title: 'Cycle 2', sub: 'CP • CE1 • CE2' },
                     { id: 'cycle_3', title: 'Cycle 3', sub: 'CM1 • CM2 • 6e' },
                     { id: 'cycle_4', title: 'Cycle 4', sub: '5e • 4e • 3e' },
-                    { id: 'lycee_general', title: 'Lycée Gén.', sub: '2de • 1re • Term' }
+                    { id: 'lycee_general', title: 'Lycée Général', sub: '2de • 1re • Term' },
+                    { id: 'lycee_techno', title: 'Lycée techno', sub: 'STI2D • STL • STMG • ST2S' },
+                    { id: 'lycee_pro', title: 'Lycée professionnel', sub: 'Bac Pro • CAP' }
                   ].map((cBtn) => {
                     const isAct = selectedCursus === cBtn.id;
                     return (
                       <button
                         key={cBtn.id}
                         onClick={() => handleCursusChange(cBtn.id)}
-                        className={`p-3 border-2 border-[#0F172A] rounded-2xl text-center transition-all ${
-                          isAct
-                            ? 'bg-[#0F172A] text-[#38BDF8] shadow-[3px_3px_0px_0px_#4F46E5] -translate-x-[1px] -translate-y-[1px]'
-                            : 'bg-white text-[#0F172A] hover:bg-[#E0E7FF] shadow-[2px_2px_0px_0px_#0F172A]'
-                        }`}
+                        className={`p-3 border-2 border-[#0F172A] rounded-2xl text-center transition-all ${isAct
+                          ? 'bg-[#0F172A] text-[#38BDF8] shadow-[3px_3px_0px_0px_#4F46E5] -translate-x-[1px] -translate-y-[1px]'
+                          : 'bg-white text-[#0F172A] hover:bg-[#E0E7FF] shadow-[2px_2px_0px_0px_#0F172A]'
+                          }`}
                       >
                         <div className="text-xs font-bold">{cBtn.title}</div>
                         <div
-                          className={`text-[10px] mt-0.5 font-mono-code ${
-                            isAct ? 'text-white' : 'text-slate-600'
-                          }`}
+                          className={`text-[10px] mt-0.5 font-mono-code ${isAct ? 'text-white' : 'text-slate-600'
+                            }`}
                         >
                           {cBtn.sub}
                         </div>
@@ -841,11 +961,10 @@ AFFICHAGE PROPRE ET LISIBLE :
                           setSelectedNiveau(niv);
                           setManualOverride(null);
                         }}
-                        className={`px-4 py-2.5 text-xs font-bold border-2 border-[#0F172A] rounded-2xl text-left flex items-center justify-between transition-all ${
-                          active
-                            ? 'bg-[#10B981] text-white shadow-[3px_3px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
-                            : 'bg-white text-[#0F172A] hover:bg-[#E0E7FF] shadow-[2px_2px_0px_0px_#0F172A]'
-                        }`}
+                        className={`px-4 py-2.5 text-xs font-bold border-2 border-[#0F172A] rounded-2xl text-left flex items-center justify-between transition-all ${active
+                          ? 'bg-[#10B981] text-white shadow-[3px_3px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
+                          : 'bg-white text-[#0F172A] hover:bg-[#E0E7FF] shadow-[2px_2px_0px_0px_#0F172A]'
+                          }`}
                       >
                         <span>{niv}</span>
                         {active && (
@@ -885,11 +1004,10 @@ AFFICHAGE PROPRE ET LISIBLE :
                             setSelectedCycleScaffold(mode.id);
                             setManualOverride(null);
                           }}
-                          className={`w-full p-3.5 border-2 border-[#0F172A] rounded-2xl text-left transition-all ${
-                            isSel
-                              ? 'bg-[#059669] text-white shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
-                              : 'bg-white text-[#0F172A] hover:bg-white shadow-[2px_2px_0px_0px_#0F172A]'
-                          }`}
+                          className={`w-full p-3.5 border-2 border-[#0F172A] rounded-2xl text-left transition-all ${isSel
+                            ? 'bg-[#059669] text-white shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
+                            : 'bg-white text-[#0F172A] hover:bg-white shadow-[2px_2px_0px_0px_#0F172A]'
+                            }`}
                         >
                           <div className="flex items-center justify-between gap-2">
                             <span className="text-xs font-bold">{mode.label}</span>
@@ -899,7 +1017,7 @@ AFFICHAGE PROPRE ET LISIBLE :
                               </span>
                             )}
                           </div>
-                          <p className="text-[11px] text-slate-700 mt-1 font-medium">
+                          <p className={`text-[11px] mt-1 font-medium ${isSel ? 'text-emerald-50' : 'text-slate-700'}`}>
                             {mode.desc}
                           </p>
                         </button>
@@ -923,11 +1041,10 @@ AFFICHAGE PROPRE ET LISIBLE :
                             setSelectedCycleEval(ev.id);
                             setManualOverride(null);
                           }}
-                          className={`w-full px-3.5 py-2.5 border-2 border-[#0F172A] rounded-2xl text-left flex items-center justify-between transition-all ${
-                            isSel
-                              ? 'bg-[#0F172A] text-white shadow-[3px_3px_0px_0px_#10B981]'
-                              : 'bg-white text-[#0F172A] hover:bg-white shadow-[2px_2px_0px_0px_#0F172A]'
-                          }`}
+                          className={`w-full px-3.5 py-2.5 border-2 border-[#0F172A] rounded-2xl text-left flex items-center justify-between transition-all ${isSel
+                            ? 'bg-[#0F172A] text-white shadow-[3px_3px_0px_0px_#10B981]'
+                            : 'bg-white text-[#0F172A] hover:bg-white shadow-[2px_2px_0px_0px_#0F172A]'
+                            }`}
                         >
                           <span className="text-xs font-bold pr-2">{ev.label}</span>
                           {isSel && (
@@ -971,11 +1088,10 @@ AFFICHAGE PROPRE ET LISIBLE :
                         setSelectedSubjectId(subj.id);
                         setManualOverride(null);
                       }}
-                      className={`flex items-center gap-2.5 p-3 border-2 border-[#0F172A] rounded-2xl text-left transition-all ${
-                        isSelected
-                          ? 'bg-[#0F172A] text-white shadow-[4px_4px_0px_0px_#F2C230] -translate-x-[1px] -translate-y-[1px]'
-                          : 'bg-white text-[#0F172A] hover:bg-[#E0E7FF] shadow-[2px_2px_0px_0px_#0F172A]'
-                      }`}
+                      className={`flex items-center gap-2.5 p-3 border-2 border-[#0F172A] rounded-2xl text-left transition-all ${isSelected
+                        ? 'bg-[#0F172A] text-white shadow-[4px_4px_0px_0px_#F2C230] -translate-x-[1px] -translate-y-[1px]'
+                        : 'bg-white text-[#0F172A] hover:bg-[#E0E7FF] shadow-[2px_2px_0px_0px_#0F172A]'
+                        }`}
                     >
                       <span className="text-xl shrink-0 bg-white border border-[#0F172A] w-10 h-10 rounded-xl flex items-center justify-center">
                         {subj.icon}
@@ -985,9 +1101,8 @@ AFFICHAGE PROPRE ET LISIBLE :
                           {adaptedTitle}
                         </div>
                         <div
-                          className={`text-[10px] truncate font-mono-code ${
-                            isSelected ? 'text-[#38BDF8]' : 'text-neutral-500'
-                          }`}
+                          className={`text-[10px] truncate font-mono-code ${isSelected ? 'text-[#38BDF8]' : 'text-neutral-500'
+                            }`}
                         >
                           {subj.category}
                         </div>
@@ -1036,11 +1151,10 @@ AFFICHAGE PROPRE ET LISIBLE :
                         setSelectedProfile(prof.id);
                         setManualOverride(null);
                       }}
-                      className={`w-full p-3.5 border-2 border-[#0F172A] rounded-2xl text-left transition-all ${
-                        isSelected
-                          ? 'bg-[#4F46E5] text-white shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
-                          : 'bg-white text-[#0F172A] hover:bg-[#E0E7FF] shadow-[2px_2px_0px_0px_#0F172A]'
-                      }`}
+                      className={`w-full p-3.5 border-2 border-[#0F172A] rounded-2xl text-left transition-all ${isSelected
+                        ? 'bg-[#4F46E5] text-white shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
+                        : 'bg-white text-[#0F172A] hover:bg-[#E0E7FF] shadow-[2px_2px_0px_0px_#0F172A]'
+                        }`}
                     >
                       <div className="flex items-center justify-between">
                         <span className="text-xs font-bold">{prof.label}</span>
@@ -1109,38 +1223,35 @@ AFFICHAGE PROPRE ET LISIBLE :
 
           {/* COLONNE DROITE : Fenêtre Principale (7 colonnes sur 12) */}
           <div className="lg:col-span-7 space-y-6 lg:sticky lg:top-24 self-start">
-            
+
             {/* Navigation par onglets façon dossiers brutalistes arrondis */}
             <div className="grid grid-cols-3 gap-2.5">
               <button
                 onClick={() => setActiveTab('prompt')}
-                className={`py-3 px-3 border-[2.5px] border-[#0F172A] rounded-2xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 transition-all ${
-                  activeTab === 'prompt'
-                    ? 'bg-[#0F172A] text-[#38BDF8] shadow-[4px_4px_0px_0px_#059669] -translate-y-0.5'
-                    : 'bg-white text-[#0F172A] hover:bg-[#E0E7FF] shadow-[4px_4px_0px_0px_#0F172A]'
-                }`}
+                className={`py-3 px-3 border-[2.5px] border-[#0F172A] rounded-2xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 transition-all ${activeTab === 'prompt'
+                  ? 'bg-[#0F172A] text-[#38BDF8] shadow-[4px_4px_0px_0px_#059669] -translate-y-0.5'
+                  : 'bg-white text-[#0F172A] hover:bg-[#E0E7FF] shadow-[4px_4px_0px_0px_#0F172A]'
+                  }`}
               >
                 <Sparkles className="w-4 h-4 shrink-0" />
                 <span className="truncate">1. Prompt Système</span>
               </button>
               <button
                 onClick={() => setActiveTab('simulation')}
-                className={`py-3 px-3 border-[2.5px] border-[#0F172A] rounded-2xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 transition-all ${
-                  activeTab === 'simulation'
-                    ? 'bg-[#0F172A] text-[#10B981] shadow-[4px_4px_0px_0px_#10B981] -translate-y-0.5'
-                    : 'bg-white text-[#0F172A] hover:bg-[#E0E7FF] shadow-[4px_4px_0px_0px_#0F172A]'
-                }`}
+                className={`py-3 px-3 border-[2.5px] border-[#0F172A] rounded-2xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 transition-all ${activeTab === 'simulation'
+                  ? 'bg-[#0F172A] text-[#10B981] shadow-[4px_4px_0px_0px_#10B981] -translate-y-0.5'
+                  : 'bg-white text-[#0F172A] hover:bg-[#E0E7FF] shadow-[4px_4px_0px_0px_#0F172A]'
+                  }`}
               >
                 <Eye className="w-4 h-4 shrink-0" />
                 <span className="truncate">2. Aperçu Dialogue</span>
               </button>
               <button
                 onClick={() => setActiveTab('guide')}
-                className={`py-3 px-3 border-[2.5px] border-[#0F172A] rounded-2xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 transition-all ${
-                  activeTab === 'guide'
-                    ? 'bg-[#0F172A] text-white shadow-[4px_4px_0px_0px_#7C3AED] -translate-y-0.5'
-                    : 'bg-white text-[#0F172A] hover:bg-[#E0E7FF] shadow-[4px_4px_0px_0px_#0F172A]'
-                }`}
+                className={`py-3 px-3 border-[2.5px] border-[#0F172A] rounded-2xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 transition-all ${activeTab === 'guide'
+                  ? 'bg-[#0F172A] text-white shadow-[4px_4px_0px_0px_#7C3AED] -translate-y-0.5'
+                  : 'bg-white text-[#0F172A] hover:bg-[#E0E7FF] shadow-[4px_4px_0px_0px_#0F172A]'
+                  }`}
               >
                 <Layers className="w-4 h-4 shrink-0" />
                 <span className="truncate">3. Mode d'Emploi</span>
@@ -1202,11 +1313,10 @@ AFFICHAGE PROPRE ET LISIBLE :
                     )}
                     <button
                       onClick={handleCopy}
-                      className={`px-6 py-3.5 text-xs sm:text-sm font-bold uppercase tracking-wider border-2 border-[#0F172A] rounded-2xl flex items-center gap-2 transition-all ${
-                        copied
-                          ? 'bg-[#10B981] text-white shadow-[2px_2px_0px_0px_#0F172A] translate-x-[2px] translate-y-[2px]'
-                          : 'bg-[#059669] hover:bg-[#047857] text-white shadow-[4px_4px_0px_0px_#0F172A] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[3px_3px_0px_0px_#0F172A] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none'
-                      }`}
+                      className={`px-6 py-3.5 text-xs sm:text-sm font-bold uppercase tracking-wider border-2 border-[#0F172A] rounded-2xl flex items-center gap-2 transition-all ${copied
+                        ? 'bg-[#10B981] text-white shadow-[2px_2px_0px_0px_#0F172A] translate-x-[2px] translate-y-[2px]'
+                        : 'bg-[#059669] hover:bg-[#047857] text-white shadow-[4px_4px_0px_0px_#0F172A] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[3px_3px_0px_0px_#0F172A] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none'
+                        }`}
                     >
                       {copied ? (
                         <>
