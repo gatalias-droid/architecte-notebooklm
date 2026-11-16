@@ -173,6 +173,186 @@ const SUBJECTS_CONFIG = {
   }
 };
 
+// Base de données dédiée aux 8 sous-matières fondamentales de l'école primaire (CP, CE1, CE2, CM1, CM2)
+const PRIMARY_SUBJECTS_CONFIG = {
+  fr_lecture: {
+    id: 'fr_lecture',
+    pole: 'francais',
+    cardTitle: 'Lecture & Compréhension',
+    nameCycle2: 'Français — Lecture, Sons & Compréhension',
+    nameCycle3: 'Français — Lecture fluide & Compréhension de texte',
+    categoryCycle2: "Sons, décodage & sens de l'histoire",
+    categoryCycle3: 'Lecture fluide & compréhension fine',
+    icon: BookOpen,
+    explanationStyle: "en découpant les mots ou les phrases courtes étape par étape et en faisant imaginer la scène comme un petit dessin animé",
+    microChallengeStyle: "une seule petite question très simple sur qui fait l'action, où se passe l'histoire ou ce que veut dire un mot",
+    progressionStyle: "une question pour deviner ce qu'un personnage pense ou ressent (l'implicite) en cherchant un mot-indice dans le texte",
+    frenchEvalRule: "le réflexe attendu sur le cahier du jour : reprendre les mots de la question pour construire une phrase-réponse complète qui commence par une majuscule et finit par un point",
+    unicodeSymbols: "« », ➔, •, —, …",
+    forbiddenLatex: "$, $$, \\(, \\)",
+    sampleSimulation: {
+      studentQuestion: "J'ai lu le texte « Léo prend son parapluie et ses bottes avant de sortir », mais la question demande quel temps il fait et ce n'est pas écrit !",
+      tutorStep1: "L'auteur a caché des indices dans la phrase comme dans une enquête :\n• Léo prend un **parapluie** et des **bottes**.\n\nÀ ton avis, quand est-ce qu'on a besoin d'un parapluie et de bottes pour sortir ?",
+      studentReply: "Quand il pleut dehors !",
+      tutorStep2: "Bravo, tu as trouvé l'indice caché : il pleut !\n💡 **Pour avoir tous les points sur ton cahier :** reprends les mots de la question avec une majuscule et un point : **« Il pleut car Léo prend son parapluie et ses bottes. »**\n\nNouvelle petite enquête : si le texte dit « Lina souffle les bougies sur le gâteau au chocolat », quelle fête célèbre-t-on ?"
+    }
+  },
+  fr_grammaire: {
+    id: 'fr_grammaire',
+    pole: 'francais',
+    cardTitle: 'Grammaire & Conjugaison',
+    nameCycle2: 'Français — Grammaire & Conjugaison',
+    nameCycle3: 'Français — Grammaire, Analyse & Conjugaison',
+    categoryCycle2: 'Phrase, nom, sujet, verbe & temps',
+    categoryCycle3: 'Nature, fonction des mots & temps',
+    icon: Edit3,
+    explanationStyle: "en donnant un rôle concret à chaque mot (le verbe = l'action qu'on peut mimer ou encadrer par « ne... pas », le sujet = celui qui fait l'action)",
+    microChallengeStyle: "une seule petite phrase où l'élève doit repérer le verbe, le sujet ou trouver la bonne terminaison",
+    progressionStyle: "une transformation de phrase (changer le temps ou remplacer le sujet par un pronom : il/ils, nous, vous)",
+    frenchEvalRule: "l'astuce de classe pour ne jamais se tromper : encadrer le verbe par « ne ... pas » pour le trouver, poser la question « Qui est-ce qui... ? » pour le sujet, et vérifier la terminaison (ex : -ent avec ils/elles)",
+    unicodeSymbols: "➔, ≠, •, « »",
+    forbiddenLatex: "$, $$, \\(, \\)",
+    sampleSimulation: {
+      studentQuestion: "Je n'arrive pas à trouver le verbe et le sujet dans la phrase : « Les oiseaux chantent dans l'arbre. »",
+      tutorStep1: "Pour trouver le **verbe**, cherche le mot qui dit l'action (ce que l'on peut mimer) ou mets la phrase à la forme négative avec **« ne ... pas »** :\n• « Les oiseaux **ne** ... **pas** dans l'arbre. »\n\nQuel est le mot qui se retrouve coincé entre « ne » et « pas » ?",
+      studentReply: "C'est le mot chantent !",
+      tutorStep2: "Exactement, **chantent** est le verbe (c'est le verbe chanter) !\n💡 **Pour avoir tous les points sur ton cahier :** pose maintenant la question « **Qui est-ce qui** chantent ? » ➔ ce sont **Les oiseaux** (le sujet au pluriel), c'est pour cela que le verbe prend **-ent** à la fin.\n\nEt si on remplace « Les oiseaux » par un seul oiseau (« L'oiseau ... »), comment vas-tu écrire la fin du verbe **chante** ?"
+    }
+  },
+  fr_orthographe: {
+    id: 'fr_orthographe',
+    pole: 'francais',
+    cardTitle: 'Orthographe & Dictée',
+    nameCycle2: 'Français — Orthographe, Sons & Accords',
+    nameCycle3: 'Français — Orthographe, Accords & Homophones',
+    categoryCycle2: "Sons, pluriel (-s) & chaîne d'accord",
+    categoryCycle3: 'Accords, dictée & homophones (a/à, et/est)',
+    icon: ShieldCheck,
+    explanationStyle: "en mettant les « lunettes de l'accord » depuis le déterminant ou en utilisant l'astuce de remplacement pour les homophones (a/à, et/est, son/sont)",
+    microChallengeStyle: "un seul mot ou petit groupe de mots à accorder ou à compléter dans une phrase courte",
+    progressionStyle: "une petite phrase de dictée guidée où il faut vérifier le pluriel des noms/adjectifs et l'accord du verbe",
+    frenchEvalRule: "le réflexe de relecture de dictée : regarder le déterminant (les, des, mes) pour ne jamais oublier le -s ou le -x muet au pluriel, et remplacer par « avait / était » pour vérifier a/à ou est/et",
+    unicodeSymbols: "➔, ≠, ✓, « »",
+    forbiddenLatex: "$, $$, \\(, \\)",
+    sampleSimulation: {
+      studentQuestion: "En dictée, j'oublie toujours les S au pluriel et je confonds « a » et « à ».",
+      tutorStep1: "Donnons-nous deux astuces magiques :\n• **Pour le pluriel** : dès que tu vois *les, des, mes, trois*, mets un **s** muet au nom et à l'adjectif (*des petit**s** chat**s***).\n• **Pour a / à** : si tu peux dire **« avait »**, c'est le verbe avoir **sans accent (a)**. Sinon, on met l'accent (**à**).\n\nDans « Tom ... faim », peut-on dire « Tom avait faim » ?",
+      studentReply: "Oui, on peut dire Tom avait faim, donc c'est a sans accent.",
+      tutorStep2: "Bravo, c'est bien **a** sans accent !\n💡 **Pour avoir tous les points sur ton cahier :** pendant la relecture de dictée, remplace toujours dans ta tête par « avait » pour vérifier chaque **a/à**.\n\nMaintenant, comment écris-tu « a/à » et le mot « vélo » dans : « Il va ... l'école avec ses deux ... » ?"
+    }
+  },
+  fr_vocabulaire: {
+    id: 'fr_vocabulaire',
+    pole: 'francais',
+    cardTitle: 'Vocabulaire & Écriture',
+    nameCycle2: "Français — Vocabulaire & Production d'écrits",
+    nameCycle3: 'Français — Vocabulaire & Expression écrite',
+    categoryCycle2: 'Mots, contraires & petites phrases',
+    categoryCycle3: 'Familles de mots, synonymes & rédaction',
+    icon: MessageSquare,
+    explanationStyle: "en reliant chaque mot à sa famille de mots, à son synonyme/contraire ou à une situation vécue par l'enfant",
+    microChallengeStyle: "un seul petit défi : trouver un mot de la même famille, un synonyme ou construire une belle phrase avec un mot donné",
+    progressionStyle: "enrichir une phrase simple en ajoutant un adjectif précis ou un complément (où ? quand ? comment ?)",
+    frenchEvalRule: "la règle d'or du cahier d'écrivain : vérifier que chaque phrase commence par une majuscule, finit par un point, a du sens à voix haute et utilise un mot précis au lieu de « faire » ou « il y a »",
+    unicodeSymbols: "➔, ≠, « », •",
+    forbiddenLatex: "$, $$, \\(, \\)",
+    sampleSimulation: {
+      studentQuestion: "C'est quoi des mots de la même famille ? Je dois en trouver pour le mot « dent ».",
+      tutorStep1: "Les mots de la **même famille** partagent le même petit cœur (le radical **dent-**) et parlent tous de la même chose :\n• Par exemple, avec **terre**, on fabrique *terrasse*, *enterrer*, *atterrir*.\n\nPour le mot **dent**, comment appelle-t-on le médecin qui soigne les dents ou la pâte qu'on met sur la brosse à dents ?",
+      studentReply: "Le dentiste et le dentifrice !",
+      tutorStep2: "Excellent : **dentiste** et **dentifrice** commencent tous les deux par **dent-** !\n💡 **Pour avoir tous les points sur ton cahier :** cet indice t'aide aussi en orthographe : comme *dent* s'écrit avec un **t** muet à la fin, on retrouve ce **t** dans *den**t**iste* et *den**t**ifrice*.\n\nÀ ton tour : peux-tu écrire une courte phrase bien ponctuée qui utilise le mot **dentiste** ?"
+    }
+  },
+  math_numeration: {
+    id: 'math_numeration',
+    pole: 'mathematiques',
+    cardTitle: 'Numération & Nombres',
+    nameCycle2: 'Mathématiques — Numération (Unités, Dizaines, Centaines)',
+    nameCycle3: 'Mathématiques — Numération, Fractions & Décimaux',
+    categoryCycle2: 'Unités, dizaines, centaines & suites',
+    categoryCycle3: 'Grands nombres, fractions & décimaux',
+    icon: Layers,
+    explanationStyle: "en représentant les nombres avec des paquets de 10 (Centaines, Dizaines, Unités) ou des parts de gâteau / bandes découpées pour les fractions et décimaux",
+    microChallengeStyle: "une seule question courte (décomposer un nombre, trouver le chiffre des dizaines/dixièmes ou comparer deux nombres)",
+    progressionStyle: "placer le nombre sur une droite graduée, l'encadrer ou passer d'une écriture à une autre",
+    frenchEvalRule: "la rigueur attendue sur le cahier : bien placer chaque chiffre dans sa colonne (Centaines | Dizaines | Unités) ou bien séparer la partie entière et la partie décimale avant de comparer",
+    unicodeSymbols: "×, ÷, +, −, =, <, >, ➔, •",
+    forbiddenLatex: "$, $$, \\(, \\), \\frac",
+    sampleSimulation: {
+      studentQuestion: "Dans le nombre 348, je confonds toujours le chiffre des dizaines et le chiffre des unités.",
+      tutorStep1: "Imagine des boîtes de rangement en partant de la droite :\n• À droite, les **Unités (U)** toutes seules : **8**\n• Au milieu, les paquets de 10 (**Dizaines - D**) : **4** (soit 40)\n• À gauche, les grosses valises de 100 (**Centaines - C**) : **3** (soit 300)\n\nSur le même modèle (C | D | U), dans le nombre **529**, quel est le chiffre des **dizaines** ?",
+      studentReply: "C'est le 2 !",
+      tutorStep2: "Bravo, dans 529, le chiffre des dizaines est bien **2** (2 paquets de 10, soit 20) !\n💡 **Pour avoir tous les points sur ton cahier :** écris la décomposition complète : **529 = 500 + 20 + 9** (ou **5 centaines, 2 dizaines et 9 unités**).\n\nMaintenant, quel nombre obtient-on si on ajoute **1 dizaine** de plus à **529** ?"
+    }
+  },
+  math_calcul: {
+    id: 'math_calcul',
+    pole: 'mathematiques',
+    cardTitle: 'Calcul Mental & Opérations',
+    nameCycle2: 'Mathématiques — Calcul Mental & Opérations (+, −, ×)',
+    nameCycle3: 'Mathématiques — Calcul Mental & 4 Opérations (+, −, ×, ÷)',
+    categoryCycle2: 'Tables, calcul rapide & posé (+, −, ×)',
+    categoryCycle3: 'Tables, calcul mental & 4 opérations',
+    icon: Calculator,
+    explanationStyle: "en montrant l'astuce maligne pour calculer de tête (passer par 10, utiliser les doubles) ou en guidant l'opération posée colonne par colonne en partant des unités à droite",
+    microChallengeStyle: "une seule petite étape de calcul (un complément à 10, une table ou une seule colonne de l'opération avec sa retenue)",
+    progressionStyle: "un calcul complet en vérifiant qu'aucune retenue n'a été oubliée",
+    frenchEvalRule: "la présentation impeccable exigée sur le cahier : aligner soigneusement 1 chiffre par carreau (les unités sous les unités) et écrire la retenue en petit au-dessus de la colonne suivante",
+    unicodeSymbols: "+, −, ×, ÷, =, ➔, •",
+    forbiddenLatex: "$, $$, \\(, \\), \\times, \\div",
+    sampleSimulation: {
+      studentQuestion: "Quand je pose 47 + 25 en colonne, je ne sais jamais quoi faire avec la retenue.",
+      tutorStep1: "On commence toujours par la colonne de droite, celle des **unités** :\n• **7 + 5 = 12**.\n• Dans 12, il y a **1 dizaine** et **2 unités** : on écrit **2** en bas dans les unités, et on monte le **1** en retenue tout en haut de la colonne des dizaines.\n\nMaintenant, additionne la colonne des dizaines : **4 + 2**, sans oublier d'ajouter le **1** de la retenue ! Combien trouves-tu ?",
+      studentReply: "4 + 2 ça fait 6, plus la retenue 1 ça fait 7 !",
+      tutorStep2: "C'est exact : **7 dizaines** et **2 unités**, donc **47 + 25 = 72** !\n💡 **Pour avoir tous les points sur ton cahier :** écris bien un chiffre par carreau et entoure ta petite retenue **+1** en haut de la colonne des dizaines pour montrer au maître que tu ne l'as pas oubliée.\n\nÀ toi sur le même principe : dans **38 + 16**, combien font les unités **8 + 6** et que poses-tu en retenue ?"
+    }
+  },
+  math_problemes: {
+    id: 'math_problemes',
+    pole: 'mathematiques',
+    cardTitle: 'Résolution de Problèmes',
+    nameCycle2: 'Mathématiques — Résolution de Problèmes',
+    nameCycle3: 'Mathématiques — Problèmes & Proportionnalité',
+    categoryCycle2: "Comprendre l'énoncé, schématiser & chercher",
+    categoryCycle3: 'Schéma en barres, étapes & proportionnalité',
+    icon: Zap,
+    explanationStyle: "en transformant l'énoncé en une petite histoire concrète ou en un schéma en barres (chercher le Tout ou chercher une Partie)",
+    microChallengeStyle: "une seule question pour aider l'enfant à dire ce que l'on cherche et s'il faut réunir (+ / ×) ou enlever/partager (− / ÷)",
+    progressionStyle: "poser le calcul correspondant puis rédiger la phrase-réponse complète avec l'unité",
+    frenchEvalRule: "la présentation en 3 temps exigée sur le cahier du jour : 1) Le schéma ou l'opération en ligne, 2) Le résultat avec l'unité (billes, euros, mètres...), et 3) La phrase-réponse qui reprend les mots de la question",
+    unicodeSymbols: "+, −, ×, ÷, =, €, cm, m, kg, ➔",
+    forbiddenLatex: "$, $$, \\(, \\)",
+    sampleSimulation: {
+      studentQuestion: "J'ai un problème : « Une boîte contient 24 chocolats. Les enfants en mangent 9. Combien en reste-t-il ? » Je ne sais jamais s'il faut faire + ou −.",
+      tutorStep1: "Imagine la boîte de **24 chocolats** au départ. Quand les enfants en mangent 9, ils **enlèvent** 9 chocolats de la boîte :\n• Il y aura donc **moins** de chocolats qu'au début.\n\nQuelle opération utilise-t-on quand on enlève une quantité : l'addition (+) ou la soustraction (−) ?",
+      studentReply: "La soustraction, on fait 24 moins 9.",
+      tutorStep2: "Exactement, on pose **24 − 9 = 15** !\n💡 **Pour avoir tous les points sur ton cahier :** écris d'abord l'opération **24 − 9 = 15**, puis la phrase-réponse avec une majuscule, l'unité et un point : **« Il reste 15 chocolats dans la boîte. »**\n\nEt si maintenant on avait **3 boîtes** contenant chacune **10 chocolats**, quel calcul ferais-tu pour trouver le total ?"
+    }
+  },
+  math_geometrie: {
+    id: 'math_geometrie',
+    pole: 'mathematiques',
+    cardTitle: 'Grandeurs, Mesures & Géométrie',
+    nameCycle2: 'Mathématiques — Grandeurs, Mesures & Géométrie',
+    nameCycle3: 'Mathématiques — Géométrie, Mesures & Conversions',
+    categoryCycle2: 'Monnaie (€), heure, longueurs & figures',
+    categoryCycle3: 'Conversions, périmètre, aire & tracés',
+    icon: FileText,
+    explanationStyle: "en s'appuyant sur des objets réels (la règle graduée depuis le 0, l'équerre pour l'angle droit, les pièces et billets ou le tableau de conversion)",
+    microChallengeStyle: "une seule question simple (convertir deux mesures dans la même unité, reconnaître un angle droit ou compter les côtés égaux d'une figure)",
+    progressionStyle: "calculer un périmètre, rendre la monnaie ou vérifier les propriétés d'un carré, rectangle ou triangle",
+    frenchEvalRule: "la règle d'or en géométrie et mesures : toujours convertir toutes les mesures dans la même unité (ex : tout en cm ou tout en centimes) avant de calculer, et toujours écrire l'unité dans la réponse",
+    unicodeSymbols: "cm, mm, m, km, g, kg, L, €, h, min, +, −, ×, =",
+    forbiddenLatex: "$, $$, \\(, \\)",
+    sampleSimulation: {
+      studentQuestion: "Comment on calcule le périmètre d'un rectangle qui mesure 5 cm de long et 3 cm de large ?",
+      tutorStep1: "Le **périmètre**, c'est le tour complet de la figure, comme si une petite fourmi marchait le long des 4 côtés pour poser une clôture :\n• Un rectangle a **2 grands côtés** de **5 cm** et **2 petits côtés** de **3 cm**.\n\nSi la fourmi parcourt les 4 côtés (**5 + 3 + 5 + 3**), combien de centimètres a-t-elle parcourus en tout ?",
+      studentReply: "5 + 3 ça fait 8, et 8 + 8 ça fait 16 cm !",
+      tutorStep2: "Bravo, cela fait **16 cm** !\n💡 **Pour avoir tous les points sur ton cahier :** écris le calcul en ligne **P = 5 + 3 + 5 + 3 = 16 cm** et la phrase-réponse : **« Le périmètre du rectangle est de 16 cm. »** (sans oublier l'unité **cm** !).\n\nÀ toi : quel est le périmètre d'un **carré** dont chaque côté mesure **4 cm** ?"
+    }
+  }
+};
+
 const CURSUS_OPTIONS = [
   {
     id: 'cycle_2',
@@ -690,15 +870,27 @@ export default function App() {
   const [manualOverride, setManualOverride] = useState(null);
 
   // Détection des niveaux de l'école élémentaire (CP, CE1, CE2, CM1, CM2)
+  const isCycle2 = selectedCursus === 'cycle_2';
   const isPrimaire =
-    selectedCursus === 'cycle_2' ||
+    isCycle2 ||
     (selectedCursus === 'cycle_3' && !selectedNiveau.includes('Sixième'));
 
-  // Sécurité anti-désynchronisation : bascule automatique sur 'francais_philo' si l'utilisateur arrive en primaire avec une matière secondaire
-  const effectiveSubjectId =
-    isPrimaire && selectedSubjectId !== 'mathematiques' && selectedSubjectId !== 'francais_philo'
-      ? 'francais_philo'
-      : selectedSubjectId;
+  // Bascule intelligente de l'identifiant matière entre Primaire (8 sous-matières) et Secondaire (8 matières)
+  const resolveSubjectForMode = (subjId, targetIsPrimaire) => {
+    if (targetIsPrimaire) {
+      if (PRIMARY_SUBJECTS_CONFIG[subjId]) return subjId;
+      if (['francais_philo', 'histoire_geo', 'ses_eco', 'langues'].includes(subjId)) {
+        return 'fr_grammaire';
+      }
+      return 'math_calcul';
+    } else {
+      if (SUBJECTS_CONFIG[subjId]) return subjId;
+      if (subjId && subjId.startsWith('fr_')) return 'francais_philo';
+      return 'mathematiques';
+    }
+  };
+
+  const effectiveSubjectId = resolveSubjectForMode(selectedSubjectId, isPrimaire);
 
   // Changement de cursus -> mise à jour automatique du niveau et des options de cycle
   const handleCursusChange = (newCursusId) => {
@@ -710,9 +902,7 @@ export default function App() {
       setSelectedNiveau(newNiv);
     }
     const willBePrimaire = newCursusId === 'cycle_2' || (newCursusId === 'cycle_3' && !newNiv.includes('Sixième'));
-    if (willBePrimaire && selectedSubjectId !== 'mathematiques' && selectedSubjectId !== 'francais_philo') {
-      setSelectedSubjectId('francais_philo');
-    }
+    setSelectedSubjectId((prev) => resolveSubjectForMode(prev, willBePrimaire));
     const cycleCfg = CYCLE_SPECIFIC_CONFIG[newCursusId];
     if (cycleCfg) {
       setSelectedCycleScaffold(cycleCfg.scaffoldingModes[0].id);
@@ -724,22 +914,13 @@ export default function App() {
   const handleNiveauChange = (niv) => {
     setSelectedNiveau(niv);
     const willBePrimaire = selectedCursus === 'cycle_2' || (selectedCursus === 'cycle_3' && !niv.includes('Sixième'));
-    if (willBePrimaire && selectedSubjectId !== 'mathematiques' && selectedSubjectId !== 'francais_philo') {
-      setSelectedSubjectId('francais_philo');
-    }
+    setSelectedSubjectId((prev) => resolveSubjectForMode(prev, willBePrimaire));
     setManualOverride(null);
   };
 
-  // Filtrage exclusif des matières : Français et Mathématiques pour le primaire (CP à CM2)
-  const availableSubjectsList = useMemo(() => {
-    const all = Object.values(SUBJECTS_CONFIG);
-    if (isPrimaire) {
-      return all.filter((s) => s.id === 'francais_philo' || s.id === 'mathematiques');
-    }
-    return all;
-  }, [isPrimaire]);
-
-  const currentSubject = SUBJECTS_CONFIG[effectiveSubjectId] || SUBJECTS_CONFIG.mathematiques;
+  const currentSubject = isPrimaire
+    ? PRIMARY_SUBJECTS_CONFIG[effectiveSubjectId] || PRIMARY_SUBJECTS_CONFIG.math_calcul
+    : SUBJECTS_CONFIG[effectiveSubjectId] || SUBJECTS_CONFIG.mathematiques;
   const CurrentSubjectIcon = currentSubject.icon;
   const currentCursusObj = CURSUS_OPTIONS.find((c) => c.id === selectedCursus) || CURSUS_OPTIONS[0];
   const currentProfileObj = STUDENT_PROFILES.find((p) => p.id === selectedProfile) || STUDENT_PROFILES[0];
@@ -747,11 +928,14 @@ export default function App() {
     NEURO_BEHAVIOR_OPTIONS.find((n) => n.id === selectedNeuroBehavior) || NEURO_BEHAVIOR_OPTIONS[0];
   const currentCycleConfig = CYCLE_SPECIFIC_CONFIG[selectedCursus] || null;
 
-  // Adaptation automatique de l'intitulé de matière pour les Cycles 2, 3 et 4
-  const defaultAdaptedSubjectName =
-    currentCycleConfig && currentCycleConfig.subjectNameOverrides[effectiveSubjectId]
+  // Adaptation automatique de l'intitulé de matière selon le niveau (Primaire CP-CE2 / CM1-CM2 vs Secondaire)
+  const defaultAdaptedSubjectName = isPrimaire
+    ? isCycle2
+      ? currentSubject.nameCycle2
+      : currentSubject.nameCycle3
+    : currentCycleConfig && currentCycleConfig.subjectNameOverrides[effectiveSubjectId]
       ? currentCycleConfig.subjectNameOverrides[effectiveSubjectId]
-      : (isPrimaire && effectiveSubjectId === 'francais_philo' ? 'Français' : currentSubject.name);
+      : currentSubject.name;
 
   const effectiveSubjectName =
     customSubjectName.trim() !== '' ? customSubjectName.trim() : defaultAdaptedSubjectName;
@@ -784,13 +968,13 @@ export default function App() {
         ? `\n${currentNeuroBehaviorObj.promptRule}`
         : '';
 
-    const copyLabel =
-      selectedCursus === 'cycle_2'
-        ? '💡 Pour avoir tous les points sur ton cahier :'
-        : '💡 Pour avoir tous les points sur ta copie :';
+    const copyLabel = isPrimaire
+      ? '💡 Pour avoir tous les points sur ton cahier :'
+      : '💡 Pour avoir tous les points sur ta copie :';
 
-    const effectiveEvalRule =
-      currentCycleConfig && activeCycleEvalObj && !activeCycleEvalObj.useSubjectDefault
+    const effectiveEvalRule = isPrimaire
+      ? `${currentSubject.frenchEvalRule} (adapté à la classe de ${selectedNiveau})`
+      : currentCycleConfig && activeCycleEvalObj && !activeCycleEvalObj.useSubjectDefault
         ? `${activeCycleEvalObj.rule} (adapté aux exigences de ${effectiveSubjectName} en ${selectedNiveau})`
         : currentSubject.frenchEvalRule;
 
@@ -819,6 +1003,7 @@ AFFICHAGE PROPRE ET LISIBLE :
     effectiveSubjectName,
     selectedNiveau,
     selectedCursus,
+    isPrimaire,
     currentCursusObj,
     currentProfileObj,
     currentNeuroBehaviorObj,
@@ -828,8 +1013,11 @@ AFFICHAGE PROPRE ET LISIBLE :
     currentSubject
   ]);
 
-  // Simulation dynamique adaptée au Cycle (Cycle 2, Cycle 3, Cycle 4 ou Lycée)
+  // Simulation dynamique adaptée à la sous-matière primaire ou au Cycle (Collège/Lycée)
   const activeSimulation = useMemo(() => {
+    if (isPrimaire) {
+      return currentSubject.sampleSimulation;
+    }
     if (currentCycleConfig && currentCycleConfig.simulationsBySubject) {
       return (
         currentCycleConfig.simulationsBySubject[effectiveSubjectId] ||
@@ -837,7 +1025,7 @@ AFFICHAGE PROPRE ET LISIBLE :
       );
     }
     return currentSubject.sampleSimulation;
-  }, [currentCycleConfig, effectiveSubjectId, currentSubject]);
+  }, [isPrimaire, currentCycleConfig, effectiveSubjectId, currentSubject]);
 
   const displayedPrompt = manualOverride !== null ? manualOverride : generatedPrompt;
   const charCount = displayedPrompt.length;
@@ -867,7 +1055,7 @@ AFFICHAGE PROPRE ET LISIBLE :
     setCustomSubjectName('');
     setSelectedNeuroBehavior('aucun');
     if (preset === 'cycle2_ce1') {
-      setSelectedSubjectId('mathematiques');
+      setSelectedSubjectId('math_calcul');
       setSelectedCursus('cycle_2');
       setSelectedNiveau('CE1 (Cours Élémentaire 1re année — 7/8 ans)');
       setSelectedCycleScaffold('c2_manip');
@@ -1046,58 +1234,163 @@ AFFICHAGE PROPRE ET LISIBLE :
                   <span className="bg-[#0F172A] text-[#38BDF8] font-mono-code text-xs px-2 py-0.5 rounded-lg">
                     02
                   </span>
-                  Domaine / Matière
+                  {isPrimaire ? 'Sous-matière (Français & Mathématiques)' : 'Domaine / Matière'}
                 </h2>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                {availableSubjectsList.map((subj) => {
-                  const isSelected = effectiveSubjectId === subj.id;
-                  const adaptedTitle =
-                    currentCycleConfig && currentCycleConfig.subjectNameOverrides[subj.id]
-                      ? currentCycleConfig.subjectNameOverrides[subj.id]
-                      : (isPrimaire && subj.id === 'francais_philo' ? 'Français' : subj.name);
-                  const adaptedCategory = isPrimaire
-                    ? (subj.id === 'francais_philo' ? 'Lecture, Écriture & Grammaire' : 'Nombres, Calcul & Problèmes')
-                    : subj.category;
-                  const SubjectIcon = subj.icon;
-                  return (
-                    <button
-                      key={subj.id}
-                      onClick={() => {
-                        setSelectedSubjectId(subj.id);
-                        setManualOverride(null);
-                      }}
-                      className={`flex items-center gap-2.5 p-3.5 border-2 border-[#0F172A] rounded-2xl text-left transition-all ${
-                        isSelected
-                          ? 'bg-[#FBBF24] text-[#0F172A] shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
-                          : 'bg-white text-[#0F172A] hover:bg-[#FEF9C3] shadow-[2px_2px_0px_0px_#0F172A]'
-                      }`}
-                    >
-                      <span className="text-xl shrink-0 bg-white border border-[#0F172A] w-10 h-10 rounded-xl flex items-center justify-center">
-                        <SubjectIcon className="w-5 h-5 text-[#0F172A]" strokeWidth={2} aria-hidden="true" />
+              {isPrimaire ? (
+                <div className="space-y-4">
+                  {/* Pôle 1 : Français (4 sous-matières) */}
+                  <div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="px-2.5 py-0.5 text-[11px] font-bold bg-[#FEF9C3] text-[#0F172A] border-2 border-[#0F172A] rounded-full shadow-[2px_2px_0px_0px_#0F172A]">
+                        📖 Français
                       </span>
-                      <div className="min-w-0 flex-1">
-                        <div className="text-xs font-bold truncate" title={adaptedTitle}>
-                          {adaptedTitle}
+                      <span className="text-[11px] font-bold text-slate-600">
+                        {isCycle2 ? 'Lecture, écriture & étude de la langue' : 'Lecture, grammaire, orthographe & rédaction'}
+                      </span>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                      {Object.values(PRIMARY_SUBJECTS_CONFIG)
+                        .filter((s) => s.pole === 'francais')
+                        .map((subj) => {
+                          const isSelected = effectiveSubjectId === subj.id;
+                          const subLabel = isCycle2 ? subj.categoryCycle2 : subj.categoryCycle3;
+                          const SubjectIcon = subj.icon;
+                          return (
+                            <button
+                              key={subj.id}
+                              onClick={() => {
+                                setSelectedSubjectId(subj.id);
+                                setManualOverride(null);
+                              }}
+                              className={`flex items-center gap-2.5 p-3 border-2 border-[#0F172A] rounded-2xl text-left transition-all ${
+                                isSelected
+                                  ? 'bg-[#FBBF24] text-[#0F172A] shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
+                                  : 'bg-white text-[#0F172A] hover:bg-[#FEF9C3] shadow-[2px_2px_0px_0px_#0F172A]'
+                              }`}
+                            >
+                              <span className="text-xl shrink-0 bg-white border border-[#0F172A] w-10 h-10 rounded-xl flex items-center justify-center">
+                                <SubjectIcon className="w-5 h-5 text-[#0F172A]" strokeWidth={2} aria-hidden="true" />
+                              </span>
+                              <div className="min-w-0 flex-1">
+                                <div className="text-xs font-bold truncate" title={subj.cardTitle}>
+                                  {subj.cardTitle}
+                                </div>
+                                <div
+                                  className={`text-[10px] truncate font-mono-code ${
+                                    isSelected ? 'text-[#0F172A]/80 font-bold' : 'text-neutral-500'
+                                  }`}
+                                  title={subLabel}
+                                >
+                                  {subLabel}
+                                </div>
+                              </div>
+                            </button>
+                          );
+                        })}
+                    </div>
+                  </div>
+
+                  {/* Pôle 2 : Mathématiques (4 sous-matières) */}
+                  <div className="pt-3 border-t-2 border-dashed border-[#0F172A]/30">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="px-2.5 py-0.5 text-[11px] font-bold bg-[#FEF9C3] text-[#0F172A] border-2 border-[#0F172A] rounded-full shadow-[2px_2px_0px_0px_#0F172A]">
+                        🧮 Mathématiques
+                      </span>
+                      <span className="text-[11px] font-bold text-slate-600">
+                        {isCycle2 ? 'Nombres, calcul, problèmes & mesures' : 'Numération, opérations, problèmes & géométrie'}
+                      </span>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                      {Object.values(PRIMARY_SUBJECTS_CONFIG)
+                        .filter((s) => s.pole === 'mathematiques')
+                        .map((subj) => {
+                          const isSelected = effectiveSubjectId === subj.id;
+                          const subLabel = isCycle2 ? subj.categoryCycle2 : subj.categoryCycle3;
+                          const SubjectIcon = subj.icon;
+                          return (
+                            <button
+                              key={subj.id}
+                              onClick={() => {
+                                setSelectedSubjectId(subj.id);
+                                setManualOverride(null);
+                              }}
+                              className={`flex items-center gap-2.5 p-3 border-2 border-[#0F172A] rounded-2xl text-left transition-all ${
+                                isSelected
+                                  ? 'bg-[#FBBF24] text-[#0F172A] shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
+                                  : 'bg-white text-[#0F172A] hover:bg-[#FEF9C3] shadow-[2px_2px_0px_0px_#0F172A]'
+                              }`}
+                            >
+                              <span className="text-xl shrink-0 bg-white border border-[#0F172A] w-10 h-10 rounded-xl flex items-center justify-center">
+                                <SubjectIcon className="w-5 h-5 text-[#0F172A]" strokeWidth={2} aria-hidden="true" />
+                              </span>
+                              <div className="min-w-0 flex-1">
+                                <div className="text-xs font-bold truncate" title={subj.cardTitle}>
+                                  {subj.cardTitle}
+                                </div>
+                                <div
+                                  className={`text-[10px] truncate font-mono-code ${
+                                    isSelected ? 'text-[#0F172A]/80 font-bold' : 'text-neutral-500'
+                                  }`}
+                                  title={subLabel}
+                                >
+                                  {subLabel}
+                                </div>
+                              </div>
+                            </button>
+                          );
+                        })}
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                  {Object.values(SUBJECTS_CONFIG).map((subj) => {
+                    const isSelected = effectiveSubjectId === subj.id;
+                    const adaptedTitle =
+                      currentCycleConfig && currentCycleConfig.subjectNameOverrides[subj.id]
+                        ? currentCycleConfig.subjectNameOverrides[subj.id]
+                        : subj.name;
+                    const SubjectIcon = subj.icon;
+                    return (
+                      <button
+                        key={subj.id}
+                        onClick={() => {
+                          setSelectedSubjectId(subj.id);
+                          setManualOverride(null);
+                        }}
+                        className={`flex items-center gap-2.5 p-3.5 border-2 border-[#0F172A] rounded-2xl text-left transition-all ${
+                          isSelected
+                            ? 'bg-[#FBBF24] text-[#0F172A] shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
+                            : 'bg-white text-[#0F172A] hover:bg-[#FEF9C3] shadow-[2px_2px_0px_0px_#0F172A]'
+                        }`}
+                      >
+                        <span className="text-xl shrink-0 bg-white border border-[#0F172A] w-10 h-10 rounded-xl flex items-center justify-center">
+                          <SubjectIcon className="w-5 h-5 text-[#0F172A]" strokeWidth={2} aria-hidden="true" />
+                        </span>
+                        <div className="min-w-0 flex-1">
+                          <div className="text-xs font-bold truncate" title={adaptedTitle}>
+                            {adaptedTitle}
+                          </div>
+                          <div
+                            className={`text-[10px] truncate font-mono-code ${
+                              isSelected ? 'text-[#0F172A]/80 font-bold' : 'text-neutral-500'
+                            }`}
+                          >
+                            {subj.category}
+                          </div>
                         </div>
-                        <div
-                          className={`text-[10px] truncate font-mono-code ${
-                            isSelected ? 'text-[#0F172A]/80 font-bold' : 'text-neutral-500'
-                          }`}
-                        >
-                          {adaptedCategory}
-                        </div>
-                      </div>
-                    </button>
-                  );
-                })}
-              </div>
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
 
               {/* Intitulé personnalisé optionnel */}
               <div className="mt-4 pt-3 border-t-2 border-dashed border-[#0F172A]">
                 <label className="block text-xs font-bold text-[#0F172A] mb-1.5">
-                  Personnaliser l'intitulé exact de la matière ou du sous-domaine (optionnel) :
+                  Personnaliser l'intitulé de la matière (optionnel) :
                 </label>
                 <input
                   type="text"
