@@ -1112,7 +1112,7 @@ AFFICHAGE PROPRE ET LISIBLE :
   return (
     <div className="min-h-screen text-[#0F172A] selection:bg-[#0F172A] selection:text-[#38BDF8] pb-20">
       {/* En-tête flottant néobrutaliste tout en rondeur */}
-      <header className="sticky top-3 z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <header className="sticky top-3 z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6">
         <div className="bg-white text-[#0F172A] border-[2.5px] border-[#0F172A] rounded-3xl shadow-[5px_5px_0px_0px_#0F172A] px-4 sm:px-6 py-3.5 flex flex-col md:flex-row md:items-center md:justify-between gap-3 backdrop-blur-sm">
           <div className="flex items-center gap-3">
             <div className="w-11 h-11 bg-[#059669] text-white border-2 border-[#0F172A] rounded-2xl flex items-center justify-center shadow-[3px_3px_0px_0px_#0F172A] shrink-0">
@@ -1133,7 +1133,7 @@ AFFICHAGE PROPRE ET LISIBLE :
       </header>
 
       {/* Carte d'introduction éditoriale arrondie */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-5 pb-2">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6">
         <div className="bg-white border-[2.5px] border-[#0F172A] rounded-3xl shadow-[6px_6px_0px_0px_#0F172A] p-6 flex flex-col lg:flex-row lg:items-end justify-between gap-4">
           <div>
             <div className="inline-flex items-center gap-2 mb-2">
@@ -1152,7 +1152,7 @@ AFFICHAGE PROPRE ET LISIBLE :
       </div>
 
       {/* Contenu principal en 2 colonnes */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-7 items-start">
 
           {/* COLONNE GAUCHE : Paramétrage (5 colonnes sur 12) */}
