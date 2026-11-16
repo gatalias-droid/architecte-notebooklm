@@ -4,7 +4,6 @@ import {
   Copy,
   Check,
   GraduationCap,
-  Sliders,
   MessageSquare,
   Eye,
   FileText,
@@ -964,89 +963,6 @@ AFFICHAGE PROPRE ET LISIBLE :
                 </div>
               </div>
             </section>
-
-            {/* BLOC SPÉCIFIQUE : Personnalisation Pédagogique Avancée pour Cycle 2, Cycle 3, Cycle 4 et Lycée */}
-            {currentCycleConfig && (
-              <section className="bg-[#F8FAFC] border-[2.5px] border-[#0F172A] rounded-3xl shadow-[6px_6px_0px_0px_#0F172A] p-6 space-y-5">
-                <div className="flex items-center justify-between bg-[#0F172A] text-[#38BDF8] px-4 py-2.5 border-2 border-[#0F172A] rounded-2xl">
-                  <h2 className="text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center gap-2">
-                    <Sliders className="w-4 h-4 text-[#38BDF8]" />
-                    {currentCycleConfig.title}
-                  </h2>
-                </div>
-
-                {/* Choix du levier d'étayage cognitif du cycle */}
-                <div>
-                  <label className="block text-xs font-bold text-[#0F172A] mb-2 uppercase tracking-wide">
-                    A. Méthode d'explication & de manipulation :
-                  </label>
-                  <div className="space-y-2.5">
-                    {currentCycleConfig.scaffoldingModes.map((mode) => {
-                      const isSel = selectedCycleScaffold === mode.id;
-                      return (
-                        <button
-                          key={mode.id}
-                          onClick={() => {
-                            setSelectedCycleScaffold(mode.id);
-                            setManualOverride(null);
-                          }}
-                          className={`w-full p-3.5 border-2 border-[#0F172A] rounded-2xl text-left transition-all ${
-                            isSel
-                              ? 'bg-[#059669] text-white shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
-                              : 'bg-white text-[#0F172A] hover:bg-white shadow-[2px_2px_0px_0px_#0F172A]'
-                          }`}
-                        >
-                          <div className="flex items-center justify-between gap-2">
-                            <span className="text-xs font-bold">{mode.label}</span>
-                            {isSel && (
-                              <span className="bg-[#0F172A] text-[#38BDF8] p-1 rounded-lg shrink-0">
-                                <Check className="w-3.5 h-3.5 stroke-[3]" />
-                              </span>
-                            )}
-                          </div>
-                          <p className="text-[11px] text-slate-700 mt-1 font-medium">
-                            {mode.desc}
-                          </p>
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                {/* Choix de l'exigence de trace écrite / évaluation du cycle */}
-                <div className="pt-3 border-t-2 border-dashed border-[#0F172A]">
-                  <label className="block text-xs font-bold text-[#0F172A] mb-2 uppercase tracking-wide">
-                    B. Exigence « Points sur le cahier / la copie » (Éducation Nationale) :
-                  </label>
-                  <div className="space-y-2">
-                    {currentCycleConfig.evalFocusOptions.map((ev) => {
-                      const isSel = selectedCycleEval === ev.id;
-                      return (
-                        <button
-                          key={ev.id}
-                          onClick={() => {
-                            setSelectedCycleEval(ev.id);
-                            setManualOverride(null);
-                          }}
-                          className={`w-full px-3.5 py-2.5 border-2 border-[#0F172A] rounded-2xl text-left flex items-center justify-between transition-all ${
-                            isSel
-                              ? 'bg-[#0F172A] text-white shadow-[3px_3px_0px_0px_#10B981]'
-                              : 'bg-white text-[#0F172A] hover:bg-white shadow-[2px_2px_0px_0px_#0F172A]'
-                          }`}
-                        >
-                          <span className="text-xs font-bold pr-2">{ev.label}</span>
-                          {isSel && (
-                            <span className="bg-[#10B981] text-white p-1 rounded-lg shrink-0">
-                              <Check className="w-3.5 h-3.5 stroke-[3]" />
-                            </span>
-                          )}
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-              </section>
-            )}
 
             {/* Bloc 2 : Choix de la Matière */}
             <section className="bg-white border-[2.5px] border-[#0F172A] rounded-3xl shadow-[6px_6px_0px_0px_#0F172A] p-6">
