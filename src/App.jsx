@@ -683,7 +683,6 @@ export default function App() {
   const [selectedCycleScaffold, setSelectedCycleScaffold] = useState('c4_demonstration');
   const [selectedCycleEval, setSelectedCycleEval] = useState('c4_eval_dnb');
   const [selectedNeuroBehavior, setSelectedNeuroBehavior] = useState('aucun');
-  const [tutoiement, setTutoiement] = useState(true);
   const [copied, setCopied] = useState(false);
   const [activeTab, setActiveTab] = useState('prompt'); // 'prompt' | 'simulation' | 'guide'
   const [manualOverride, setManualOverride] = useState(null);
@@ -733,9 +732,8 @@ export default function App() {
 
   // Génération dynamique et chirurgicale du prompt système "Zéro Friction"
   const generatedPrompt = useMemo(() => {
-    const pronounRule = tutoiement
-      ? "Adresse-toi à l'élève en le tutoyant avec un ton encourageant, direct et chaleureux."
-      : "Adresse-toi à l'élève en le vouvoyant avec un ton bienveillant, valorisant et accessible.";
+    const pronounRule =
+      "Adresse-toi à l'élève en le tutoyant avec un ton encourageant, direct et chaleureux.";
 
     const sourceRule =
       "Appuie-toi strictement sur le périmètre et les attendus de fin de cycle du programme officiel présent dans les sources du carnet pour ne jamais introduire de notion hors-programme, tout en utilisant librement tes capacités pédagogiques pour créer des exemples chiffrés ou concrets progressifs.";
@@ -790,8 +788,7 @@ AFFICHAGE PROPRE ET LISIBLE :
     currentCycleConfig,
     activeScaffoldObj,
     activeCycleEvalObj,
-    currentSubject,
-    tutoiement
+    currentSubject
   ]);
 
   // Simulation dynamique adaptée au Cycle (Cycle 2, Cycle 3, Cycle 4 ou Lycée)
@@ -1152,24 +1149,6 @@ AFFICHAGE PROPRE ET LISIBLE :
                     <span>{currentNeuroBehaviorObj.shortDesc}</span>
                   </div>
                 )}
-              </div>
-
-              {/* Interrupteurs de réglage */}
-              <div className="pt-3 border-t-2 border-dashed border-[#0F172A]">
-                <label className="flex items-center justify-between cursor-pointer p-2.5 bg-white border-2 border-[#0F172A] rounded-2xl">
-                  <span className="text-xs font-bold text-[#0F172A]">
-                    Tutoyer l'élève (recommandé pour la fluidité)
-                  </span>
-                  <input
-                    type="checkbox"
-                    checked={tutoiement}
-                    onChange={(e) => {
-                      setTutoiement(e.target.checked);
-                      setManualOverride(null);
-                    }}
-                    className="accent-[#0F172A] h-4 w-4 border-2 border-[#0F172A] rounded"
-                  />
-                </label>
               </div>
             </section>
           </div>
