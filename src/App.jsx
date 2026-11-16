@@ -15,6 +15,14 @@ import {
   Info,
   Edit3,
   Layers,
+  Calculator,
+  Dna,
+  FlaskConical,
+  Globe,
+  BookOpen,
+  TrendingUp,
+  Languages,
+  Code2,
 } from 'lucide-react';
 
 // Base de données des matières avec leurs spécificités d'évaluation en France et règles Unicode
@@ -22,7 +30,7 @@ const SUBJECTS_CONFIG = {
   mathematiques: {
     id: 'mathematiques',
     name: 'Mathématiques',
-    icon: '📐',
+    icon: Calculator,
     category: 'Sciences & Logique',
     explanationStyle: "avec une image concrète ou géométrique et un exemple chiffré immédiat",
     microChallengeStyle: "une seule petite question de calcul ou d'application très simple",
@@ -40,7 +48,7 @@ const SUBJECTS_CONFIG = {
   svt: {
     id: 'svt',
     name: 'SVT (Sciences de la Vie et de la Terre)',
-    icon: '🧬',
+    icon: Dna,
     category: 'Sciences & Logique',
     explanationStyle: "sous forme de chaîne logique simple (Cause ➔ Mécanisme biologique/géologique ➔ Conséquence) avec une analogie concrète du quotidien ou de laboratoire",
     microChallengeStyle: "une seule petite mise en situation très simple (comparer deux résultats d'expérience, deux témoins ou deux valeurs chiffrées)",
@@ -58,7 +66,7 @@ const SUBJECTS_CONFIG = {
   physique_chimie: {
     id: 'physique_chimie',
     name: 'Physique-Chimie',
-    icon: '⚗️',
+    icon: FlaskConical,
     category: 'Sciences & Logique',
     explanationStyle: "en reliant le phénomène physique concret à sa grandeur mesurable et à sa formule expliquée avec des mots simples",
     microChallengeStyle: "une seule petite question directe (identifier la bonne unité, prévoir le sens d'évolution ou faire un calcul simple)",
@@ -76,7 +84,7 @@ const SUBJECTS_CONFIG = {
   histoire_geo: {
     id: 'histoire_geo',
     name: 'Histoire-Géographie & HGGSP',
-    icon: '🌍',
+    icon: Globe,
     category: 'Humanités & Sciences Sociales',
     explanationStyle: "en posant le décor en 3 points repères : Acteur/Lieu ➔ Événement ou Dynamique spatiale ➔ Conséquence majeure",
     microChallengeStyle: "une seule question ciblée (relier une date ou un lieu à son enjeu, ou identifier l'idée principale d'une situation historique/géographique)",
@@ -94,7 +102,7 @@ const SUBJECTS_CONFIG = {
   francais_philo: {
     id: 'francais_philo',
     name: 'Français & Philosophie',
-    icon: '✒️',
+    icon: BookOpen,
     category: 'Humanités & Sciences Sociales',
     explanationStyle: "en expliquant l'idée ou le procédé littéraire avec des mots simples du quotidien, suivi d'un court exemple parlant",
     microChallengeStyle: "une seule question courte sur un court extrait ou une affirmation pour vérifier que l'élève repère l'effet produit ou le paradoxe",
@@ -112,7 +120,7 @@ const SUBJECTS_CONFIG = {
   ses_eco: {
     id: 'ses_eco',
     name: 'SES / Économie-Gestion',
-    icon: '📊',
+    icon: TrendingUp,
     category: 'Humanités & Sciences Sociales',
     explanationStyle: "sous forme de chaîne de causalité économique ou sociologique claire (Mécanisme A ➔ Effet B ➔ Résultat C) illustrée par un cas concret",
     microChallengeStyle: "une seule question simple de vérification (lire un chiffre correctement ou identifier le sens de variation d'une grandeur économique)",
@@ -130,7 +138,7 @@ const SUBJECTS_CONFIG = {
   langues: {
     id: 'langues',
     name: 'Langues Vivantes (Anglais, Espagnol, Allemand)',
-    icon: '🗣️',
+    icon: Languages,
     category: 'Langues & Communication',
     explanationStyle: "en expliquant la règle grammaticale ou lexicale en français de façon ultra-visuelle, avec 2 exemples courts mis en parallèle",
     microChallengeStyle: "une seule phrase courte à compléter, traduire ou reformuler immédiatement pour ancrer le réflexe",
@@ -148,7 +156,7 @@ const SUBJECTS_CONFIG = {
   nsi_info: {
     id: 'nsi_info',
     name: 'NSI / SNT / Algorithmique',
-    icon: '💻',
+    icon: Code2,
     category: 'Sciences & Logique',
     explanationStyle: "en déroulant ce qui se passe concrètement en mémoire étape par étape sur un tout petit exemple (3 valeurs maximum)",
     microChallengeStyle: "une seule question courte demandant de prédire la valeur d'une variable après un tour de boucle ou de compléter une seule ligne de code",
@@ -621,6 +629,51 @@ const STUDENT_PROFILES = [
   }
 ];
 
+const NEURO_BEHAVIOR_OPTIONS = [
+  {
+    id: 'aucun',
+    label: 'Aucun trouble spécifique signalé (Standard)',
+    shortDesc: '',
+    promptRule: ''
+  },
+  {
+    id: 'tsa',
+    label: 'Trouble du Spectre de l’Autisme (TSA / Asperger) — Besoin de littéralité & prévisibilité',
+    shortDesc: 'Langage 100 % explicite, zéro second degré ni métaphore floue, structure invariable et prévisible.',
+    promptRule: "ADAPTATION TSA (TROUBLE DU SPECTRE DE L'AUTISME) : Utilise un langage 100 % explicite et littéral. Bannis totalement le second degré, l'ironie, les métaphores abstraites et les sous-entendus. Garde une structure de réponse strictement identique et prévisible à chaque échange, et formule des consignes fermées sans aucune ambiguïté."
+  },
+  {
+    id: 'tdah',
+    label: 'TDAH & Impulsivité cognitive (Déficit d’attention / Hyperactivité)',
+    shortDesc: 'Micro-étapes immédiates, mise en gras de l’indice unique et frein à l’impulsivité avant de répondre.',
+    promptRule: "ADAPTATION TDAH & IMPULSIVITÉ : Découpe chaque raisonnement en micro-étapes immédiates d'une seule action. Surligne en gras le seul mot-clé ou chiffre à observer. Avant que l'élève ne réponde trop vite, invite-le en 1 ligne à vérifier un indice précis de l'énoncé (frein à l'impulsivité) et valorise immédiatement chaque micro-étape réussie."
+  },
+  {
+    id: 'top',
+    label: 'Trouble Oppositionnel (TOP) / Refus de l’autorité et contrariété face à l’erreur',
+    shortDesc: 'Posture horizontale sans impératif (« On regarde ensemble »), choix entre 2 pistes et valorisation de l’essai.',
+    promptRule: "ADAPTATION TROUBLE OPPOSITIONNEL (TOP) & REJET DE L'AUTORITÉ : Adopte une posture de partenaire (« On regarde ensemble ») et jamais de donneur d'ordres. N'utilise jamais d'impératif sec ni de formules directives (« Il faut », « Tu dois »). Propose systématiquement un choix entre 2 pistes ou 2 approches pour laisser à l'élève le contrôle de son apprentissage. Ne dis jamais brutalement « C'est faux », mais valorise la logique de son essai avant d'ajuster."
+  },
+  {
+    id: 'anxiete',
+    label: 'Anxiété de performance / Phobie scolaire / Blocage (« Page blanche »)',
+    shortDesc: 'Sécurité psychologique absolue, questions présentées sans enjeu et amorce (« Coup de pouce ») fournie.',
+    promptRule: "ADAPTATION ANXIÉTÉ SCOLAIRE & PEUR DE L'ÉCHEC : Supprime toute pression d'évaluation. Présente chaque question comme un simple essai sans enjeu où l'erreur est normale et utile. Fournis systématiquement le début du raisonnement ou un indice rassurant (« Coup de pouce ») pour éviter la sidération devant la page blanche."
+  },
+  {
+    id: 'dys',
+    label: 'Troubles DYS & Surcharge de la mémoire de travail (Dyslexie, Dyspraxie, Dyscalculie)',
+    shortDesc: 'Rappel permanent des formules/règles sous les yeux (zéro double tâche) et étapes visuellement isolées.',
+    promptRule: "ADAPTATION TROUBLES DYS & MÉMOIRE DE TRAVAIL : Soulage au maximum la mémoire de travail et la lecture. Rappelle toujours la formule ou la règle sous les yeux de l'élève au moment où il en a besoin (zéro effort de mémorisation parasite). Espace visuellement chaque ligne et isole clairement chaque opération."
+  },
+  {
+    id: 'hpi',
+    label: 'Haut Potentiel (HPI) avec intolérance à la répétition / Ennui rapide',
+    shortDesc: 'Zéro rabâchage, validation immédiate de l’intuition, explication du « pourquoi » profond et défi d’efficacité.',
+    promptRule: "ADAPTATION PROFIL HPI (INTOLÉRANCE À LA RÉPÉTITION) : Évite tout rabâchage infantile qui génère de l'ennui ou de l'irritation. Valide immédiatement son intuition rapide, explique le « pourquoi » logique profond de la règle, et transforme la rédaction des étapes en un défi de précision rapide pour sécuriser tous les points."
+  }
+];
+
 export default function App() {
   const [selectedSubjectId, setSelectedSubjectId] = useState('mathematiques');
   const [customSubjectName, setCustomSubjectName] = useState('');
@@ -629,7 +682,7 @@ export default function App() {
   const [selectedProfile, setSelectedProfile] = useState('standard');
   const [selectedCycleScaffold, setSelectedCycleScaffold] = useState('c4_demonstration');
   const [selectedCycleEval, setSelectedCycleEval] = useState('c4_eval_dnb');
-  const [customFocus, setCustomFocus] = useState('');
+  const [selectedNeuroBehavior, setSelectedNeuroBehavior] = useState('aucun');
   const [tutoiement, setTutoiement] = useState(true);
   const [strictSourceGrounding, setStrictSourceGrounding] = useState(true);
   const [copied, setCopied] = useState(false);
@@ -652,8 +705,11 @@ export default function App() {
   };
 
   const currentSubject = SUBJECTS_CONFIG[selectedSubjectId];
+  const CurrentSubjectIcon = currentSubject.icon;
   const currentCursusObj = CURSUS_OPTIONS.find((c) => c.id === selectedCursus) || CURSUS_OPTIONS[0];
   const currentProfileObj = STUDENT_PROFILES.find((p) => p.id === selectedProfile) || STUDENT_PROFILES[0];
+  const currentNeuroBehaviorObj =
+    NEURO_BEHAVIOR_OPTIONS.find((n) => n.id === selectedNeuroBehavior) || NEURO_BEHAVIOR_OPTIONS[0];
   const currentCycleConfig = CYCLE_SPECIFIC_CONFIG[selectedCursus] || null;
 
   // Adaptation automatique de l'intitulé de matière pour les Cycles 2, 3 et 4
@@ -690,9 +746,10 @@ export default function App() {
       ? `\n${currentCycleConfig.cognitiveBase}\nÉTAYAGE PRIORITAIRE : ${activeScaffoldObj ? activeScaffoldObj.promptRule : ''}`
       : '';
 
-    const focusClause = customFocus.trim()
-      ? `\nPOINT D'ATTENTION PARTICULIER : Accorde une vigilance spéciale à : ${customFocus.trim()}.`
-      : '';
+    const neuroBehaviorClause =
+      currentNeuroBehaviorObj && currentNeuroBehaviorObj.promptRule
+        ? `\n${currentNeuroBehaviorObj.promptRule}`
+        : '';
 
     const copyLabel =
       selectedCursus === 'cycle_2'
@@ -713,7 +770,7 @@ export default function App() {
 
 ${pronounRule}
 ${sourceRule}
-${currentProfileObj.directive}${cycleCognitiveBlock}${focusClause}
+${currentProfileObj.directive}${neuroBehaviorClause}${cycleCognitiveBlock}
 
 RÈGLES DE DIALOGUE (CENTRÉES À 100 % SUR L'ÉLÈVE) :
 1. Zéro commentaire sur ta façon d'enseigner : N'affiche jamais de titres d'étapes, de noms de méthodes pédagogiques ou de catégories d'exercices (n'écris jamais de termes techniques d'enseignement, de numéros de phases ou d'étiquettes méthodologiques). Parle directement à l'élève de ${effectiveSubjectName}, sans préambule.
@@ -731,13 +788,13 @@ AFFICHAGE PROPRE ET LISIBLE :
     selectedCursus,
     currentCursusObj,
     currentProfileObj,
+    currentNeuroBehaviorObj,
     currentCycleConfig,
     activeScaffoldObj,
     activeCycleEvalObj,
     currentSubject,
     tutoiement,
-    strictSourceGrounding,
-    customFocus
+    strictSourceGrounding
   ]);
 
   // Simulation dynamique adaptée au Cycle (Cycle 2, Cycle 3, Cycle 4 ou Lycée)
@@ -777,7 +834,7 @@ AFFICHAGE PROPRE ET LISIBLE :
   const applyPreset = (preset) => {
     setManualOverride(null);
     setCustomSubjectName('');
-    setCustomFocus('');
+    setSelectedNeuroBehavior('aucun');
     if (preset === 'cycle2_ce1') {
       setSelectedSubjectId('mathematiques');
       setSelectedCursus('cycle_2');
@@ -857,13 +914,6 @@ AFFICHAGE PROPRE ET LISIBLE :
                 personnalisé
               </span>{' '}
             </h2>
-          </div>
-
-          <div className="flex flex-wrap items-center gap-2.5">
-            <div className="bg-white border-2 border-[#0F172A] rounded-full shadow-[3px_3px_0px_0px_#0F172A] px-3.5 py-1.5 text-xs font-bold flex items-center gap-2">
-              <span className="w-2.5 h-2.5 bg-[#10B981] border border-[#0F172A] rounded-full inline-block" />
-              <span>1 question à la fois (Scaffolding)</span>
-            </div>
           </div>
         </div>
       </div>
@@ -982,6 +1032,7 @@ AFFICHAGE PROPRE ET LISIBLE :
                     currentCycleConfig && currentCycleConfig.subjectNameOverrides[subj.id]
                       ? currentCycleConfig.subjectNameOverrides[subj.id]
                       : subj.name;
+                  const SubjectIcon = subj.icon;
                   return (
                     <button
                       key={subj.id}
@@ -996,7 +1047,7 @@ AFFICHAGE PROPRE ET LISIBLE :
                       }`}
                     >
                       <span className="text-xl shrink-0 bg-white border border-[#0F172A] w-10 h-10 rounded-xl flex items-center justify-center">
-                        {subj.icon}
+                        <SubjectIcon className="w-5 h-5 text-[#0F172A]" strokeWidth={2} aria-hidden="true" />
                       </span>
                       <div className="min-w-0 flex-1">
                         <div className="text-xs font-bold truncate" title={adaptedTitle}>
@@ -1068,27 +1119,45 @@ AFFICHAGE PROPRE ET LISIBLE :
                           </span>
                         )}
                       </div>
-                      <p className="text-[11px] text-slate-700 mt-1 font-medium">{prof.desc}</p>
+                      <p
+                        className={`text-[11px] mt-1 font-medium ${
+                          isSelected ? 'text-white' : 'text-slate-700'
+                        }`}
+                      >
+                        {prof.desc}
+                      </p>
                     </button>
                   );
                 })}
               </div>
 
-              {/* Consigne ou chapitre spécifique */}
+              {/* Menu déroulant des troubles neuro-développementaux ou du comportement */}
               <div className="pt-2">
                 <label className="block text-xs font-bold text-[#0F172A] mb-1.5">
-                  Objectif ou difficulté spécifique de l'élève (optionnel) :
+                  Adaptation aux troubles autistiques, neuro-développementaux ou du comportement (optionnel) :
                 </label>
-                <input
-                  type="text"
-                  value={customFocus}
+                <select
+                  value={selectedNeuroBehavior}
                   onChange={(e) => {
-                    setCustomFocus(e.target.value);
+                    setSelectedNeuroBehavior(e.target.value);
                     setManualOverride(null);
                   }}
-                  placeholder="Ex : Tables de multiplication, retenues, théorème de Thalès, accords..."
-                  className="w-full px-3.5 py-2 text-xs font-medium bg-white border-2 border-[#0F172A] rounded-xl shadow-[2px_2px_0px_0px_#0F172A] text-[#0F172A] placeholder-neutral-400 focus:outline-none focus:bg-[#E0E7FF]"
-                />
+                  className="w-full px-3.5 py-2.5 text-xs font-bold bg-white border-2 border-[#0F172A] rounded-2xl shadow-[3px_3px_0px_0px_#0F172A] text-[#0F172A] focus:outline-none focus:bg-[#E0E7FF] cursor-pointer"
+                >
+                  {NEURO_BEHAVIOR_OPTIONS.map((opt) => (
+                    <option key={opt.id} value={opt.id}>
+                      {opt.label}
+                    </option>
+                  ))}
+                </select>
+                {currentNeuroBehaviorObj && currentNeuroBehaviorObj.shortDesc && (
+                  <div className="mt-2.5 p-3 bg-[#EEF2FF] border-2 border-[#0F172A] rounded-xl text-[11px] font-medium text-[#0F172A] flex items-start gap-2">
+                    <span className="bg-[#4F46E5] text-white font-mono-code text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0">
+                      ACTIF
+                    </span>
+                    <span>{currentNeuroBehaviorObj.shortDesc}</span>
+                  </div>
+                )}
               </div>
 
               {/* Interrupteurs de réglage */}
@@ -1188,7 +1257,7 @@ AFFICHAGE PROPRE ET LISIBLE :
                   <div>
                     <div className="flex items-center gap-3">
                       <span className="text-xl bg-white border-2 border-[#0F172A] w-10 h-10 rounded-2xl flex items-center justify-center shadow-[2px_2px_0px_0px_#0F172A]">
-                        {currentSubject.icon}
+                        <CurrentSubjectIcon className="w-5 h-5 text-[#0F172A]" strokeWidth={2} aria-hidden="true" />
                       </span>
                       <div>
                         <h3 className="text-sm sm:text-base font-bold text-[#0F172A]">
