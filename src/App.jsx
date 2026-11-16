@@ -1134,7 +1134,7 @@ AFFICHAGE PROPRE ET LISIBLE :
 
       {/* Carte d'introduction éditoriale arrondie */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6">
-        <div className="bg-white border-[2.5px] border-[#0F172A] rounded-3xl shadow-[6px_6px_0px_0px_#0F172A] p-6 flex flex-col lg:flex-row lg:items-end justify-between gap-4">
+        <div className="bg-[#FFFBEB] border-[2.5px] border-[#0F172A] rounded-3xl shadow-[6px_6px_0px_0px_#0F172A] p-6 flex flex-col lg:flex-row lg:items-end justify-between gap-4">
           <div>
             <div className="inline-flex items-center gap-2 mb-2">
               <span className="font-mono-code text-[11px] font-bold uppercase tracking-widest text-[#0F172A] bg-white border-2 border-[#0F172A] px-2.5 py-0.5 rounded-full shadow-[2px_2px_0px_0px_#0F172A]">
