@@ -30,6 +30,7 @@ const SUBJECTS_CONFIG = {
   mathematiques: {
     id: 'mathematiques',
     name: 'Mathématiques',
+    bulletSummary: 'Calcul • Algèbre • Géométrie',
     icon: Calculator,
     category: 'Sciences & Logique',
     explanationStyle: "avec une image concrète ou géométrique et un exemple chiffré immédiat",
@@ -48,6 +49,7 @@ const SUBJECTS_CONFIG = {
   svt: {
     id: 'svt',
     name: 'SVT (Sciences de la Vie et de la Terre)',
+    bulletSummary: 'Vivant • Corps • Planète',
     icon: Dna,
     category: 'Sciences & Logique',
     explanationStyle: "sous forme de chaîne logique simple (Cause ➔ Mécanisme biologique/géologique ➔ Conséquence) avec une analogie concrète du quotidien ou de laboratoire",
@@ -66,6 +68,7 @@ const SUBJECTS_CONFIG = {
   physique_chimie: {
     id: 'physique_chimie',
     name: 'Physique-Chimie',
+    bulletSummary: 'Matière • Énergie • Formules',
     icon: FlaskConical,
     category: 'Sciences & Logique',
     explanationStyle: "en reliant le phénomène physique concret à sa grandeur mesurable et à sa formule expliquée avec des mots simples",
@@ -84,6 +87,7 @@ const SUBJECTS_CONFIG = {
   histoire_geo: {
     id: 'histoire_geo',
     name: 'Histoire-Géographie & HGGSP',
+    bulletSummary: 'Dates • Cartes • Enjeux',
     icon: Globe,
     category: 'Humanités & Sciences Sociales',
     explanationStyle: "en posant le décor en 3 points repères : Acteur/Lieu ➔ Événement ou Dynamique spatiale ➔ Conséquence majeure",
@@ -102,6 +106,7 @@ const SUBJECTS_CONFIG = {
   francais_philo: {
     id: 'francais_philo',
     name: 'Français & Philosophie',
+    bulletSummary: 'Textes • Grammaire • Rédaction',
     icon: BookOpen,
     category: 'Humanités & Sciences Sociales',
     explanationStyle: "en expliquant l'idée ou le procédé littéraire avec des mots simples du quotidien, suivi d'un court exemple parlant",
@@ -120,6 +125,7 @@ const SUBJECTS_CONFIG = {
   ses_eco: {
     id: 'ses_eco',
     name: 'SES / Économie-Gestion',
+    bulletSummary: 'Économie • Société • Données',
     icon: TrendingUp,
     category: 'Humanités & Sciences Sociales',
     explanationStyle: "sous forme de chaîne de causalité économique ou sociologique claire (Mécanisme A ➔ Effet B ➔ Résultat C) illustrée par un cas concret",
@@ -138,6 +144,7 @@ const SUBJECTS_CONFIG = {
   langues: {
     id: 'langues',
     name: 'Langues Vivantes (Anglais, Espagnol, Allemand)',
+    bulletSummary: 'Anglais • Espagnol • Allemand',
     icon: Languages,
     category: 'Langues & Communication',
     explanationStyle: "en expliquant la règle grammaticale ou lexicale en français de façon ultra-visuelle, avec 2 exemples courts mis en parallèle",
@@ -156,6 +163,7 @@ const SUBJECTS_CONFIG = {
   nsi_info: {
     id: 'nsi_info',
     name: 'NSI / SNT / Algorithmique',
+    bulletSummary: 'Code • Python • Logique',
     icon: Code2,
     category: 'Sciences & Logique',
     explanationStyle: "en déroulant ce qui se passe concrètement en mémoire étape par étape sur un tout petit exemple (3 valeurs maximum)",
@@ -181,8 +189,8 @@ const PRIMARY_SUBJECTS_CONFIG = {
     cardTitle: 'Lecture & Compréhension',
     nameCycle2: 'Français — Lecture, Sons & Compréhension',
     nameCycle3: 'Français — Lecture fluide & Compréhension de texte',
-    categoryCycle2: "Sons, décodage & sens de l'histoire",
-    categoryCycle3: 'Lecture fluide & compréhension fine',
+    categoryCycle2: 'Sons • Fluence • Sens',
+    categoryCycle3: 'Fluence • Récit • Implicite',
     icon: BookOpen,
     explanationStyle: "en découpant les mots ou les phrases courtes étape par étape et en faisant imaginer la scène comme un petit dessin animé",
     microChallengeStyle: "une seule petite question très simple sur qui fait l'action, où se passe l'histoire ou ce que veut dire un mot",
@@ -203,8 +211,8 @@ const PRIMARY_SUBJECTS_CONFIG = {
     cardTitle: 'Grammaire & Conjugaison',
     nameCycle2: 'Français — Grammaire & Conjugaison',
     nameCycle3: 'Français — Grammaire, Analyse & Conjugaison',
-    categoryCycle2: 'Phrase, nom, sujet, verbe & temps',
-    categoryCycle3: 'Nature, fonction des mots & temps',
+    categoryCycle2: 'Phrase • Sujet • Verbe',
+    categoryCycle3: 'Nature • Fonction • Temps',
     icon: Edit3,
     explanationStyle: "en donnant un rôle concret à chaque mot (le verbe = l'action qu'on peut mimer ou encadrer par « ne... pas », le sujet = celui qui fait l'action)",
     microChallengeStyle: "une seule petite phrase où l'élève doit repérer le verbe, le sujet ou trouver la bonne terminaison",
@@ -225,8 +233,8 @@ const PRIMARY_SUBJECTS_CONFIG = {
     cardTitle: 'Orthographe & Dictée',
     nameCycle2: 'Français — Orthographe, Sons & Accords',
     nameCycle3: 'Français — Orthographe, Accords & Homophones',
-    categoryCycle2: "Sons, pluriel (-s) & chaîne d'accord",
-    categoryCycle3: 'Accords, dictée & homophones (a/à, et/est)',
+    categoryCycle2: 'Sons • Pluriel • Accords',
+    categoryCycle3: 'Accords • Dictée • a/à',
     icon: ShieldCheck,
     explanationStyle: "en mettant les « lunettes de l'accord » depuis le déterminant ou en utilisant l'astuce de remplacement pour les homophones (a/à, et/est, son/sont)",
     microChallengeStyle: "un seul mot ou petit groupe de mots à accorder ou à compléter dans une phrase courte",
@@ -247,8 +255,8 @@ const PRIMARY_SUBJECTS_CONFIG = {
     cardTitle: 'Vocabulaire & Écriture',
     nameCycle2: "Français — Vocabulaire & Production d'écrits",
     nameCycle3: 'Français — Vocabulaire & Expression écrite',
-    categoryCycle2: 'Mots, contraires & petites phrases',
-    categoryCycle3: 'Familles de mots, synonymes & rédaction',
+    categoryCycle2: 'Mots • Contraires • Phrases',
+    categoryCycle3: 'Synonymes • Familles • Récit',
     icon: MessageSquare,
     explanationStyle: "en reliant chaque mot à sa famille de mots, à son synonyme/contraire ou à une situation vécue par l'enfant",
     microChallengeStyle: "un seul petit défi : trouver un mot de la même famille, un synonyme ou construire une belle phrase avec un mot donné",
@@ -269,8 +277,8 @@ const PRIMARY_SUBJECTS_CONFIG = {
     cardTitle: 'Numération & Nombres',
     nameCycle2: 'Mathématiques — Numération (Unités, Dizaines, Centaines)',
     nameCycle3: 'Mathématiques — Numération, Fractions & Décimaux',
-    categoryCycle2: 'Unités, dizaines, centaines & suites',
-    categoryCycle3: 'Grands nombres, fractions & décimaux',
+    categoryCycle2: 'Unités • Dizaines • Centaines',
+    categoryCycle3: 'Nombres • Fractions • Décimaux',
     icon: Layers,
     explanationStyle: "en représentant les nombres avec des paquets de 10 (Centaines, Dizaines, Unités) ou des parts de gâteau / bandes découpées pour les fractions et décimaux",
     microChallengeStyle: "une seule question courte (décomposer un nombre, trouver le chiffre des dizaines/dixièmes ou comparer deux nombres)",
@@ -288,11 +296,11 @@ const PRIMARY_SUBJECTS_CONFIG = {
   math_calcul: {
     id: 'math_calcul',
     pole: 'mathematiques',
-    cardTitle: 'Calcul Mental & Opérations',
+    cardTitle: 'Calcul & Opérations',
     nameCycle2: 'Mathématiques — Calcul Mental & Opérations (+, −, ×)',
     nameCycle3: 'Mathématiques — Calcul Mental & 4 Opérations (+, −, ×, ÷)',
-    categoryCycle2: 'Tables, calcul rapide & posé (+, −, ×)',
-    categoryCycle3: 'Tables, calcul mental & 4 opérations',
+    categoryCycle2: 'Tables • Mental • Calcul posé',
+    categoryCycle3: 'Tables • Mental • 4 opérations',
     icon: Calculator,
     explanationStyle: "en montrant l'astuce maligne pour calculer de tête (passer par 10, utiliser les doubles) ou en guidant l'opération posée colonne par colonne en partant des unités à droite",
     microChallengeStyle: "une seule petite étape de calcul (un complément à 10, une table ou une seule colonne de l'opération avec sa retenue)",
@@ -313,8 +321,8 @@ const PRIMARY_SUBJECTS_CONFIG = {
     cardTitle: 'Résolution de Problèmes',
     nameCycle2: 'Mathématiques — Résolution de Problèmes',
     nameCycle3: 'Mathématiques — Problèmes & Proportionnalité',
-    categoryCycle2: "Comprendre l'énoncé, schématiser & chercher",
-    categoryCycle3: 'Schéma en barres, étapes & proportionnalité',
+    categoryCycle2: 'Énoncé • Schéma • Opération',
+    categoryCycle3: 'Schéma • Étapes • Problèmes',
     icon: Zap,
     explanationStyle: "en transformant l'énoncé en une petite histoire concrète ou en un schéma en barres (chercher le Tout ou chercher une Partie)",
     microChallengeStyle: "une seule question pour aider l'enfant à dire ce que l'on cherche et s'il faut réunir (+ / ×) ou enlever/partager (− / ÷)",
@@ -332,11 +340,11 @@ const PRIMARY_SUBJECTS_CONFIG = {
   math_geometrie: {
     id: 'math_geometrie',
     pole: 'mathematiques',
-    cardTitle: 'Grandeurs, Mesures & Géométrie',
+    cardTitle: 'Grandeurs & Géométrie',
     nameCycle2: 'Mathématiques — Grandeurs, Mesures & Géométrie',
     nameCycle3: 'Mathématiques — Géométrie, Mesures & Conversions',
-    categoryCycle2: 'Monnaie (€), heure, longueurs & figures',
-    categoryCycle3: 'Conversions, périmètre, aire & tracés',
+    categoryCycle2: 'Monnaie • Heure • Figures',
+    categoryCycle3: 'Conversions • Périmètre • Figures',
     icon: FileText,
     explanationStyle: "en s'appuyant sur des objets réels (la règle graduée depuis le 0, l'équerre pour l'angle droit, les pièces et billets ou le tableau de conversion)",
     microChallengeStyle: "une seule question simple (convertir deux mesures dans la même unité, reconnaître un angle droit ou compter les côtés égaux d'une figure)",
@@ -943,12 +951,12 @@ export default function App() {
   // Sélection des règles spécifiques au Cycle 2, 3 ou 4 si actif
   const activeScaffoldObj = currentCycleConfig
     ? currentCycleConfig.scaffoldingModes.find((s) => s.id === selectedCycleScaffold) ||
-      currentCycleConfig.scaffoldingModes[0]
+    currentCycleConfig.scaffoldingModes[0]
     : null;
 
   const activeCycleEvalObj = currentCycleConfig
     ? currentCycleConfig.evalFocusOptions.find((e) => e.id === selectedCycleEval) ||
-      currentCycleConfig.evalFocusOptions[0]
+    currentCycleConfig.evalFocusOptions[0]
     : null;
 
   // Génération dynamique et chirurgicale du prompt système "Zéro Friction"
@@ -1137,10 +1145,10 @@ AFFICHAGE PROPRE ET LISIBLE :
       {/* Contenu principal en 2 colonnes */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-7 items-start">
-          
+
           {/* COLONNE GAUCHE : Paramétrage (5 colonnes sur 12) */}
           <div className="lg:col-span-5 space-y-6">
-            
+
             {/* Bloc 1 : Cursus, Cycle & Niveau scolaire */}
             <section className="bg-white border-[2.5px] border-[#0F172A] rounded-3xl shadow-[6px_6px_0px_0px_#0F172A] p-6 space-y-5">
               <div className="flex items-center justify-between border-b-2 border-[#0F172A] pb-3">
@@ -1176,17 +1184,15 @@ AFFICHAGE PROPRE ET LISIBLE :
                       <button
                         key={cBtn.id}
                         onClick={() => handleCursusChange(cBtn.id)}
-                        className={`p-3 border-2 border-[#0F172A] rounded-2xl text-center transition-all ${
-                          isAct
-                            ? 'bg-[#FBBF24] text-[#0F172A] shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
-                            : 'bg-white text-[#0F172A] hover:bg-[#FEF9C3] shadow-[2px_2px_0px_0px_#0F172A]'
-                        }`}
+                        className={`p-3 border-2 border-[#0F172A] rounded-2xl text-center transition-all ${isAct
+                          ? 'bg-[#FBBF24] text-[#0F172A] shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
+                          : 'bg-white text-[#0F172A] hover:bg-[#FEF9C3] shadow-[2px_2px_0px_0px_#0F172A]'
+                          }`}
                       >
                         <div className="text-xs font-bold">{cBtn.title}</div>
                         <div
-                          className={`text-[10px] mt-0.5 font-mono-code ${
-                            isAct ? 'text-[#0F172A]/80 font-bold' : 'text-slate-600'
-                          }`}
+                          className={`text-[10px] mt-0.5 font-mono-code ${isAct ? 'text-[#0F172A]/80 font-bold' : 'text-slate-600'
+                            }`}
                         >
                           {cBtn.sub}
                         </div>
@@ -1208,11 +1214,10 @@ AFFICHAGE PROPRE ET LISIBLE :
                       <button
                         key={niv}
                         onClick={() => handleNiveauChange(niv)}
-                        className={`px-4 py-2.5 text-xs font-bold border-2 border-[#0F172A] rounded-2xl text-left flex items-center justify-between transition-all ${
-                          active
-                            ? 'bg-[#FBBF24] text-[#0F172A] shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
-                            : 'bg-white text-[#0F172A] hover:bg-[#FEF9C3] shadow-[2px_2px_0px_0px_#0F172A]'
-                        }`}
+                        className={`px-4 py-2.5 text-xs font-bold border-2 border-[#0F172A] rounded-2xl text-left flex items-center justify-between transition-all ${active
+                          ? 'bg-[#FBBF24] text-[#0F172A] shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
+                          : 'bg-white text-[#0F172A] hover:bg-[#FEF9C3] shadow-[2px_2px_0px_0px_#0F172A]'
+                          }`}
                       >
                         <span>{niv}</span>
                         {active && (
@@ -1256,7 +1261,6 @@ AFFICHAGE PROPRE ET LISIBLE :
                         .map((subj) => {
                           const isSelected = effectiveSubjectId === subj.id;
                           const subLabel = isCycle2 ? subj.categoryCycle2 : subj.categoryCycle3;
-                          const SubjectIcon = subj.icon;
                           return (
                             <button
                               key={subj.id}
@@ -1264,27 +1268,17 @@ AFFICHAGE PROPRE ET LISIBLE :
                                 setSelectedSubjectId(subj.id);
                                 setManualOverride(null);
                               }}
-                              className={`flex items-center gap-2.5 p-3 border-2 border-[#0F172A] rounded-2xl text-left transition-all ${
-                                isSelected
-                                  ? 'bg-[#FBBF24] text-[#0F172A] shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
-                                  : 'bg-white text-[#0F172A] hover:bg-[#FEF9C3] shadow-[2px_2px_0px_0px_#0F172A]'
-                              }`}
+                              className={`p-3 border-2 border-[#0F172A] rounded-2xl text-center transition-all ${isSelected
+                                ? 'bg-[#FBBF24] text-[#0F172A] shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
+                                : 'bg-white text-[#0F172A] hover:bg-[#FEF9C3] shadow-[2px_2px_0px_0px_#0F172A]'
+                                }`}
                             >
-                              <span className="text-xl shrink-0 bg-white border border-[#0F172A] w-10 h-10 rounded-xl flex items-center justify-center">
-                                <SubjectIcon className="w-5 h-5 text-[#0F172A]" strokeWidth={2} aria-hidden="true" />
-                              </span>
-                              <div className="min-w-0 flex-1">
-                                <div className="text-xs font-bold truncate" title={subj.cardTitle}>
-                                  {subj.cardTitle}
-                                </div>
-                                <div
-                                  className={`text-[10px] truncate font-mono-code ${
-                                    isSelected ? 'text-[#0F172A]/80 font-bold' : 'text-neutral-500'
+                              <div className="text-xs font-bold leading-tight">{subj.cardTitle}</div>
+                              <div
+                                className={`text-[10px] mt-1 font-mono-code ${isSelected ? 'text-[#0F172A]/80 font-bold' : 'text-slate-600'
                                   }`}
-                                  title={subLabel}
-                                >
-                                  {subLabel}
-                                </div>
+                              >
+                                {subLabel}
                               </div>
                             </button>
                           );
@@ -1308,7 +1302,6 @@ AFFICHAGE PROPRE ET LISIBLE :
                         .map((subj) => {
                           const isSelected = effectiveSubjectId === subj.id;
                           const subLabel = isCycle2 ? subj.categoryCycle2 : subj.categoryCycle3;
-                          const SubjectIcon = subj.icon;
                           return (
                             <button
                               key={subj.id}
@@ -1316,27 +1309,17 @@ AFFICHAGE PROPRE ET LISIBLE :
                                 setSelectedSubjectId(subj.id);
                                 setManualOverride(null);
                               }}
-                              className={`flex items-center gap-2.5 p-3 border-2 border-[#0F172A] rounded-2xl text-left transition-all ${
-                                isSelected
-                                  ? 'bg-[#FBBF24] text-[#0F172A] shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
-                                  : 'bg-white text-[#0F172A] hover:bg-[#FEF9C3] shadow-[2px_2px_0px_0px_#0F172A]'
-                              }`}
+                              className={`p-3 border-2 border-[#0F172A] rounded-2xl text-center transition-all ${isSelected
+                                ? 'bg-[#FBBF24] text-[#0F172A] shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
+                                : 'bg-white text-[#0F172A] hover:bg-[#FEF9C3] shadow-[2px_2px_0px_0px_#0F172A]'
+                                }`}
                             >
-                              <span className="text-xl shrink-0 bg-white border border-[#0F172A] w-10 h-10 rounded-xl flex items-center justify-center">
-                                <SubjectIcon className="w-5 h-5 text-[#0F172A]" strokeWidth={2} aria-hidden="true" />
-                              </span>
-                              <div className="min-w-0 flex-1">
-                                <div className="text-xs font-bold truncate" title={subj.cardTitle}>
-                                  {subj.cardTitle}
-                                </div>
-                                <div
-                                  className={`text-[10px] truncate font-mono-code ${
-                                    isSelected ? 'text-[#0F172A]/80 font-bold' : 'text-neutral-500'
+                              <div className="text-xs font-bold leading-tight">{subj.cardTitle}</div>
+                              <div
+                                className={`text-[10px] mt-1 font-mono-code ${isSelected ? 'text-[#0F172A]/80 font-bold' : 'text-slate-600'
                                   }`}
-                                  title={subLabel}
-                                >
-                                  {subLabel}
-                                </div>
+                              >
+                                {subLabel}
                               </div>
                             </button>
                           );
@@ -1352,7 +1335,7 @@ AFFICHAGE PROPRE ET LISIBLE :
                       currentCycleConfig && currentCycleConfig.subjectNameOverrides[subj.id]
                         ? currentCycleConfig.subjectNameOverrides[subj.id]
                         : subj.name;
-                    const SubjectIcon = subj.icon;
+                    const subLabel = subj.bulletSummary || subj.category;
                     return (
                       <button
                         key={subj.id}
@@ -1360,26 +1343,17 @@ AFFICHAGE PROPRE ET LISIBLE :
                           setSelectedSubjectId(subj.id);
                           setManualOverride(null);
                         }}
-                        className={`flex items-center gap-2.5 p-3.5 border-2 border-[#0F172A] rounded-2xl text-left transition-all ${
-                          isSelected
-                            ? 'bg-[#FBBF24] text-[#0F172A] shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
-                            : 'bg-white text-[#0F172A] hover:bg-[#FEF9C3] shadow-[2px_2px_0px_0px_#0F172A]'
-                        }`}
+                        className={`p-3 border-2 border-[#0F172A] rounded-2xl text-center transition-all ${isSelected
+                          ? 'bg-[#FBBF24] text-[#0F172A] shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
+                          : 'bg-white text-[#0F172A] hover:bg-[#FEF9C3] shadow-[2px_2px_0px_0px_#0F172A]'
+                          }`}
                       >
-                        <span className="text-xl shrink-0 bg-white border border-[#0F172A] w-10 h-10 rounded-xl flex items-center justify-center">
-                          <SubjectIcon className="w-5 h-5 text-[#0F172A]" strokeWidth={2} aria-hidden="true" />
-                        </span>
-                        <div className="min-w-0 flex-1">
-                          <div className="text-xs font-bold truncate" title={adaptedTitle}>
-                            {adaptedTitle}
-                          </div>
-                          <div
-                            className={`text-[10px] truncate font-mono-code ${
-                              isSelected ? 'text-[#0F172A]/80 font-bold' : 'text-neutral-500'
+                        <div className="text-xs font-bold leading-tight">{adaptedTitle}</div>
+                        <div
+                          className={`text-[10px] mt-1 font-mono-code ${isSelected ? 'text-[#0F172A]/80 font-bold' : 'text-slate-600'
                             }`}
-                          >
-                            {subj.category}
-                          </div>
+                        >
+                          {subLabel}
                         </div>
                       </button>
                     );
@@ -1426,11 +1400,10 @@ AFFICHAGE PROPRE ET LISIBLE :
                         setSelectedProfile(prof.id);
                         setManualOverride(null);
                       }}
-                      className={`w-full p-3.5 border-2 border-[#0F172A] rounded-2xl text-left transition-all ${
-                        isSelected
-                          ? 'bg-[#FBBF24] text-[#0F172A] shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
-                          : 'bg-white text-[#0F172A] hover:bg-[#FEF9C3] shadow-[2px_2px_0px_0px_#0F172A]'
-                      }`}
+                      className={`w-full p-3.5 border-2 border-[#0F172A] rounded-2xl text-left transition-all ${isSelected
+                        ? 'bg-[#FBBF24] text-[#0F172A] shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
+                        : 'bg-white text-[#0F172A] hover:bg-[#FEF9C3] shadow-[2px_2px_0px_0px_#0F172A]'
+                        }`}
                     >
                       <div className="flex items-center justify-between">
                         <span className="text-xs font-bold">{prof.label}</span>
@@ -1441,9 +1414,8 @@ AFFICHAGE PROPRE ET LISIBLE :
                         )}
                       </div>
                       <p
-                        className={`text-[11px] mt-1 font-medium ${
-                          isSelected ? 'text-[#0F172A]/85' : 'text-slate-700'
-                        }`}
+                        className={`text-[11px] mt-1 font-medium ${isSelected ? 'text-[#0F172A]/85' : 'text-slate-700'
+                          }`}
                       >
                         {prof.desc}
                       </p>
@@ -1485,7 +1457,7 @@ AFFICHAGE PROPRE ET LISIBLE :
 
           {/* COLONNE DROITE : Fenêtre Principale (7 colonnes sur 12) */}
           <div className="lg:col-span-7 space-y-6 lg:sticky lg:top-24 self-start">
-            
+
             {/* Navigation par onglets façon dossiers brutalistes arrondis */}
             <div className="grid grid-cols-3 gap-2.5">
               {[
@@ -1499,11 +1471,10 @@ AFFICHAGE PROPRE ET LISIBLE :
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`py-3 px-3 border-[2.5px] border-[#0F172A] rounded-2xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 transition-all ${
-                      isActive
-                        ? 'bg-[#FBBF24] text-[#0F172A] shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
-                        : 'bg-white text-[#0F172A] hover:bg-[#FEF9C3] shadow-[3px_3px_0px_0px_#0F172A]'
-                    }`}
+                    className={`py-3 px-3 border-[2.5px] border-[#0F172A] rounded-2xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 transition-all ${isActive
+                      ? 'bg-[#FBBF24] text-[#0F172A] shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
+                      : 'bg-white text-[#0F172A] hover:bg-[#FEF9C3] shadow-[3px_3px_0px_0px_#0F172A]'
+                      }`}
                   >
                     <TabIcon className="w-4 h-4 shrink-0" />
                     <span className="truncate">{tab.label}</span>
@@ -1567,11 +1538,10 @@ AFFICHAGE PROPRE ET LISIBLE :
                     )}
                     <button
                       onClick={handleCopy}
-                      className={`px-6 py-3.5 text-xs sm:text-sm font-bold uppercase tracking-wider border-2 border-[#0F172A] rounded-2xl flex items-center gap-2 transition-all ${
-                        copied
-                          ? 'bg-[#10B981] text-white shadow-[2px_2px_0px_0px_#0F172A] translate-x-[2px] translate-y-[2px]'
-                          : 'bg-[#059669] hover:bg-[#047857] text-white shadow-[4px_4px_0px_0px_#0F172A] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[3px_3px_0px_0px_#0F172A] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none'
-                      }`}
+                      className={`px-6 py-3.5 text-xs sm:text-sm font-bold uppercase tracking-wider border-2 border-[#0F172A] rounded-2xl flex items-center gap-2 transition-all ${copied
+                        ? 'bg-[#10B981] text-white shadow-[2px_2px_0px_0px_#0F172A] translate-x-[2px] translate-y-[2px]'
+                        : 'bg-[#059669] hover:bg-[#047857] text-white shadow-[4px_4px_0px_0px_#0F172A] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[3px_3px_0px_0px_#0F172A] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none'
+                        }`}
                     >
                       {copied ? (
                         <>
