@@ -707,85 +707,52 @@ AFFICHAGE PROPRE ET LISIBLE :
   };
 
   return (
-    <div className="min-h-screen text-[#111111] selection:bg-[#111111] selection:text-[#F2C230] pb-20">
+    <div className="min-h-screen text-[#0F172A] selection:bg-[#0F172A] selection:text-[#38BDF8] pb-20">
       {/* Liseré supérieur signature */}
-      <div className="h-2 bg-[#E63946]" />
+      <div className="h-2 bg-[#4F46E5]" />
 
       {/* En-tête flottant néobrutaliste tout en rondeur */}
       <header className="sticky top-3 z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-[#111111] text-white border-[2.5px] border-[#111111] rounded-3xl shadow-[5px_5px_0px_0px_#111111] px-4 sm:px-6 py-3.5 flex flex-col md:flex-row md:items-center md:justify-between gap-3 backdrop-blur-sm">
+        <div className="bg-[#0F172A] text-white border-[2.5px] border-[#0F172A] rounded-3xl shadow-[5px_5px_0px_0px_#0F172A] px-4 sm:px-6 py-3.5 flex flex-col md:flex-row md:items-center md:justify-between gap-3 backdrop-blur-sm">
           <div className="flex items-center gap-3">
-            <div className="w-11 h-11 bg-[#F2C230] text-[#111111] border-2 border-white rounded-2xl flex items-center justify-center shadow-[3px_3px_0px_0px_#E63946] shrink-0">
+            <div className="w-11 h-11 bg-[#059669] text-white border-2 border-white rounded-2xl flex items-center justify-center shadow-[3px_3px_0px_0px_#4F46E5] shrink-0">
               <GraduationCap className="w-6 h-6 stroke-[2.5]" />
             </div>
             <div>
               <div className="flex flex-wrap items-center gap-2">
-                <span className="font-mono-code text-[11px] font-bold uppercase tracking-widest px-2.5 py-0.5 bg-[#F2C230] text-[#111111] rounded-full border border-white">
+                <span className="font-mono-code text-[11px] font-bold uppercase tracking-widest px-2.5 py-0.5 bg-[#059669] text-white rounded-full border border-white">
                   CORTEX360 • ÉDUCATION
                 </span>
                 <h1 className="text-base sm:text-lg font-bold tracking-tight text-white">
                   Architecte Pédagogique NotebookLM
                 </h1>
               </div>
-              <p className="text-xs text-neutral-300 mt-0.5">
-                Méthode Singapour / Hong Kong (CPA) × Barème Officiel Éducation Nationale
-              </p>
             </div>
-          </div>
-
-          {/* Barre de Presets rapides par Cycle */}
-          <div className="flex items-center gap-2 overflow-x-auto pb-1 md:pb-0">
-            <span className="font-mono-code text-[11px] font-bold uppercase text-[#F2C230] whitespace-nowrap mr-1 flex items-center gap-1">
-              <Zap className="w-3.5 h-3.5 fill-[#F2C230]" /> Presets :
-            </span>
-            {[
-              { id: 'cycle2_ce1', label: '🧒 Cycle 2 (CE1)' },
-              { id: 'cycle3_cm2_6e', label: '📘 Cycle 3 (CM2/6e)' },
-              { id: 'cycle4_3e_brevet', label: '🎓 Cycle 4 (Brevet)' },
-              { id: 'seconde_svt', label: '🧬 SVT 2de' },
-              { id: 'term_maths', label: '📐 Maths Term' }
-            ].map((p) => (
-              <button
-                key={p.id}
-                onClick={() => applyPreset(p.id)}
-                className="px-3 py-1.5 text-xs font-bold bg-white text-[#111111] border-2 border-[#111111] rounded-full shadow-[2px_2px_0px_0px_#F2C230] hover:bg-[#F2C230] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0px_0px_#F2C230] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all whitespace-nowrap"
-              >
-                {p.label}
-              </button>
-            ))}
           </div>
         </div>
       </header>
 
       {/* Carte d'introduction éditoriale arrondie */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-5 pb-2">
-        <div className="bg-white border-[2.5px] border-[#111111] rounded-3xl shadow-[6px_6px_0px_0px_#111111] p-6 flex flex-col lg:flex-row lg:items-end justify-between gap-4">
+        <div className="bg-white border-[2.5px] border-[#0F172A] rounded-3xl shadow-[6px_6px_0px_0px_#0F172A] p-6 flex flex-col lg:flex-row lg:items-end justify-between gap-4">
           <div>
             <div className="inline-flex items-center gap-2 mb-2">
-              <span className="font-mono-code text-[11px] font-bold uppercase tracking-widest text-[#111111] bg-white border-2 border-[#111111] px-2.5 py-0.5 rounded-full shadow-[2px_2px_0px_0px_#111111]">
-                INGÉNIERIE PÉDAGOGIQUE SUR-MESURE • DU CP À LA TERMINALE
+              <span className="font-mono-code text-[11px] font-bold uppercase tracking-widest text-[#0F172A] bg-white border-2 border-[#0F172A] px-2.5 py-0.5 rounded-full shadow-[2px_2px_0px_0px_#0F172A]">
+                ASSISTANT PÉDAGOGIQUE SUR-MESURE • DU CP À LA TERMINALE
               </span>
             </div>
-            <h2 className="text-2xl sm:text-4xl font-bold tracking-tight leading-tight text-[#111111]">
-              Configurez un tuteur IA{' '}
-              <span className="bg-[#FF66C4] text-[#111111] px-3 py-1 rounded-2xl border-2 border-[#111111] shadow-[3px_3px_0px_0px_#111111] inline-block transform -rotate-1">
-                zéro jargon
+            <h2 className="text-2xl sm:text-4xl font-bold tracking-tight leading-tight text-[#0F172A]">
+              Configurez votre tuteur IA{' '}
+              <span className="bg-[#4F46E5] text-white px-3 py-1 rounded-2xl border-2 border-[#0F172A] shadow-[3px_3px_0px_0px_#0F172A] inline-block transform -rotate-1">
+                personnalisé
               </span>{' '}
-              et{' '}
-              <span className="bg-[#111111] text-[#F2C230] px-3 py-1 rounded-2xl border-2 border-[#111111] shadow-[3px_3px_0px_0px_#E63946] inline-block">
-                100 % conforme au BO
-              </span>
             </h2>
           </div>
 
           <div className="flex flex-wrap items-center gap-2.5">
-            <div className="bg-white border-2 border-[#111111] rounded-full shadow-[3px_3px_0px_0px_#111111] px-3.5 py-1.5 text-xs font-bold flex items-center gap-2">
-              <span className="w-2.5 h-2.5 bg-[#10B981] border border-[#111111] rounded-full inline-block" />
+            <div className="bg-white border-2 border-[#0F172A] rounded-full shadow-[3px_3px_0px_0px_#0F172A] px-3.5 py-1.5 text-xs font-bold flex items-center gap-2">
+              <span className="w-2.5 h-2.5 bg-[#10B981] border border-[#0F172A] rounded-full inline-block" />
               <span>1 question à la fois (Scaffolding)</span>
-            </div>
-            <div className="bg-white border-2 border-[#111111] rounded-full shadow-[3px_3px_0px_0px_#111111] px-3.5 py-1.5 text-xs font-bold flex items-center gap-2">
-              <span className="w-2.5 h-2.5 bg-[#E63946] border border-[#111111] rounded-full inline-block" />
-              <span>Zéro LaTeX cassé</span>
             </div>
           </div>
         </div>
@@ -799,16 +766,16 @@ AFFICHAGE PROPRE ET LISIBLE :
           <div className="lg:col-span-5 space-y-6">
             
             {/* Bloc 1 : Cursus, Cycle & Niveau scolaire */}
-            <section className="bg-white border-[2.5px] border-[#111111] rounded-3xl shadow-[6px_6px_0px_0px_#111111] p-6 space-y-5">
-              <div className="flex items-center justify-between border-b-2 border-[#111111] pb-3">
-                <h2 className="text-sm font-bold uppercase tracking-wider text-[#111111] flex items-center gap-2">
-                  <span className="bg-[#111111] text-[#F2C230] font-mono-code text-xs px-2 py-0.5 rounded-lg">
+            <section className="bg-white border-[2.5px] border-[#0F172A] rounded-3xl shadow-[6px_6px_0px_0px_#0F172A] p-6 space-y-5">
+              <div className="flex items-center justify-between border-b-2 border-[#0F172A] pb-3">
+                <h2 className="text-sm font-bold uppercase tracking-wider text-[#0F172A] flex items-center gap-2">
+                  <span className="bg-[#0F172A] text-[#38BDF8] font-mono-code text-xs px-2 py-0.5 rounded-lg">
                     01
                   </span>
                   <Compass className="w-4 h-4 stroke-[2.5]" /> Cycle & Niveau Scolaire
                 </h2>
                 {currentCycleConfig && (
-                  <span className="px-3 py-0.5 text-[11px] font-bold bg-[#F2C230] text-[#111111] border-2 border-[#111111] rounded-full shadow-[2px_2px_0px_0px_#111111]">
+                  <span className="px-3 py-0.5 text-[11px] font-bold bg-[#059669] text-white border-2 border-[#0F172A] rounded-full shadow-[2px_2px_0px_0px_#0F172A]">
                     {currentCycleConfig.badge}
                   </span>
                 )}
@@ -816,7 +783,7 @@ AFFICHAGE PROPRE ET LISIBLE :
 
               {/* Boutons d'accès direct aux Cycles 2, 3, 4 et Lycée Général */}
               <div>
-                <span className="block text-xs font-bold text-[#111111] mb-2">
+                <span className="block text-xs font-bold text-[#0F172A] mb-2">
                   Sélection rapide des Cycles (École, Collège & Lycée Général) :
                 </span>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-4">
@@ -831,16 +798,16 @@ AFFICHAGE PROPRE ET LISIBLE :
                       <button
                         key={cBtn.id}
                         onClick={() => handleCursusChange(cBtn.id)}
-                        className={`p-3 border-2 border-[#111111] rounded-2xl text-center transition-all ${
+                        className={`p-3 border-2 border-[#0F172A] rounded-2xl text-center transition-all ${
                           isAct
-                            ? 'bg-[#111111] text-[#F2C230] shadow-[3px_3px_0px_0px_#E63946] -translate-x-[1px] -translate-y-[1px]'
-                            : 'bg-[#FFFDF7] text-[#111111] hover:bg-[#FFF3B0] shadow-[2px_2px_0px_0px_#111111]'
+                            ? 'bg-[#0F172A] text-[#38BDF8] shadow-[3px_3px_0px_0px_#4F46E5] -translate-x-[1px] -translate-y-[1px]'
+                            : 'bg-white text-[#0F172A] hover:bg-[#E0E7FF] shadow-[2px_2px_0px_0px_#0F172A]'
                         }`}
                       >
                         <div className="text-xs font-bold">{cBtn.title}</div>
                         <div
                           className={`text-[10px] mt-0.5 font-mono-code ${
-                            isAct ? 'text-white' : 'text-neutral-600'
+                            isAct ? 'text-white' : 'text-slate-600'
                           }`}
                         >
                           {cBtn.sub}
@@ -850,13 +817,13 @@ AFFICHAGE PROPRE ET LISIBLE :
                   })}
                 </div>
 
-                <label className="block text-xs font-bold text-[#111111] mb-1.5">
+                <label className="block text-xs font-bold text-[#0F172A] mb-1.5">
                   Ou choisir parmi tous les cursus (Techno, Pro, Supérieur) :
                 </label>
                 <select
                   value={selectedCursus}
                   onChange={(e) => handleCursusChange(e.target.value)}
-                  className="w-full px-3.5 py-2.5 text-xs sm:text-sm font-bold bg-[#FFFDF7] border-2 border-[#111111] rounded-2xl shadow-[3px_3px_0px_0px_#111111] text-[#111111] focus:outline-none focus:bg-[#FFF3B0]"
+                  className="w-full px-3.5 py-2.5 text-xs sm:text-sm font-bold bg-white border-2 border-[#0F172A] rounded-2xl shadow-[3px_3px_0px_0px_#0F172A] text-[#0F172A] focus:outline-none focus:bg-[#E0E7FF]"
                 >
                   {CURSUS_OPTIONS.map((c) => (
                     <option key={c.id} value={c.id}>
@@ -867,7 +834,7 @@ AFFICHAGE PROPRE ET LISIBLE :
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-[#111111] mb-2">
+                <label className="block text-xs font-bold text-[#0F172A] mb-2">
                   Classe exacte de l'apprenant :
                 </label>
                 <div className="grid grid-cols-1 gap-2">
@@ -880,15 +847,15 @@ AFFICHAGE PROPRE ET LISIBLE :
                           setSelectedNiveau(niv);
                           setManualOverride(null);
                         }}
-                        className={`px-4 py-2.5 text-xs font-bold border-2 border-[#111111] rounded-2xl text-left flex items-center justify-between transition-all ${
+                        className={`px-4 py-2.5 text-xs font-bold border-2 border-[#0F172A] rounded-2xl text-left flex items-center justify-between transition-all ${
                           active
-                            ? 'bg-[#10B981] text-[#111111] shadow-[3px_3px_0px_0px_#111111] -translate-x-[1px] -translate-y-[1px]'
-                            : 'bg-white text-[#111111] hover:bg-[#FFF3B0] shadow-[2px_2px_0px_0px_#111111]'
+                            ? 'bg-[#10B981] text-white shadow-[3px_3px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
+                            : 'bg-white text-[#0F172A] hover:bg-[#E0E7FF] shadow-[2px_2px_0px_0px_#0F172A]'
                         }`}
                       >
                         <span>{niv}</span>
                         {active && (
-                          <span className="bg-[#111111] text-white p-1 rounded-lg">
+                          <span className="bg-[#0F172A] text-white p-1 rounded-lg">
                             <Check className="w-3.5 h-3.5 stroke-[3]" />
                           </span>
                         )}
@@ -901,17 +868,17 @@ AFFICHAGE PROPRE ET LISIBLE :
 
             {/* BLOC SPÉCIFIQUE : Personnalisation Pédagogique Avancée pour Cycle 2, Cycle 3, Cycle 4 et Lycée */}
             {currentCycleConfig && (
-              <section className="bg-[#FFF6D6] border-[2.5px] border-[#111111] rounded-3xl shadow-[6px_6px_0px_0px_#111111] p-6 space-y-5">
-                <div className="flex items-center justify-between bg-[#111111] text-[#F2C230] px-4 py-2.5 border-2 border-[#111111] rounded-2xl">
+              <section className="bg-[#F8FAFC] border-[2.5px] border-[#0F172A] rounded-3xl shadow-[6px_6px_0px_0px_#0F172A] p-6 space-y-5">
+                <div className="flex items-center justify-between bg-[#0F172A] text-[#38BDF8] px-4 py-2.5 border-2 border-[#0F172A] rounded-2xl">
                   <h2 className="text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center gap-2">
-                    <Sliders className="w-4 h-4 text-[#F2C230]" />
+                    <Sliders className="w-4 h-4 text-[#38BDF8]" />
                     {currentCycleConfig.title}
                   </h2>
                 </div>
 
                 {/* Choix du levier d'étayage cognitif du cycle */}
                 <div>
-                  <label className="block text-xs font-bold text-[#111111] mb-2 uppercase tracking-wide">
+                  <label className="block text-xs font-bold text-[#0F172A] mb-2 uppercase tracking-wide">
                     A. Méthode d'explication & de manipulation (Hong Kong / Singapour) :
                   </label>
                   <div className="space-y-2.5">
@@ -924,21 +891,21 @@ AFFICHAGE PROPRE ET LISIBLE :
                             setSelectedCycleScaffold(mode.id);
                             setManualOverride(null);
                           }}
-                          className={`w-full p-3.5 border-2 border-[#111111] rounded-2xl text-left transition-all ${
+                          className={`w-full p-3.5 border-2 border-[#0F172A] rounded-2xl text-left transition-all ${
                             isSel
-                              ? 'bg-[#F2C230] text-[#111111] shadow-[4px_4px_0px_0px_#111111] -translate-x-[1px] -translate-y-[1px]'
-                              : 'bg-white text-[#111111] hover:bg-[#FFFDF7] shadow-[2px_2px_0px_0px_#111111]'
+                              ? 'bg-[#059669] text-white shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
+                              : 'bg-white text-[#0F172A] hover:bg-white shadow-[2px_2px_0px_0px_#0F172A]'
                           }`}
                         >
                           <div className="flex items-center justify-between gap-2">
                             <span className="text-xs font-bold">{mode.label}</span>
                             {isSel && (
-                              <span className="bg-[#111111] text-[#F2C230] p-1 rounded-lg shrink-0">
+                              <span className="bg-[#0F172A] text-[#38BDF8] p-1 rounded-lg shrink-0">
                                 <Check className="w-3.5 h-3.5 stroke-[3]" />
                               </span>
                             )}
                           </div>
-                          <p className="text-[11px] text-neutral-700 mt-1 font-medium">
+                          <p className="text-[11px] text-slate-700 mt-1 font-medium">
                             {mode.desc}
                           </p>
                         </button>
@@ -948,8 +915,8 @@ AFFICHAGE PROPRE ET LISIBLE :
                 </div>
 
                 {/* Choix de l'exigence de trace écrite / évaluation du cycle */}
-                <div className="pt-3 border-t-2 border-dashed border-[#111111]">
-                  <label className="block text-xs font-bold text-[#111111] mb-2 uppercase tracking-wide">
+                <div className="pt-3 border-t-2 border-dashed border-[#0F172A]">
+                  <label className="block text-xs font-bold text-[#0F172A] mb-2 uppercase tracking-wide">
                     B. Exigence « Points sur le cahier / la copie » (Éducation Nationale) :
                   </label>
                   <div className="space-y-2">
@@ -962,15 +929,15 @@ AFFICHAGE PROPRE ET LISIBLE :
                             setSelectedCycleEval(ev.id);
                             setManualOverride(null);
                           }}
-                          className={`w-full px-3.5 py-2.5 border-2 border-[#111111] rounded-2xl text-left flex items-center justify-between transition-all ${
+                          className={`w-full px-3.5 py-2.5 border-2 border-[#0F172A] rounded-2xl text-left flex items-center justify-between transition-all ${
                             isSel
-                              ? 'bg-[#111111] text-white shadow-[3px_3px_0px_0px_#10B981]'
-                              : 'bg-white text-[#111111] hover:bg-[#FFFDF7] shadow-[2px_2px_0px_0px_#111111]'
+                              ? 'bg-[#0F172A] text-white shadow-[3px_3px_0px_0px_#10B981]'
+                              : 'bg-white text-[#0F172A] hover:bg-white shadow-[2px_2px_0px_0px_#0F172A]'
                           }`}
                         >
                           <span className="text-xs font-bold pr-2">{ev.label}</span>
                           {isSel && (
-                            <span className="bg-[#10B981] text-[#111111] p-1 rounded-lg shrink-0">
+                            <span className="bg-[#10B981] text-white p-1 rounded-lg shrink-0">
                               <Check className="w-3.5 h-3.5 stroke-[3]" />
                             </span>
                           )}
@@ -983,15 +950,15 @@ AFFICHAGE PROPRE ET LISIBLE :
             )}
 
             {/* Bloc 2 : Choix de la Matière */}
-            <section className="bg-white border-[2.5px] border-[#111111] rounded-3xl shadow-[6px_6px_0px_0px_#111111] p-6">
-              <div className="flex items-center justify-between border-b-2 border-[#111111] pb-3 mb-4">
-                <h2 className="text-sm font-bold uppercase tracking-wider text-[#111111] flex items-center gap-2">
-                  <span className="bg-[#111111] text-[#F2C230] font-mono-code text-xs px-2 py-0.5 rounded-lg">
+            <section className="bg-white border-[2.5px] border-[#0F172A] rounded-3xl shadow-[6px_6px_0px_0px_#0F172A] p-6">
+              <div className="flex items-center justify-between border-b-2 border-[#0F172A] pb-3 mb-4">
+                <h2 className="text-sm font-bold uppercase tracking-wider text-[#0F172A] flex items-center gap-2">
+                  <span className="bg-[#0F172A] text-[#38BDF8] font-mono-code text-xs px-2 py-0.5 rounded-lg">
                     02
                   </span>
                   <BookOpen className="w-4 h-4 stroke-[2.5]" /> Domaine / Matière
                 </h2>
-                <span className="font-mono-code text-[10px] font-bold uppercase px-2.5 py-0.5 bg-neutral-100 border border-[#111111] rounded-full">
+                <span className="font-mono-code text-[10px] font-bold uppercase px-2.5 py-0.5 bg-neutral-100 border border-[#0F172A] rounded-full">
                   Intitulés officiels
                 </span>
               </div>
@@ -1010,13 +977,13 @@ AFFICHAGE PROPRE ET LISIBLE :
                         setSelectedSubjectId(subj.id);
                         setManualOverride(null);
                       }}
-                      className={`flex items-center gap-2.5 p-3 border-2 border-[#111111] rounded-2xl text-left transition-all ${
+                      className={`flex items-center gap-2.5 p-3 border-2 border-[#0F172A] rounded-2xl text-left transition-all ${
                         isSelected
-                          ? 'bg-[#111111] text-white shadow-[4px_4px_0px_0px_#F2C230] -translate-x-[1px] -translate-y-[1px]'
-                          : 'bg-[#FFFDF7] text-[#111111] hover:bg-[#FFF3B0] shadow-[2px_2px_0px_0px_#111111]'
+                          ? 'bg-[#0F172A] text-white shadow-[4px_4px_0px_0px_#F2C230] -translate-x-[1px] -translate-y-[1px]'
+                          : 'bg-white text-[#0F172A] hover:bg-[#E0E7FF] shadow-[2px_2px_0px_0px_#0F172A]'
                       }`}
                     >
-                      <span className="text-xl shrink-0 bg-white border border-[#111111] w-10 h-10 rounded-xl flex items-center justify-center">
+                      <span className="text-xl shrink-0 bg-white border border-[#0F172A] w-10 h-10 rounded-xl flex items-center justify-center">
                         {subj.icon}
                       </span>
                       <div className="min-w-0 flex-1">
@@ -1025,7 +992,7 @@ AFFICHAGE PROPRE ET LISIBLE :
                         </div>
                         <div
                           className={`text-[10px] truncate font-mono-code ${
-                            isSelected ? 'text-[#F2C230]' : 'text-neutral-500'
+                            isSelected ? 'text-[#38BDF8]' : 'text-neutral-500'
                           }`}
                         >
                           {subj.category}
@@ -1037,8 +1004,8 @@ AFFICHAGE PROPRE ET LISIBLE :
               </div>
 
               {/* Intitulé personnalisé optionnel */}
-              <div className="mt-4 pt-3 border-t-2 border-dashed border-[#111111]">
-                <label className="block text-xs font-bold text-[#111111] mb-1.5">
+              <div className="mt-4 pt-3 border-t-2 border-dashed border-[#0F172A]">
+                <label className="block text-xs font-bold text-[#0F172A] mb-1.5">
                   Personnaliser l'intitulé exact de la matière ou du sous-domaine (optionnel) :
                 </label>
                 <input
@@ -1049,16 +1016,16 @@ AFFICHAGE PROPRE ET LISIBLE :
                     setManualOverride(null);
                   }}
                   placeholder={`Par défaut : ${defaultAdaptedSubjectName}`}
-                  className="w-full px-3.5 py-2 text-xs font-medium bg-[#FFFDF7] border-2 border-[#111111] rounded-xl shadow-[2px_2px_0px_0px_#111111] text-[#111111] placeholder-neutral-400 focus:outline-none focus:bg-[#FFF3B0]"
+                  className="w-full px-3.5 py-2 text-xs font-medium bg-white border-2 border-[#0F172A] rounded-xl shadow-[2px_2px_0px_0px_#0F172A] text-[#0F172A] placeholder-neutral-400 focus:outline-none focus:bg-[#E0E7FF]"
                 />
               </div>
             </section>
 
             {/* Bloc 3 : Calibration cognitive de l'apprenant */}
-            <section className="bg-white border-[2.5px] border-[#111111] rounded-3xl shadow-[6px_6px_0px_0px_#111111] p-6 space-y-5">
-              <div className="border-b-2 border-[#111111] pb-3">
-                <h2 className="text-sm font-bold uppercase tracking-wider text-[#111111] flex items-center gap-2">
-                  <span className="bg-[#111111] text-[#F2C230] font-mono-code text-xs px-2 py-0.5 rounded-lg">
+            <section className="bg-white border-[2.5px] border-[#0F172A] rounded-3xl shadow-[6px_6px_0px_0px_#0F172A] p-6 space-y-5">
+              <div className="border-b-2 border-[#0F172A] pb-3">
+                <h2 className="text-sm font-bold uppercase tracking-wider text-[#0F172A] flex items-center gap-2">
+                  <span className="bg-[#0F172A] text-[#38BDF8] font-mono-code text-xs px-2 py-0.5 rounded-lg">
                     03
                   </span>
                   <UserCheck className="w-4 h-4 stroke-[2.5]" /> Profil de l'Enfant & Options
@@ -1075,21 +1042,21 @@ AFFICHAGE PROPRE ET LISIBLE :
                         setSelectedProfile(prof.id);
                         setManualOverride(null);
                       }}
-                      className={`w-full p-3.5 border-2 border-[#111111] rounded-2xl text-left transition-all ${
+                      className={`w-full p-3.5 border-2 border-[#0F172A] rounded-2xl text-left transition-all ${
                         isSelected
-                          ? 'bg-[#FF66C4] text-[#111111] shadow-[4px_4px_0px_0px_#111111] -translate-x-[1px] -translate-y-[1px]'
-                          : 'bg-[#FFFDF7] text-[#111111] hover:bg-[#FFF3B0] shadow-[2px_2px_0px_0px_#111111]'
+                          ? 'bg-[#4F46E5] text-white shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
+                          : 'bg-white text-[#0F172A] hover:bg-[#E0E7FF] shadow-[2px_2px_0px_0px_#0F172A]'
                       }`}
                     >
                       <div className="flex items-center justify-between">
                         <span className="text-xs font-bold">{prof.label}</span>
                         {isSelected && (
-                          <span className="bg-[#111111] text-white px-2 py-0.5 rounded-full font-mono-code text-[10px] font-bold uppercase">
+                          <span className="bg-[#0F172A] text-white px-2 py-0.5 rounded-full font-mono-code text-[10px] font-bold uppercase">
                             Actif
                           </span>
                         )}
                       </div>
-                      <p className="text-[11px] text-neutral-800 mt-1 font-medium">{prof.desc}</p>
+                      <p className="text-[11px] text-slate-700 mt-1 font-medium">{prof.desc}</p>
                     </button>
                   );
                 })}
@@ -1097,7 +1064,7 @@ AFFICHAGE PROPRE ET LISIBLE :
 
               {/* Consigne ou chapitre spécifique */}
               <div className="pt-2">
-                <label className="block text-xs font-bold text-[#111111] mb-1.5">
+                <label className="block text-xs font-bold text-[#0F172A] mb-1.5">
                   Objectif ou difficulté spécifique de l'élève (optionnel) :
                 </label>
                 <input
@@ -1108,14 +1075,14 @@ AFFICHAGE PROPRE ET LISIBLE :
                     setManualOverride(null);
                   }}
                   placeholder="Ex : Tables de multiplication, retenues, théorème de Thalès, accords..."
-                  className="w-full px-3.5 py-2 text-xs font-medium bg-[#FFFDF7] border-2 border-[#111111] rounded-xl shadow-[2px_2px_0px_0px_#111111] text-[#111111] placeholder-neutral-400 focus:outline-none focus:bg-[#FFF3B0]"
+                  className="w-full px-3.5 py-2 text-xs font-medium bg-white border-2 border-[#0F172A] rounded-xl shadow-[2px_2px_0px_0px_#0F172A] text-[#0F172A] placeholder-neutral-400 focus:outline-none focus:bg-[#E0E7FF]"
                 />
               </div>
 
               {/* Interrupteurs de réglage */}
-              <div className="pt-3 space-y-2.5 border-t-2 border-dashed border-[#111111]">
-                <label className="flex items-center justify-between cursor-pointer p-2.5 bg-[#FFFDF7] border-2 border-[#111111] rounded-2xl">
-                  <span className="text-xs font-bold text-[#111111]">
+              <div className="pt-3 space-y-2.5 border-t-2 border-dashed border-[#0F172A]">
+                <label className="flex items-center justify-between cursor-pointer p-2.5 bg-white border-2 border-[#0F172A] rounded-2xl">
+                  <span className="text-xs font-bold text-[#0F172A]">
                     Tutoyer l'élève (recommandé pour la fluidité)
                   </span>
                   <input
@@ -1125,11 +1092,11 @@ AFFICHAGE PROPRE ET LISIBLE :
                       setTutoiement(e.target.checked);
                       setManualOverride(null);
                     }}
-                    className="accent-[#111111] h-4 w-4 border-2 border-[#111111] rounded"
+                    className="accent-[#0F172A] h-4 w-4 border-2 border-[#0F172A] rounded"
                   />
                 </label>
-                <label className="flex items-center justify-between cursor-pointer p-2.5 bg-[#FFFDF7] border-2 border-[#111111] rounded-2xl">
-                  <span className="text-xs font-bold text-[#111111]">
+                <label className="flex items-center justify-between cursor-pointer p-2.5 bg-white border-2 border-[#0F172A] rounded-2xl">
+                  <span className="text-xs font-bold text-[#0F172A]">
                     Ancrage strict sur le Bulletin Officiel du cycle
                   </span>
                   <input
@@ -1139,7 +1106,7 @@ AFFICHAGE PROPRE ET LISIBLE :
                       setStrictSourceGrounding(e.target.checked);
                       setManualOverride(null);
                     }}
-                    className="accent-[#111111] h-4 w-4 border-2 border-[#111111] rounded"
+                    className="accent-[#0F172A] h-4 w-4 border-2 border-[#0F172A] rounded"
                   />
                 </label>
               </div>
@@ -1147,16 +1114,16 @@ AFFICHAGE PROPRE ET LISIBLE :
           </div>
 
           {/* COLONNE DROITE : Fenêtre Principale (7 colonnes sur 12) */}
-          <div className="lg:col-span-7 space-y-6">
+          <div className="lg:col-span-7 space-y-6 lg:sticky lg:top-24 self-start">
             
             {/* Navigation par onglets façon dossiers brutalistes arrondis */}
             <div className="grid grid-cols-3 gap-2.5">
               <button
                 onClick={() => setActiveTab('prompt')}
-                className={`py-3 px-3 border-[2.5px] border-[#111111] rounded-2xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 transition-all ${
+                className={`py-3 px-3 border-[2.5px] border-[#0F172A] rounded-2xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 transition-all ${
                   activeTab === 'prompt'
-                    ? 'bg-[#111111] text-[#F2C230] shadow-[4px_4px_0px_0px_#E63946] -translate-y-0.5'
-                    : 'bg-white text-[#111111] hover:bg-[#FFF3B0] shadow-[4px_4px_0px_0px_#111111]'
+                    ? 'bg-[#0F172A] text-[#38BDF8] shadow-[4px_4px_0px_0px_#059669] -translate-y-0.5'
+                    : 'bg-white text-[#0F172A] hover:bg-[#E0E7FF] shadow-[4px_4px_0px_0px_#0F172A]'
                 }`}
               >
                 <Sparkles className="w-4 h-4 shrink-0" />
@@ -1164,10 +1131,10 @@ AFFICHAGE PROPRE ET LISIBLE :
               </button>
               <button
                 onClick={() => setActiveTab('simulation')}
-                className={`py-3 px-3 border-[2.5px] border-[#111111] rounded-2xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 transition-all ${
+                className={`py-3 px-3 border-[2.5px] border-[#0F172A] rounded-2xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 transition-all ${
                   activeTab === 'simulation'
-                    ? 'bg-[#111111] text-[#10B981] shadow-[4px_4px_0px_0px_#10B981] -translate-y-0.5'
-                    : 'bg-white text-[#111111] hover:bg-[#FFF3B0] shadow-[4px_4px_0px_0px_#111111]'
+                    ? 'bg-[#0F172A] text-[#10B981] shadow-[4px_4px_0px_0px_#10B981] -translate-y-0.5'
+                    : 'bg-white text-[#0F172A] hover:bg-[#E0E7FF] shadow-[4px_4px_0px_0px_#0F172A]'
                 }`}
               >
                 <Eye className="w-4 h-4 shrink-0" />
@@ -1175,10 +1142,10 @@ AFFICHAGE PROPRE ET LISIBLE :
               </button>
               <button
                 onClick={() => setActiveTab('guide')}
-                className={`py-3 px-3 border-[2.5px] border-[#111111] rounded-2xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 transition-all ${
+                className={`py-3 px-3 border-[2.5px] border-[#0F172A] rounded-2xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 transition-all ${
                   activeTab === 'guide'
-                    ? 'bg-[#111111] text-white shadow-[4px_4px_0px_0px_#FF66C4] -translate-y-0.5'
-                    : 'bg-white text-[#111111] hover:bg-[#FFF3B0] shadow-[4px_4px_0px_0px_#111111]'
+                    ? 'bg-[#0F172A] text-white shadow-[4px_4px_0px_0px_#7C3AED] -translate-y-0.5'
+                    : 'bg-white text-[#0F172A] hover:bg-[#E0E7FF] shadow-[4px_4px_0px_0px_#0F172A]'
                 }`}
               >
                 <Layers className="w-4 h-4 shrink-0" />
@@ -1188,9 +1155,9 @@ AFFICHAGE PROPRE ET LISIBLE :
 
             {/* ONGLET 1 : LE PROMPT SYSTÈME PRÊT À COPIER (Style fenêtre OS Brutaliste arrondie) */}
             {activeTab === 'prompt' && (
-              <div className="bg-white border-[3px] border-[#111111] rounded-3xl shadow-[8px_8px_0px_0px_#111111] overflow-hidden">
+              <div className="bg-white border-[3px] border-[#0F172A] rounded-3xl shadow-[8px_8px_0px_0px_#0F172A] overflow-hidden">
                 {/* Barre supérieure de fenêtre */}
-                <div className="bg-[#141414] text-white px-5 py-3 border-b-[2.5px] border-[#111111] flex items-center justify-between gap-2">
+                <div className="bg-[#0F172A] text-white px-5 py-3 border-b-[2.5px] border-[#0F172A] flex items-center justify-between gap-2">
                   <div className="flex items-center gap-2.5">
                     <span className="w-3.5 h-3.5 rounded-full bg-[#FF5F56] border border-black inline-block" />
                     <span className="w-3.5 h-3.5 rounded-full bg-[#FFBD2E] border border-black inline-block" />
@@ -1199,31 +1166,31 @@ AFFICHAGE PROPRE ET LISIBLE :
                       PROMPT_MAITRE_NOTEBOOKLM.TXT
                     </span>
                   </div>
-                  <span className="bg-[#10B981] text-[#111111] font-mono-code text-[10px] font-bold uppercase px-2.5 py-0.5 border border-[#111111] rounded-full">
+                  <span className="bg-[#10B981] text-white font-mono-code text-[10px] font-bold uppercase px-2.5 py-0.5 border border-[#0F172A] rounded-full">
                     PRÊT À COPIER
                   </span>
                 </div>
 
                 {/* Bandeau d'identification et bouton d'action rouge corail */}
-                <div className="px-6 py-5 bg-[#FFF6D6] border-b-[2.5px] border-[#111111] flex flex-wrap items-center justify-between gap-4">
+                <div className="px-6 py-5 bg-[#F8FAFC] border-b-[2.5px] border-[#0F172A] flex flex-wrap items-center justify-between gap-4">
                   <div>
                     <div className="flex items-center gap-3">
-                      <span className="text-xl bg-white border-2 border-[#111111] w-10 h-10 rounded-2xl flex items-center justify-center shadow-[2px_2px_0px_0px_#111111]">
+                      <span className="text-xl bg-white border-2 border-[#0F172A] w-10 h-10 rounded-2xl flex items-center justify-center shadow-[2px_2px_0px_0px_#0F172A]">
                         {currentSubject.icon}
                       </span>
                       <div>
-                        <h3 className="text-sm sm:text-base font-bold text-[#111111]">
+                        <h3 className="text-sm sm:text-base font-bold text-[#0F172A]">
                           {effectiveSubjectName}
                         </h3>
-                        <p className="text-xs font-bold text-neutral-700">{selectedNiveau}</p>
+                        <p className="text-xs font-bold text-slate-700">{selectedNiveau}</p>
                       </div>
                     </div>
                     <div className="flex flex-wrap items-center gap-2 mt-3 text-xs font-mono-code">
-                      <span className="inline-flex items-center gap-1 bg-white border border-[#111111] px-2.5 py-0.5 rounded-full font-bold text-[#111111]">
+                      <span className="inline-flex items-center gap-1 bg-white border border-[#0F172A] px-2.5 py-0.5 rounded-full font-bold text-[#0F172A]">
                         <ShieldCheck className="w-3.5 h-3.5 text-[#10B981]" />
                         {currentCycleConfig ? currentCycleConfig.badge : 'Lycée / Sup'}
                       </span>
-                      <span className="inline-flex items-center gap-1 bg-[#111111] text-[#F2C230] px-2.5 py-0.5 rounded-full font-bold">
+                      <span className="inline-flex items-center gap-1 bg-[#0F172A] text-[#38BDF8] px-2.5 py-0.5 rounded-full font-bold">
                         {charCount} / 10 000 car. ({Math.round((charCount / 10000) * 100)} %)
                       </span>
                     </div>
@@ -1234,17 +1201,17 @@ AFFICHAGE PROPRE ET LISIBLE :
                       <button
                         onClick={() => setManualOverride(null)}
                         title="Réinitialiser les modifications manuelles"
-                        className="px-3.5 py-2.5 text-xs font-bold bg-white hover:bg-neutral-100 text-[#111111] border-2 border-[#111111] rounded-2xl shadow-[3px_3px_0px_0px_#111111] flex items-center gap-1.5 transition-all"
+                        className="px-3.5 py-2.5 text-xs font-bold bg-white hover:bg-neutral-100 text-[#0F172A] border-2 border-[#0F172A] rounded-2xl shadow-[3px_3px_0px_0px_#0F172A] flex items-center gap-1.5 transition-all"
                       >
                         <RefreshCw className="w-3.5 h-3.5" /> Réinitialiser
                       </button>
                     )}
                     <button
                       onClick={handleCopy}
-                      className={`px-6 py-3.5 text-xs sm:text-sm font-bold uppercase tracking-wider border-2 border-[#111111] rounded-2xl flex items-center gap-2 transition-all ${
+                      className={`px-6 py-3.5 text-xs sm:text-sm font-bold uppercase tracking-wider border-2 border-[#0F172A] rounded-2xl flex items-center gap-2 transition-all ${
                         copied
-                          ? 'bg-[#10B981] text-[#111111] shadow-[2px_2px_0px_0px_#111111] translate-x-[2px] translate-y-[2px]'
-                          : 'bg-[#E63946] hover:bg-[#D62828] text-white shadow-[4px_4px_0px_0px_#111111] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[3px_3px_0px_0px_#111111] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none'
+                          ? 'bg-[#10B981] text-white shadow-[2px_2px_0px_0px_#0F172A] translate-x-[2px] translate-y-[2px]'
+                          : 'bg-[#059669] hover:bg-[#047857] text-white shadow-[4px_4px_0px_0px_#0F172A] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[3px_3px_0px_0px_#0F172A] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none'
                       }`}
                     >
                       {copied ? (
@@ -1267,56 +1234,56 @@ AFFICHAGE PROPRE ET LISIBLE :
                       value={displayedPrompt}
                       onChange={(e) => setManualOverride(e.target.value)}
                       rows={19}
-                      className="w-full p-4 bg-[#FFFDF7] border-[2.5px] border-[#111111] rounded-2xl shadow-[inset_3px_3px_0px_0px_rgba(0,0,0,0.06)] text-[#111111] font-mono-code text-xs sm:text-[13px] leading-relaxed focus:outline-none focus:bg-[#FFF9E6] resize-y"
+                      className="w-full p-4 bg-white border-[2.5px] border-[#0F172A] rounded-2xl shadow-[inset_3px_3px_0px_0px_rgba(0,0,0,0.06)] text-[#0F172A] font-mono-code text-xs sm:text-[13px] leading-relaxed focus:outline-none focus:bg-[#F8FAFC] resize-y"
                     />
-                    <div className="mt-3 flex flex-wrap items-center justify-between gap-2 text-[11px] font-bold text-neutral-700">
-                      <span className="flex items-center gap-1.5 bg-[#FFF6D6] border border-[#111111] px-2.5 py-0.5 rounded-full">
+                    <div className="mt-3 flex flex-wrap items-center justify-between gap-2 text-[11px] font-bold text-slate-700">
+                      <span className="flex items-center gap-1.5 bg-[#F8FAFC] border border-[#0F172A] px-2.5 py-0.5 rounded-full">
                         <Edit3 className="w-3 h-3" /> Texte 100 % modifiable avant copie
                       </span>
-                      <span className="font-mono-code uppercase bg-[#111111] text-white px-2.5 py-0.5 rounded-full">
+                      <span className="font-mono-code uppercase bg-[#0F172A] text-white px-2.5 py-0.5 rounded-full">
                         Compatible NotebookLM & Gemini
                       </span>
                     </div>
                   </div>
 
                   {/* Résumé des 3 garanties pédagogiques injectées (Style cartes brutalistes arrondies) */}
-                  <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-5 border-t-[2.5px] border-[#111111]">
-                    <div className="p-4 bg-[#FFFDF7] border-2 border-[#111111] rounded-2xl shadow-[3px_3px_0px_0px_#111111]">
-                      <span className="inline-block font-mono-code text-[10px] font-bold uppercase bg-[#F2C230] text-[#111111] border border-[#111111] px-2 py-0.5 rounded-full mb-2">
+                  <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-5 border-t-[2.5px] border-[#0F172A]">
+                    <div className="p-4 bg-white border-2 border-[#0F172A] rounded-2xl shadow-[3px_3px_0px_0px_#0F172A]">
+                      <span className="inline-block font-mono-code text-[10px] font-bold uppercase bg-[#059669] text-white border border-[#0F172A] px-2 py-0.5 rounded-full mb-2">
                         MÉTHODE CPA
                       </span>
-                      <div className="text-xs font-bold text-[#111111] flex items-center gap-1.5 mb-1">
-                        <Zap className="w-3.5 h-3.5 fill-[#111111]" /> Étayage adapté à l'âge
+                      <div className="text-xs font-bold text-[#0F172A] flex items-center gap-1.5 mb-1">
+                        <Zap className="w-3.5 h-3.5 fill-[#0F172A]" /> Étayage adapté à l'âge
                       </div>
-                      <p className="text-[11px] text-neutral-700 leading-normal font-medium">
+                      <p className="text-[11px] text-slate-700 leading-normal font-medium">
                         {currentCycleConfig
                           ? activeScaffoldObj?.label
                           : '1 seule question progressive à la fois sans jamais noyer l’élève.'}
                       </p>
                     </div>
 
-                    <div className="p-4 bg-[#FFFDF7] border-2 border-[#111111] rounded-2xl shadow-[3px_3px_0px_0px_#111111]">
-                      <span className="inline-block font-mono-code text-[10px] font-bold uppercase bg-[#10B981] text-[#111111] border border-[#111111] px-2 py-0.5 rounded-full mb-2">
+                    <div className="p-4 bg-white border-2 border-[#0F172A] rounded-2xl shadow-[3px_3px_0px_0px_#0F172A]">
+                      <span className="inline-block font-mono-code text-[10px] font-bold uppercase bg-[#10B981] text-white border border-[#0F172A] px-2 py-0.5 rounded-full mb-2">
                         BARÈME OFFICIEL
                       </span>
-                      <div className="text-xs font-bold text-[#111111] flex items-center gap-1.5 mb-1">
+                      <div className="text-xs font-bold text-[#0F172A] flex items-center gap-1.5 mb-1">
                         <Award className="w-3.5 h-3.5" /> Norme Éducation Nationale
                       </div>
-                      <p className="text-[11px] text-neutral-700 leading-normal font-medium">
+                      <p className="text-[11px] text-slate-700 leading-normal font-medium">
                         {currentCycleConfig
                           ? activeCycleEvalObj?.label
                           : `Formulation exacte exigée aux épreuves (${effectiveSubjectName}).`}
                       </p>
                     </div>
 
-                    <div className="p-4 bg-[#FFFDF7] border-2 border-[#111111] rounded-2xl shadow-[3px_3px_0px_0px_#111111]">
-                      <span className="inline-block font-mono-code text-[10px] font-bold uppercase bg-[#FF66C4] text-[#111111] border border-[#111111] px-2 py-0.5 rounded-full mb-2">
+                    <div className="p-4 bg-white border-2 border-[#0F172A] rounded-2xl shadow-[3px_3px_0px_0px_#0F172A]">
+                      <span className="inline-block font-mono-code text-[10px] font-bold uppercase bg-[#4F46E5] text-white border border-[#0F172A] px-2 py-0.5 rounded-full mb-2">
                         UNICODE PUR
                       </span>
-                      <div className="text-xs font-bold text-[#111111] flex items-center gap-1.5 mb-1">
+                      <div className="text-xs font-bold text-[#0F172A] flex items-center gap-1.5 mb-1">
                         <FileText className="w-3.5 h-3.5" /> Zéro LaTeX brut
                       </div>
-                      <p className="text-[11px] text-neutral-700 leading-normal font-medium">
+                      <p className="text-[11px] text-slate-700 leading-normal font-medium">
                         Caractères lisibles ({currentSubject.unicodeSymbols.split(',').slice(0, 4).join(', ')}...) sans balises cassées.
                       </p>
                     </div>
@@ -1327,9 +1294,9 @@ AFFICHAGE PROPRE ET LISIBLE :
 
             {/* ONGLET 2 : SIMULATEUR D'APERÇU ÉLÈVE */}
             {activeTab === 'simulation' && (
-              <div className="bg-white border-[3px] border-[#111111] rounded-3xl shadow-[8px_8px_0px_0px_#111111] overflow-hidden">
+              <div className="bg-white border-[3px] border-[#0F172A] rounded-3xl shadow-[8px_8px_0px_0px_#0F172A] overflow-hidden">
                 {/* Barre supérieure de fenêtre */}
-                <div className="bg-[#141414] text-white px-5 py-3 border-b-[2.5px] border-[#111111] flex items-center justify-between">
+                <div className="bg-[#0F172A] text-white px-5 py-3 border-b-[2.5px] border-[#0F172A] flex items-center justify-between">
                   <div className="flex items-center gap-2.5">
                     <span className="w-3.5 h-3.5 rounded-full bg-[#FF5F56] border border-black inline-block" />
                     <span className="w-3.5 h-3.5 rounded-full bg-[#FFBD2E] border border-black inline-block" />
@@ -1338,18 +1305,18 @@ AFFICHAGE PROPRE ET LISIBLE :
                       SIMULATION_DIALOGUE_ELEVE.APP
                     </span>
                   </div>
-                  <span className="px-2.5 py-0.5 font-mono-code text-[10px] font-bold uppercase bg-[#F2C230] text-[#111111] border border-[#111111] rounded-full">
+                  <span className="px-2.5 py-0.5 font-mono-code text-[10px] font-bold uppercase bg-[#059669] text-white border border-[#0F172A] rounded-full">
                     {currentCycleConfig ? currentCycleConfig.badge : 'Expérience Apprenant'}
                   </span>
                 </div>
 
                 <div className="p-6 sm:p-7 space-y-5">
-                  <div className="border-b-2 border-[#111111] pb-4">
-                    <h3 className="text-base sm:text-lg font-bold text-[#111111] flex items-center gap-2">
+                  <div className="border-b-2 border-[#0F172A] pb-4">
+                    <h3 className="text-base sm:text-lg font-bold text-[#0F172A] flex items-center gap-2">
                       <MessageSquare className="w-5 h-5 stroke-[2.5]" />
                       Simulation de ce que vivra l'élève ({selectedNiveau})
                     </h3>
-                    <p className="text-xs font-medium text-neutral-700 mt-1">
+                    <p className="text-xs font-medium text-slate-700 mt-1">
                       Aperçu du dialogue pas-à-pas calibré pour {currentCursusObj.label} :
                     </p>
                   </div>
@@ -1358,8 +1325,8 @@ AFFICHAGE PROPRE ET LISIBLE :
                   <div className="space-y-4">
                     {/* Message 1 : Élève */}
                     <div className="flex justify-end">
-                      <div className="max-w-[85%] bg-[#111111] text-white px-4 py-3 border-2 border-[#111111] rounded-2xl rounded-tr-sm shadow-[4px_4px_0px_0px_#F2C230] text-xs sm:text-sm">
-                        <div className="font-mono-code text-[10px] uppercase tracking-wider text-[#F2C230] font-bold mb-1">
+                      <div className="max-w-[85%] bg-[#0F172A] text-white px-4 py-3 border-2 border-[#0F172A] rounded-2xl rounded-tr-sm shadow-[4px_4px_0px_0px_#F2C230] text-xs sm:text-sm">
+                        <div className="font-mono-code text-[10px] uppercase tracking-wider text-[#38BDF8] font-bold mb-1">
                           👦 Élève ({selectedNiveau})
                         </div>
                         {activeSimulation.studentQuestion}
@@ -1368,12 +1335,12 @@ AFFICHAGE PROPRE ET LISIBLE :
 
                     {/* Message 2 : Réponse du Notebook (Explication courte + 1 seule question) */}
                     <div className="flex justify-start">
-                      <div className="max-w-[92%] bg-[#FFFDF7] border-2 border-[#111111] rounded-2xl rounded-tl-sm shadow-[4px_4px_0px_0px_#111111] text-[#111111] px-4 py-3.5 text-xs sm:text-sm space-y-2">
-                        <div className="flex flex-wrap items-center justify-between gap-2 font-mono-code text-[10px] uppercase tracking-wider border-b border-[#111111] pb-1.5">
-                          <span className="font-bold bg-[#F2C230] px-2 py-0.5 border border-[#111111] rounded-full">
+                      <div className="max-w-[92%] bg-white border-2 border-[#0F172A] rounded-2xl rounded-tl-sm shadow-[4px_4px_0px_0px_#0F172A] text-[#0F172A] px-4 py-3.5 text-xs sm:text-sm space-y-2">
+                        <div className="flex flex-wrap items-center justify-between gap-2 font-mono-code text-[10px] uppercase tracking-wider border-b border-[#0F172A] pb-1.5">
+                          <span className="font-bold bg-[#F2C230] px-2 py-0.5 border border-[#0F172A] rounded-full">
                             🎓 Tuteur NotebookLM ({effectiveSubjectName})
                           </span>
-                          <span className="font-bold text-neutral-600">
+                          <span className="font-bold text-slate-600">
                             Étayage visuel + 1 seule question
                           </span>
                         </div>
@@ -1385,8 +1352,8 @@ AFFICHAGE PROPRE ET LISIBLE :
 
                     {/* Message 3 : Réponse rapide de l'élève */}
                     <div className="flex justify-end">
-                      <div className="max-w-[85%] bg-[#111111] text-white px-4 py-3 border-2 border-[#111111] rounded-2xl rounded-tr-sm shadow-[4px_4px_0px_0px_#F2C230] text-xs sm:text-sm">
-                        <div className="font-mono-code text-[10px] uppercase tracking-wider text-[#F2C230] font-bold mb-1">
+                      <div className="max-w-[85%] bg-[#0F172A] text-white px-4 py-3 border-2 border-[#0F172A] rounded-2xl rounded-tr-sm shadow-[4px_4px_0px_0px_#F2C230] text-xs sm:text-sm">
+                        <div className="font-mono-code text-[10px] uppercase tracking-wider text-[#38BDF8] font-bold mb-1">
                           👦 Élève
                         </div>
                         {activeSimulation.studentReply}
@@ -1395,12 +1362,12 @@ AFFICHAGE PROPRE ET LISIBLE :
 
                     {/* Message 4 : Validation + Point Copie + Question niveau 2 */}
                     <div className="flex justify-start">
-                      <div className="max-w-[92%] bg-[#E6F9F1] border-2 border-[#111111] rounded-2xl rounded-tl-sm shadow-[5px_5px_0px_0px_#111111] text-[#111111] px-4 py-3.5 text-xs sm:text-sm space-y-2">
-                        <div className="flex flex-wrap items-center justify-between gap-2 font-mono-code text-[10px] uppercase tracking-wider border-b border-[#111111] pb-1.5">
-                          <span className="font-bold bg-[#10B981] text-[#111111] px-2 py-0.5 border border-[#111111] rounded-full">
+                      <div className="max-w-[92%] bg-[#E6F9F1] border-2 border-[#0F172A] rounded-2xl rounded-tl-sm shadow-[5px_5px_0px_0px_#0F172A] text-[#0F172A] px-4 py-3.5 text-xs sm:text-sm space-y-2">
+                        <div className="flex flex-wrap items-center justify-between gap-2 font-mono-code text-[10px] uppercase tracking-wider border-b border-[#0F172A] pb-1.5">
+                          <span className="font-bold bg-[#10B981] text-white px-2 py-0.5 border border-[#0F172A] rounded-full">
                             ✓ Validation + Barème Examen
                           </span>
-                          <span className="font-bold text-neutral-700">
+                          <span className="font-bold text-slate-700">
                             Trace écrite + Question étape 2
                           </span>
                         </div>
@@ -1411,7 +1378,7 @@ AFFICHAGE PROPRE ET LISIBLE :
                     </div>
                   </div>
 
-                  <div className="p-4 bg-[#FFE4E6] border-2 border-[#111111] rounded-2xl shadow-[4px_4px_0px_0px_#111111] flex items-start gap-3 text-xs text-[#111111]">
+                  <div className="p-4 bg-[#FFE4E6] border-2 border-[#0F172A] rounded-2xl shadow-[4px_4px_0px_0px_#0F172A] flex items-start gap-3 text-xs text-[#0F172A]">
                     <Info className="w-5 h-5 text-[#E63946] shrink-0 mt-0.5 stroke-[2.5]" />
                     <div className="leading-relaxed font-medium">
                       <strong>Continuité Cycle 2 ➔ Cycle 3 ➔ Cycle 4 :</strong> En Cycle 2, l'IA privilégie les objets manipulables et la phrase-réponse simple. En Cycle 3, elle introduit le schéma en barres (Singapour) et les justifications grammaticales. En Cycle 4, elle installe la démonstration complète (« On sait que / Or / Donc ») exigée au Brevet.
@@ -1423,8 +1390,8 @@ AFFICHAGE PROPRE ET LISIBLE :
 
             {/* ONGLET 3 : GUIDE D'INTÉGRATION EN 3 ÉTAPES DANS NOTEBOOKLM */}
             {activeTab === 'guide' && (
-              <div className="bg-white border-[3px] border-[#111111] rounded-3xl shadow-[8px_8px_0px_0px_#111111] overflow-hidden">
-                <div className="bg-[#141414] text-white px-5 py-3 border-b-[2.5px] border-[#111111] flex items-center justify-between">
+              <div className="bg-white border-[3px] border-[#0F172A] rounded-3xl shadow-[8px_8px_0px_0px_#0F172A] overflow-hidden">
+                <div className="bg-[#0F172A] text-white px-5 py-3 border-b-[2.5px] border-[#0F172A] flex items-center justify-between">
                   <div className="flex items-center gap-2.5">
                     <span className="w-3.5 h-3.5 rounded-full bg-[#FF5F56] border border-black inline-block" />
                     <span className="w-3.5 h-3.5 rounded-full bg-[#FFBD2E] border border-black inline-block" />
@@ -1436,49 +1403,49 @@ AFFICHAGE PROPRE ET LISIBLE :
                 </div>
 
                 <div className="p-6 sm:p-7 space-y-5">
-                  <h3 className="text-base sm:text-lg font-bold text-[#111111] flex items-center gap-2 border-b-2 border-[#111111] pb-3">
+                  <h3 className="text-base sm:text-lg font-bold text-[#0F172A] flex items-center gap-2 border-b-2 border-[#0F172A] pb-3">
                     <Layers className="w-5 h-5 stroke-[2.5]" />
                     Procédure de déploiement d'un Notebook Scolaire (Cycles 2, 3, 4 & Lycée)
                   </h3>
 
                   <div className="space-y-4">
-                    <div className="p-5 bg-[#FFFDF7] border-2 border-[#111111] rounded-2xl shadow-[4px_4px_0px_0px_#111111] flex gap-4">
-                      <div className="w-10 h-10 bg-[#F2C230] border-2 border-[#111111] rounded-xl text-[#111111] font-mono-code font-bold text-base flex items-center justify-center shrink-0 shadow-[2px_2px_0px_0px_#111111]">
+                    <div className="p-5 bg-white border-2 border-[#0F172A] rounded-2xl shadow-[4px_4px_0px_0px_#0F172A] flex gap-4">
+                      <div className="w-10 h-10 bg-[#F2C230] border-2 border-[#0F172A] rounded-xl text-[#0F172A] font-mono-code font-bold text-base flex items-center justify-center shrink-0 shadow-[2px_2px_0px_0px_#0F172A]">
                         01
                       </div>
                       <div>
-                        <h4 className="text-sm font-bold text-[#111111]">
+                        <h4 className="text-sm font-bold text-[#0F172A]">
                           Importer le Bulletin Officiel (BO) du Cycle comme source de référence
                         </h4>
-                        <p className="text-xs text-neutral-700 mt-1 leading-relaxed font-medium">
+                        <p className="text-xs text-slate-700 mt-1 leading-relaxed font-medium">
                           Télécharge le PDF du programme officiel de <strong>{currentCursusObj.label}</strong> (ou les attendus de fin d'année de <strong>{selectedNiveau}</strong> sur Éduscol) et glisse-le dans les sources du carnet. Le BO garantit que l'IA n'utilisera jamais une méthode hors-programme (par exemple : pas d'équation en CM2, mais une résolution par schéma en barres).
                         </p>
                       </div>
                     </div>
 
-                    <div className="p-5 bg-[#FFFDF7] border-2 border-[#111111] rounded-2xl shadow-[4px_4px_0px_0px_#111111] flex gap-4">
-                      <div className="w-10 h-10 bg-[#FF66C4] border-2 border-[#111111] rounded-xl text-[#111111] font-mono-code font-bold text-base flex items-center justify-center shrink-0 shadow-[2px_2px_0px_0px_#111111]">
+                    <div className="p-5 bg-white border-2 border-[#0F172A] rounded-2xl shadow-[4px_4px_0px_0px_#0F172A] flex gap-4">
+                      <div className="w-10 h-10 bg-[#FF66C4] border-2 border-[#0F172A] rounded-xl text-[#0F172A] font-mono-code font-bold text-base flex items-center justify-center shrink-0 shadow-[2px_2px_0px_0px_#0F172A]">
                         02
                       </div>
                       <div>
-                        <h4 className="text-sm font-bold text-[#111111]">
+                        <h4 className="text-sm font-bold text-[#0F172A]">
                           Coller le Prompt Système dans « Configurer le chat »
                         </h4>
-                        <p className="text-xs text-neutral-700 mt-1 leading-relaxed font-medium">
+                        <p className="text-xs text-slate-700 mt-1 leading-relaxed font-medium">
                           En haut à droite de la fenêtre de discussion de NotebookLM, clique sur l'icône de réglages <strong>Configurer le notebook</strong>, choisis le style <strong>Personnalisé (Custom)</strong>, colle le prompt généré par cette application et clique sur <strong>Enregistrer</strong>.
                         </p>
                       </div>
                     </div>
 
-                    <div className="p-5 bg-[#FFFDF7] border-2 border-[#111111] rounded-2xl shadow-[4px_4px_0px_0px_#111111] flex gap-4">
-                      <div className="w-10 h-10 bg-[#10B981] border-2 border-[#111111] rounded-xl text-[#111111] font-mono-code font-bold text-base flex items-center justify-center shrink-0 shadow-[2px_2px_0px_0px_#111111]">
+                    <div className="p-5 bg-white border-2 border-[#0F172A] rounded-2xl shadow-[4px_4px_0px_0px_#0F172A] flex gap-4">
+                      <div className="w-10 h-10 bg-[#10B981] border-2 border-[#0F172A] rounded-xl text-[#0F172A] font-mono-code font-bold text-base flex items-center justify-center shrink-0 shadow-[2px_2px_0px_0px_#0F172A]">
                         03
                       </div>
                       <div>
-                        <h4 className="text-sm font-bold text-[#111111]">
+                        <h4 className="text-sm font-bold text-[#0F172A]">
                           Ajouter les leçons du cahier ou fiches d'exercices de l'enseignant (Optionnel)
                         </h4>
-                        <p className="text-xs text-neutral-700 mt-1 leading-relaxed font-medium">
+                        <p className="text-xs text-slate-700 mt-1 leading-relaxed font-medium">
                           Tu peux photographier ou importer la leçon du cahier de l'enfant. Le Notebook utilisera exactement les mots de son enseignant tout en appliquant la progression pas-à-pas.
                         </p>
                       </div>
