@@ -1,6 +1,5 @@
 import React, { useState, useMemo } from 'react';
 import {
-  BookOpen,
   Sparkles,
   Copy,
   Check,
@@ -13,12 +12,10 @@ import {
   ShieldCheck,
   RefreshCw,
   Award,
-  Compass,
   ChevronRight,
   Info,
   Edit3,
   Layers,
-  UserCheck
 } from 'lucide-react';
 
 // Base de données des matières avec leurs spécificités d'évaluation en France et règles Unicode
@@ -250,7 +247,7 @@ const NIVEAUX_BY_CURSUS = {
 // Matrices de personnalisation fine pour les Cycles 2, 3 et 4 (Éducation Nationale)
 const CYCLE_SPECIFIC_CONFIG = {
   cycle_2: {
-    badge: 'Cycle 2 • 6 à 9 ans',
+    badge: 'Cycle 2',
     title: 'Personnalisation Cycle 2',
     cognitiveBase: "CALIBRATION COGNITIVE CYCLE 2 (6-9 ANS) : Utilise un vocabulaire très simple, concret et adapté à un jeune enfant d'école élémentaire. Tes phrases doivent être très courtes (10 à 15 mots maximum par phrase). Pars toujours d'une manipulation concrète d'objets du quotidien (billes, paquets de 10, jetons, pièces de monnaie, parts de gâteau) avant d'écrire les symboles.",
     subjectNameOverrides: {
@@ -313,7 +310,7 @@ const CYCLE_SPECIFIC_CONFIG = {
     }
   },
   cycle_3: {
-    badge: 'Cycle 3 • 9 à 12 ans',
+    badge: 'Cycle 3',
     title: 'Personnalisation Cycle 3',
     cognitiveBase: "CALIBRATION COGNITIVE CYCLE 3 (9-12 ANS) : Fais le pont entre la manipulation concrète et le raisonnement structuré. Utilise des représentations visuelles claires (schéma en barres pour les problèmes, partage de bandes pour les fractions et nombres décimaux, tableaux de proportionnalité) avant d'introduire les règles formelles.",
     subjectNameOverrides: {
@@ -375,7 +372,7 @@ const CYCLE_SPECIFIC_CONFIG = {
     }
   },
   cycle_4: {
-    badge: 'Cycle 4 • 12 à 15 ans (5e, 4e, 3e)',
+    badge: 'Cycle 4',
     title: 'Personnalisation Cycle 4',
     cognitiveBase: "CALIBRATION COGNITIVE CYCLE 4 (5e, 4e, 3e) : Accompagne le passage du numérique au littéral et de l'observation à la démonstration structurée. L'élève doit comprendre le sens concret d'une règle avant d'appliquer le formalisme exigé au collège et au Diplôme National du Brevet (DNB).",
     subjectNameOverrides: {
@@ -436,7 +433,7 @@ const CYCLE_SPECIFIC_CONFIG = {
     }
   },
   lycee_general: {
-    badge: 'Lycée Général • 2de, 1re, Term',
+    badge: 'Lycée Général',
     title: 'Personnalisation Lycée Général',
     cognitiveBase: "CALIBRATION COGNITIVE LYCÉE GÉNÉRAL (2de, 1re, Terminale) : Combine l'acquisition rapide d'automatismes techniques (calculatoires, méthodologiques ou analytiques) avec la rigueur conceptuelle et rédactionnelle exigée aux épreuves du Baccalauréat Général.",
     subjectNameOverrides: {},
@@ -483,7 +480,7 @@ const CYCLE_SPECIFIC_CONFIG = {
     simulationsBySubject: null
   },
   lycee_techno: {
-    badge: 'Lycée Techno • STI2D, STL, STMG, ST2S',
+    badge: 'Lycée Techno',
     title: 'Personnalisation Lycée Technologique',
     cognitiveBase: "CALIBRATION COGNITIVE LYCÉE TECHNOLOGIQUE (STI2D, STL, STMG, ST2S) : Privilégie une démarche inductive et concrète. Pars systématiquement d'une étude de cas réel, d'un système technique, d'une manipulation de laboratoire ou d'un contexte d'organisation/santé avant de formaliser le concept théorique exigé au Baccalauréat Technologique.",
     subjectNameOverrides: {
@@ -542,7 +539,7 @@ const CYCLE_SPECIFIC_CONFIG = {
     }
   },
   lycee_pro: {
-    badge: 'Lycée Pro • Bac Pro & CAP',
+    badge: 'Lycée Pro',
     title: 'Personnalisation Lycée Professionnel',
     cognitiveBase: "CALIBRATION COGNITIVE LYCÉE PROFESSIONNEL (Bac Pro / CAP) : Ancre chaque explication dans une situation professionnelle concrète (atelier, chantier, laboratoire, entreprise, relation client ou terrain). Va droit à l'essentiel avec un vocabulaire clair et opérationnel. Valorise le savoir-faire pratique pour donner du sens immédiat aux matières générales et professionnelles.",
     subjectNameOverrides: {
@@ -672,12 +669,12 @@ export default function App() {
   // Sélection des règles spécifiques au Cycle 2, 3 ou 4 si actif
   const activeScaffoldObj = currentCycleConfig
     ? currentCycleConfig.scaffoldingModes.find((s) => s.id === selectedCycleScaffold) ||
-    currentCycleConfig.scaffoldingModes[0]
+      currentCycleConfig.scaffoldingModes[0]
     : null;
 
   const activeCycleEvalObj = currentCycleConfig
     ? currentCycleConfig.evalFocusOptions.find((e) => e.id === selectedCycleEval) ||
-    currentCycleConfig.evalFocusOptions[0]
+      currentCycleConfig.evalFocusOptions[0]
     : null;
 
   // Génération dynamique et chirurgicale du prompt système "Zéro Friction"
@@ -834,11 +831,11 @@ AFFICHAGE PROPRE ET LISIBLE :
             </div>
             <div>
               <div className="flex flex-wrap items-center gap-2">
-                <span className="font-mono-code text-[11px] font-bold uppercase tracking-widest px-2.5 py-0.5 bg-[#059669] text-white rounded-full border border-white">
-                  CORTEX360 • ÉDUCATION
+                <span className="font-mono-code text-xl font-bold uppercase tracking-widest px-2.5 py-0.5 bg-[#059669] text-white rounded-full border border-white">
+                  Cortex Studio
                 </span>
                 <h1 className="text-base sm:text-lg font-bold tracking-tight text-white">
-                  Architecte Pédagogique NotebookLM
+                  Assistant pédagogique NotebookLM
                 </h1>
               </div>
             </div>
@@ -875,10 +872,10 @@ AFFICHAGE PROPRE ET LISIBLE :
       {/* Contenu principal en 2 colonnes */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-7 items-start">
-
+          
           {/* COLONNE GAUCHE : Paramétrage (5 colonnes sur 12) */}
           <div className="lg:col-span-5 space-y-6">
-
+            
             {/* Bloc 1 : Cursus, Cycle & Niveau scolaire */}
             <section className="bg-white border-[2.5px] border-[#0F172A] rounded-3xl shadow-[6px_6px_0px_0px_#0F172A] p-6 space-y-5">
               <div className="flex items-center justify-between border-b-2 border-[#0F172A] pb-3">
@@ -886,7 +883,7 @@ AFFICHAGE PROPRE ET LISIBLE :
                   <span className="bg-[#0F172A] text-[#38BDF8] font-mono-code text-xs px-2 py-0.5 rounded-lg">
                     01
                   </span>
-                  <Compass className="w-4 h-4 stroke-[2.5]" /> Cycle & Niveau Scolaire
+                  Cycle & Niveau Scolaire
                 </h2>
                 {currentCycleConfig && (
                   <span className="px-3 py-0.5 text-[11px] font-bold bg-[#059669] text-white border-2 border-[#0F172A] rounded-full shadow-[2px_2px_0px_0px_#0F172A]">
@@ -895,12 +892,12 @@ AFFICHAGE PROPRE ET LISIBLE :
                 )}
               </div>
 
-              {/* Boutons d'accès direct aux Cycles 2, 3, 4 et Lycées (Général, Techno, Pro) */}
+              {/* Sélection rapide des cycles et voies du lycée */}
               <div>
                 <span className="block text-xs font-bold text-[#0F172A] mb-2">
-                  Sélection rapide des Cycles & Voies (École, Collège & Lycée) :
+                  Sélection rapide du cursus :
                 </span>
-                <div className="grid grid-cols-2 gap-2.5 mb-4">
+                <div className="grid grid-cols-2 gap-2.5">
                   {[
                     { id: 'cycle_2', title: 'Cycle 2', sub: 'CP • CE1 • CE2' },
                     { id: 'cycle_3', title: 'Cycle 3', sub: 'CM1 • CM2 • 6e' },
@@ -914,15 +911,17 @@ AFFICHAGE PROPRE ET LISIBLE :
                       <button
                         key={cBtn.id}
                         onClick={() => handleCursusChange(cBtn.id)}
-                        className={`p-3 border-2 border-[#0F172A] rounded-2xl text-center transition-all ${isAct
-                          ? 'bg-[#0F172A] text-[#38BDF8] shadow-[3px_3px_0px_0px_#4F46E5] -translate-x-[1px] -translate-y-[1px]'
-                          : 'bg-white text-[#0F172A] hover:bg-[#E0E7FF] shadow-[2px_2px_0px_0px_#0F172A]'
-                          }`}
+                        className={`p-3 border-2 border-[#0F172A] rounded-2xl text-center transition-all ${
+                          isAct
+                            ? 'bg-[#0F172A] text-[#38BDF8] shadow-[3px_3px_0px_0px_#4F46E5] -translate-x-[1px] -translate-y-[1px]'
+                            : 'bg-white text-[#0F172A] hover:bg-[#E0E7FF] shadow-[2px_2px_0px_0px_#0F172A]'
+                        }`}
                       >
                         <div className="text-xs font-bold">{cBtn.title}</div>
                         <div
-                          className={`text-[10px] mt-0.5 font-mono-code ${isAct ? 'text-white' : 'text-slate-600'
-                            }`}
+                          className={`text-[10px] mt-0.5 font-mono-code ${
+                            isAct ? 'text-white' : 'text-slate-600'
+                          }`}
                         >
                           {cBtn.sub}
                         </div>
@@ -931,20 +930,6 @@ AFFICHAGE PROPRE ET LISIBLE :
                   })}
                 </div>
 
-                <label className="block text-xs font-bold text-[#0F172A] mb-1.5">
-                  Ou choisir parmi tous les cursus (Techno, Pro, Supérieur) :
-                </label>
-                <select
-                  value={selectedCursus}
-                  onChange={(e) => handleCursusChange(e.target.value)}
-                  className="w-full px-3.5 py-2.5 text-xs sm:text-sm font-bold bg-white border-2 border-[#0F172A] rounded-2xl shadow-[3px_3px_0px_0px_#0F172A] text-[#0F172A] focus:outline-none focus:bg-[#E0E7FF]"
-                >
-                  {CURSUS_OPTIONS.map((c) => (
-                    <option key={c.id} value={c.id}>
-                      {c.label}
-                    </option>
-                  ))}
-                </select>
               </div>
 
               <div>
@@ -961,10 +946,11 @@ AFFICHAGE PROPRE ET LISIBLE :
                           setSelectedNiveau(niv);
                           setManualOverride(null);
                         }}
-                        className={`px-4 py-2.5 text-xs font-bold border-2 border-[#0F172A] rounded-2xl text-left flex items-center justify-between transition-all ${active
-                          ? 'bg-[#10B981] text-white shadow-[3px_3px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
-                          : 'bg-white text-[#0F172A] hover:bg-[#E0E7FF] shadow-[2px_2px_0px_0px_#0F172A]'
-                          }`}
+                        className={`px-4 py-2.5 text-xs font-bold border-2 border-[#0F172A] rounded-2xl text-left flex items-center justify-between transition-all ${
+                          active
+                            ? 'bg-[#10B981] text-white shadow-[3px_3px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
+                            : 'bg-white text-[#0F172A] hover:bg-[#E0E7FF] shadow-[2px_2px_0px_0px_#0F172A]'
+                        }`}
                       >
                         <span>{niv}</span>
                         {active && (
@@ -1004,10 +990,11 @@ AFFICHAGE PROPRE ET LISIBLE :
                             setSelectedCycleScaffold(mode.id);
                             setManualOverride(null);
                           }}
-                          className={`w-full p-3.5 border-2 border-[#0F172A] rounded-2xl text-left transition-all ${isSel
-                            ? 'bg-[#059669] text-white shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
-                            : 'bg-white text-[#0F172A] hover:bg-white shadow-[2px_2px_0px_0px_#0F172A]'
-                            }`}
+                          className={`w-full p-3.5 border-2 border-[#0F172A] rounded-2xl text-left transition-all ${
+                            isSel
+                              ? 'bg-[#059669] text-white shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
+                              : 'bg-white text-[#0F172A] hover:bg-white shadow-[2px_2px_0px_0px_#0F172A]'
+                          }`}
                         >
                           <div className="flex items-center justify-between gap-2">
                             <span className="text-xs font-bold">{mode.label}</span>
@@ -1017,7 +1004,7 @@ AFFICHAGE PROPRE ET LISIBLE :
                               </span>
                             )}
                           </div>
-                          <p className={`text-[11px] mt-1 font-medium ${isSel ? 'text-emerald-50' : 'text-slate-700'}`}>
+                          <p className="text-[11px] text-slate-700 mt-1 font-medium">
                             {mode.desc}
                           </p>
                         </button>
@@ -1041,10 +1028,11 @@ AFFICHAGE PROPRE ET LISIBLE :
                             setSelectedCycleEval(ev.id);
                             setManualOverride(null);
                           }}
-                          className={`w-full px-3.5 py-2.5 border-2 border-[#0F172A] rounded-2xl text-left flex items-center justify-between transition-all ${isSel
-                            ? 'bg-[#0F172A] text-white shadow-[3px_3px_0px_0px_#10B981]'
-                            : 'bg-white text-[#0F172A] hover:bg-white shadow-[2px_2px_0px_0px_#0F172A]'
-                            }`}
+                          className={`w-full px-3.5 py-2.5 border-2 border-[#0F172A] rounded-2xl text-left flex items-center justify-between transition-all ${
+                            isSel
+                              ? 'bg-[#0F172A] text-white shadow-[3px_3px_0px_0px_#10B981]'
+                              : 'bg-white text-[#0F172A] hover:bg-white shadow-[2px_2px_0px_0px_#0F172A]'
+                          }`}
                         >
                           <span className="text-xs font-bold pr-2">{ev.label}</span>
                           {isSel && (
@@ -1067,11 +1055,8 @@ AFFICHAGE PROPRE ET LISIBLE :
                   <span className="bg-[#0F172A] text-[#38BDF8] font-mono-code text-xs px-2 py-0.5 rounded-lg">
                     02
                   </span>
-                  <BookOpen className="w-4 h-4 stroke-[2.5]" /> Domaine / Matière
+                  Domaine / Matière
                 </h2>
-                <span className="font-mono-code text-[10px] font-bold uppercase px-2.5 py-0.5 bg-neutral-100 border border-[#0F172A] rounded-full">
-                  Intitulés officiels
-                </span>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -1088,10 +1073,11 @@ AFFICHAGE PROPRE ET LISIBLE :
                         setSelectedSubjectId(subj.id);
                         setManualOverride(null);
                       }}
-                      className={`flex items-center gap-2.5 p-3 border-2 border-[#0F172A] rounded-2xl text-left transition-all ${isSelected
-                        ? 'bg-[#0F172A] text-white shadow-[4px_4px_0px_0px_#F2C230] -translate-x-[1px] -translate-y-[1px]'
-                        : 'bg-white text-[#0F172A] hover:bg-[#E0E7FF] shadow-[2px_2px_0px_0px_#0F172A]'
-                        }`}
+                      className={`flex items-center gap-2.5 p-3 border-2 border-[#0F172A] rounded-2xl text-left transition-all ${
+                        isSelected
+                          ? 'bg-[#0F172A] text-white shadow-[4px_4px_0px_0px_#F2C230] -translate-x-[1px] -translate-y-[1px]'
+                          : 'bg-white text-[#0F172A] hover:bg-[#E0E7FF] shadow-[2px_2px_0px_0px_#0F172A]'
+                      }`}
                     >
                       <span className="text-xl shrink-0 bg-white border border-[#0F172A] w-10 h-10 rounded-xl flex items-center justify-center">
                         {subj.icon}
@@ -1101,8 +1087,9 @@ AFFICHAGE PROPRE ET LISIBLE :
                           {adaptedTitle}
                         </div>
                         <div
-                          className={`text-[10px] truncate font-mono-code ${isSelected ? 'text-[#38BDF8]' : 'text-neutral-500'
-                            }`}
+                          className={`text-[10px] truncate font-mono-code ${
+                            isSelected ? 'text-[#38BDF8]' : 'text-neutral-500'
+                          }`}
                         >
                           {subj.category}
                         </div>
@@ -1137,7 +1124,7 @@ AFFICHAGE PROPRE ET LISIBLE :
                   <span className="bg-[#0F172A] text-[#38BDF8] font-mono-code text-xs px-2 py-0.5 rounded-lg">
                     03
                   </span>
-                  <UserCheck className="w-4 h-4 stroke-[2.5]" /> Profil de l'Enfant & Options
+                  Profil de l'Enfant & Options
                 </h2>
               </div>
 
@@ -1151,10 +1138,11 @@ AFFICHAGE PROPRE ET LISIBLE :
                         setSelectedProfile(prof.id);
                         setManualOverride(null);
                       }}
-                      className={`w-full p-3.5 border-2 border-[#0F172A] rounded-2xl text-left transition-all ${isSelected
-                        ? 'bg-[#4F46E5] text-white shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
-                        : 'bg-white text-[#0F172A] hover:bg-[#E0E7FF] shadow-[2px_2px_0px_0px_#0F172A]'
-                        }`}
+                      className={`w-full p-3.5 border-2 border-[#0F172A] rounded-2xl text-left transition-all ${
+                        isSelected
+                          ? 'bg-[#4F46E5] text-white shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
+                          : 'bg-white text-[#0F172A] hover:bg-[#E0E7FF] shadow-[2px_2px_0px_0px_#0F172A]'
+                      }`}
                     >
                       <div className="flex items-center justify-between">
                         <span className="text-xs font-bold">{prof.label}</span>
@@ -1223,35 +1211,38 @@ AFFICHAGE PROPRE ET LISIBLE :
 
           {/* COLONNE DROITE : Fenêtre Principale (7 colonnes sur 12) */}
           <div className="lg:col-span-7 space-y-6 lg:sticky lg:top-24 self-start">
-
+            
             {/* Navigation par onglets façon dossiers brutalistes arrondis */}
             <div className="grid grid-cols-3 gap-2.5">
               <button
                 onClick={() => setActiveTab('prompt')}
-                className={`py-3 px-3 border-[2.5px] border-[#0F172A] rounded-2xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 transition-all ${activeTab === 'prompt'
-                  ? 'bg-[#0F172A] text-[#38BDF8] shadow-[4px_4px_0px_0px_#059669] -translate-y-0.5'
-                  : 'bg-white text-[#0F172A] hover:bg-[#E0E7FF] shadow-[4px_4px_0px_0px_#0F172A]'
-                  }`}
+                className={`py-3 px-3 border-[2.5px] border-[#0F172A] rounded-2xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 transition-all ${
+                  activeTab === 'prompt'
+                    ? 'bg-[#0F172A] text-[#38BDF8] shadow-[4px_4px_0px_0px_#059669] -translate-y-0.5'
+                    : 'bg-white text-[#0F172A] hover:bg-[#E0E7FF] shadow-[4px_4px_0px_0px_#0F172A]'
+                }`}
               >
                 <Sparkles className="w-4 h-4 shrink-0" />
                 <span className="truncate">1. Prompt Système</span>
               </button>
               <button
                 onClick={() => setActiveTab('simulation')}
-                className={`py-3 px-3 border-[2.5px] border-[#0F172A] rounded-2xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 transition-all ${activeTab === 'simulation'
-                  ? 'bg-[#0F172A] text-[#10B981] shadow-[4px_4px_0px_0px_#10B981] -translate-y-0.5'
-                  : 'bg-white text-[#0F172A] hover:bg-[#E0E7FF] shadow-[4px_4px_0px_0px_#0F172A]'
-                  }`}
+                className={`py-3 px-3 border-[2.5px] border-[#0F172A] rounded-2xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 transition-all ${
+                  activeTab === 'simulation'
+                    ? 'bg-[#0F172A] text-[#10B981] shadow-[4px_4px_0px_0px_#10B981] -translate-y-0.5'
+                    : 'bg-white text-[#0F172A] hover:bg-[#E0E7FF] shadow-[4px_4px_0px_0px_#0F172A]'
+                }`}
               >
                 <Eye className="w-4 h-4 shrink-0" />
                 <span className="truncate">2. Aperçu Dialogue</span>
               </button>
               <button
                 onClick={() => setActiveTab('guide')}
-                className={`py-3 px-3 border-[2.5px] border-[#0F172A] rounded-2xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 transition-all ${activeTab === 'guide'
-                  ? 'bg-[#0F172A] text-white shadow-[4px_4px_0px_0px_#7C3AED] -translate-y-0.5'
-                  : 'bg-white text-[#0F172A] hover:bg-[#E0E7FF] shadow-[4px_4px_0px_0px_#0F172A]'
-                  }`}
+                className={`py-3 px-3 border-[2.5px] border-[#0F172A] rounded-2xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 transition-all ${
+                  activeTab === 'guide'
+                    ? 'bg-[#0F172A] text-white shadow-[4px_4px_0px_0px_#7C3AED] -translate-y-0.5'
+                    : 'bg-white text-[#0F172A] hover:bg-[#E0E7FF] shadow-[4px_4px_0px_0px_#0F172A]'
+                }`}
               >
                 <Layers className="w-4 h-4 shrink-0" />
                 <span className="truncate">3. Mode d'Emploi</span>
@@ -1313,10 +1304,11 @@ AFFICHAGE PROPRE ET LISIBLE :
                     )}
                     <button
                       onClick={handleCopy}
-                      className={`px-6 py-3.5 text-xs sm:text-sm font-bold uppercase tracking-wider border-2 border-[#0F172A] rounded-2xl flex items-center gap-2 transition-all ${copied
-                        ? 'bg-[#10B981] text-white shadow-[2px_2px_0px_0px_#0F172A] translate-x-[2px] translate-y-[2px]'
-                        : 'bg-[#059669] hover:bg-[#047857] text-white shadow-[4px_4px_0px_0px_#0F172A] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[3px_3px_0px_0px_#0F172A] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none'
-                        }`}
+                      className={`px-6 py-3.5 text-xs sm:text-sm font-bold uppercase tracking-wider border-2 border-[#0F172A] rounded-2xl flex items-center gap-2 transition-all ${
+                        copied
+                          ? 'bg-[#10B981] text-white shadow-[2px_2px_0px_0px_#0F172A] translate-x-[2px] translate-y-[2px]'
+                          : 'bg-[#059669] hover:bg-[#047857] text-white shadow-[4px_4px_0px_0px_#0F172A] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[3px_3px_0px_0px_#0F172A] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none'
+                      }`}
                     >
                       {copied ? (
                         <>
