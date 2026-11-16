@@ -10,7 +10,6 @@ import {
   Zap,
   ShieldCheck,
   RefreshCw,
-  Award,
   ChevronRight,
   Info,
   Edit3,
@@ -1492,13 +1491,10 @@ AFFICHAGE PROPRE ET LISIBLE :
                     <span className="w-3.5 h-3.5 rounded-full bg-[#FF5F56] border border-black inline-block" />
                     <span className="w-3.5 h-3.5 rounded-full bg-[#FFBD2E] border border-black inline-block" />
                     <span className="w-3.5 h-3.5 rounded-full bg-[#27C93F] border border-black inline-block" />
-                    <span className="font-mono-code text-[11px] text-neutral-300 ml-2 truncate">
-                      PROMPT_MAITRE_NOTEBOOKLM.TXT
+                    <span className="font-mono-code text-base sm:text-lg font-black tracking-wide text-white ml-2 truncate">
+                      PROMPT MAITRE NOTEBOOKLM
                     </span>
                   </div>
-                  <span className="bg-[#10B981] text-white font-mono-code text-[10px] font-bold uppercase px-2.5 py-0.5 border border-[#0F172A] rounded-full">
-                    PRÊT À COPIER
-                  </span>
                 </div>
 
                 {/* Bandeau d'identification et bouton d'action rouge corail */}
@@ -1569,54 +1565,9 @@ AFFICHAGE PROPRE ET LISIBLE :
                       <span className="flex items-center gap-1.5 bg-[#F8FAFC] border border-[#0F172A] px-2.5 py-0.5 rounded-full">
                         <Edit3 className="w-3 h-3" /> Texte 100 % modifiable avant copie
                       </span>
-                      <span className="font-mono-code uppercase bg-[#0F172A] text-white px-2.5 py-0.5 rounded-full">
-                        Compatible NotebookLM & Gemini
-                      </span>
                     </div>
                   </div>
 
-                  {/* Résumé des 3 garanties pédagogiques injectées (Style cartes brutalistes arrondies) */}
-                  <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-5 border-t-[2.5px] border-[#0F172A]">
-                    <div className="p-4 bg-white border-2 border-[#0F172A] rounded-2xl shadow-[3px_3px_0px_0px_#0F172A]">
-                      <span className="inline-block font-mono-code text-[10px] font-bold uppercase bg-[#059669] text-white border border-[#0F172A] px-2 py-0.5 rounded-full mb-2">
-                        MÉTHODE CPA
-                      </span>
-                      <div className="text-xs font-bold text-[#0F172A] flex items-center gap-1.5 mb-1">
-                        <Zap className="w-3.5 h-3.5 fill-[#0F172A]" /> Étayage adapté à l'âge
-                      </div>
-                      <p className="text-[11px] text-slate-700 leading-normal font-medium">
-                        {currentCycleConfig
-                          ? activeScaffoldObj?.label
-                          : '1 seule question progressive à la fois sans jamais noyer l’élève.'}
-                      </p>
-                    </div>
-
-                    <div className="p-4 bg-white border-2 border-[#0F172A] rounded-2xl shadow-[3px_3px_0px_0px_#0F172A]">
-                      <span className="inline-block font-mono-code text-[10px] font-bold uppercase bg-[#10B981] text-white border border-[#0F172A] px-2 py-0.5 rounded-full mb-2">
-                        BARÈME OFFICIEL
-                      </span>
-                      <div className="text-xs font-bold text-[#0F172A] flex items-center gap-1.5 mb-1">
-                        <Award className="w-3.5 h-3.5" /> Norme Éducation Nationale
-                      </div>
-                      <p className="text-[11px] text-slate-700 leading-normal font-medium">
-                        {currentCycleConfig
-                          ? activeCycleEvalObj?.label
-                          : `Formulation exacte exigée aux épreuves (${effectiveSubjectName}).`}
-                      </p>
-                    </div>
-
-                    <div className="p-4 bg-white border-2 border-[#0F172A] rounded-2xl shadow-[3px_3px_0px_0px_#0F172A]">
-                      <span className="inline-block font-mono-code text-[10px] font-bold uppercase bg-[#059669] text-white border border-[#0F172A] px-2 py-0.5 rounded-full mb-2">
-                        UNICODE PUR
-                      </span>
-                      <div className="text-xs font-bold text-[#0F172A] flex items-center gap-1.5 mb-1">
-                        <FileText className="w-3.5 h-3.5" /> Zéro LaTeX brut
-                      </div>
-                      <p className="text-[11px] text-slate-700 leading-normal font-medium">
-                        Caractères lisibles ({currentSubject.unicodeSymbols.split(',').slice(0, 4).join(', ')}...) sans balises cassées.
-                      </p>
-                    </div>
-                  </div>
                 </div>
               </div>
             )}
