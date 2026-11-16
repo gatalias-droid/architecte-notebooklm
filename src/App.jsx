@@ -799,66 +799,76 @@ const CYCLE_SPECIFIC_CONFIG = {
 
 const STUDENT_PROFILES = [
   {
-    id: 'standard',
-    label: 'Élève bloqué / En perte de confiance',
-    desc: 'Peur de se tromper, découragé par les cours trop abstraits',
-    directive: "Rassure l'élève par la simplicité immédiate. Dédramatise chaque erreur en montrant exactement où le raisonnement a bifurqué sans jamais le juger."
+    id: 'bases',
+    label: 'Reprendre les bases pas à pas',
+    desc: '« Je n’ai pas bien compris la leçon, je ne sais pas par où commencer. »',
+    bulletSummary: 'Repart de zéro • Exemples concrets • Petites étapes',
+    directive: "CALIBRATION APPRENANT (REPRENDRE LES BASES) : Considère que la notion n'est pas acquise. Repart systématiquement du sens concret avec une image simple du quotidien avant la règle formelle. Découpe chaque étape au maximum et vérifie chaque petite brique avant d'avancer."
   },
   {
-    id: 'dys_tdah',
-    label: 'Besoin de concision extrême (Attention fragile / DYS)',
-    desc: 'Surcharge rapide face aux longs paragraphes',
-    directive: "Fais des phrases ultra-courtes (une seule idée par ligne, listes à puces aérées, mots-clés en gras). Ne dépasse jamais 4 lignes avant de poser ta question."
+    id: 'confiance',
+    label: 'Reprendre confiance & Oser essayer',
+    desc: '« J’ai peur de me tromper, je me décourage vite devant l’exercice. »',
+    bulletSummary: 'Ultra-rassurant • Coup de pouce • Dédramatise l’erreur',
+    directive: "CALIBRATION APPRENANT (CONFIANCE & DÉDRAMATISATION) : Sois particulièrement encourageant, chaleureux et rassurant. Dédramatise chaque erreur en valorisant la logique de l'essai de l'élève. Donne systématiquement une amorce ou un indice (« Coup de pouce ») pour qu'il ne reste jamais bloqué devant une page blanche."
+  },
+  {
+    id: 'methode',
+    label: 'Canaliser & Structurer la méthode',
+    desc: '« Je trouve vite de tête, mais je brûle les étapes ou je bâcle. »',
+    bulletSummary: 'Freine la précipitation • Étapes propres • Rédaction',
+    directive: "CALIBRATION APPRENANT (CANALISATION & MÉTHODE) : Valide immédiatement l'intuition ou le résultat de l'élève, mais freine sa précipitation. Exige avec bienveillance de poser chaque étape intermédiaire, de citer la règle ou formule utilisée et de rédiger une phrase-réponse complète avec l'unité."
   },
   {
     id: 'perfectionnement',
-    label: 'Élève visant l’excellence (Manque de rigueur écrite)',
-    desc: 'Comprend vite mais perd des points sur la rédaction des copies',
-    directive: "Sois exigeant sur la précision du vocabulaire et la rigueur de la justification écrite dès que le mécanisme de base est validé."
+    label: 'S’entraîner & Approfondir',
+    desc: '« J’ai compris ma leçon, je veux m’exercer et réussir mon contrôle. »',
+    bulletSummary: 'Entraînement • Pièges classiques • Précision maximale',
+    directive: "CALIBRATION APPRENANT (ENTRAÎNEMENT & EXCELLENCE) : Ne perds pas de temps sur les évidences. Propose rapidement des questions d'application progressives et stimulantes, attire l'attention sur les pièges classiques des contrôles et exige une rigueur de rédaction irréprochable dès le départ."
   }
 ];
 
 const NEURO_BEHAVIOR_OPTIONS = [
   {
     id: 'aucun',
-    label: 'Aucun trouble spécifique signalé (Standard)',
+    label: 'Aucun besoin particulier sélectionné (Standard)',
     shortDesc: '',
     promptRule: ''
   },
   {
-    id: 'tsa',
-    label: 'Trouble du Spectre de l’Autisme (TSA / Asperger) — Besoin de littéralité & prévisibilité',
-    shortDesc: 'Langage 100 % explicite, zéro second degré ni métaphore floue, structure invariable et prévisible.',
-    promptRule: "ADAPTATION TSA (TROUBLE DU SPECTRE DE L'AUTISME) : Utilise un langage 100 % explicite et littéral. Bannis totalement le second degré, l'ironie, les métaphores abstraites et les sous-entendus. Garde une structure de réponse strictement identique et prévisible à chaque échange, et formule des consignes fermées sans aucune ambiguïté."
-  },
-  {
-    id: 'tdah',
-    label: 'TDAH & Impulsivité cognitive (Déficit d’attention / Hyperactivité)',
-    shortDesc: 'Micro-étapes immédiates, mise en gras de l’indice unique et frein à l’impulsivité avant de répondre.',
-    promptRule: "ADAPTATION TDAH & IMPULSIVITÉ : Découpe chaque raisonnement en micro-étapes immédiates d'une seule action. Surligne en gras le seul mot-clé ou chiffre à observer. Avant que l'élève ne réponde trop vite, invite-le en 1 ligne à vérifier un indice précis de l'énoncé (frein à l'impulsivité) et valorise immédiatement chaque micro-étape réussie."
-  },
-  {
-    id: 'top',
-    label: 'Trouble Oppositionnel (TOP) / Refus de l’autorité et contrariété face à l’erreur',
-    shortDesc: 'Posture horizontale sans impératif (« On regarde ensemble »), choix entre 2 pistes et valorisation de l’essai.',
-    promptRule: "ADAPTATION TROUBLE OPPOSITIONNEL (TOP) & REJET DE L'AUTORITÉ : Adopte une posture de partenaire (« On regarde ensemble ») et jamais de donneur d'ordres. N'utilise jamais d'impératif sec ni de formules directives (« Il faut », « Tu dois »). Propose systématiquement un choix entre 2 pistes ou 2 approches pour laisser à l'élève le contrôle de son apprentissage. Ne dis jamais brutalement « C'est faux », mais valorise la logique de son essai avant d'ajuster."
-  },
-  {
-    id: 'anxiete',
-    label: 'Anxiété de performance / Phobie scolaire / Blocage (« Page blanche »)',
-    shortDesc: 'Sécurité psychologique absolue, questions présentées sans enjeu et amorce (« Coup de pouce ») fournie.',
-    promptRule: "ADAPTATION ANXIÉTÉ SCOLAIRE & PEUR DE L'ÉCHEC : Supprime toute pression d'évaluation. Présente chaque question comme un simple essai sans enjeu où l'erreur est normale et utile. Fournis systématiquement le début du raisonnement ou un indice rassurant (« Coup de pouce ») pour éviter la sidération devant la page blanche."
-  },
-  {
     id: 'dys',
-    label: 'Troubles DYS & Surcharge de la mémoire de travail (Dyslexie, Dyspraxie, Dyscalculie)',
+    label: 'Troubles DYS (Dyslexie, Dyspraxie, Dyscalculie) — Soulager la lecture et la mémoire',
     shortDesc: 'Rappel permanent des formules/règles sous les yeux (zéro double tâche) et étapes visuellement isolées.',
     promptRule: "ADAPTATION TROUBLES DYS & MÉMOIRE DE TRAVAIL : Soulage au maximum la mémoire de travail et la lecture. Rappelle toujours la formule ou la règle sous les yeux de l'élève au moment où il en a besoin (zéro effort de mémorisation parasite). Espace visuellement chaque ligne et isole clairement chaque opération."
   },
   {
+    id: 'tdah',
+    label: 'TDAH & Attention fragile — Phrases très courtes, micro-étapes et repères en gras',
+    shortDesc: 'Micro-étapes immédiates, mise en gras de l’indice unique et frein à l’impulsivité avant de répondre.',
+    promptRule: "ADAPTATION TDAH & IMPULSIVITÉ : Découpe chaque raisonnement en micro-étapes immédiates d'une seule action. Surligne en gras le seul mot-clé ou chiffre à observer. Avant que l'élève ne réponde trop vite, invite-le en 1 ligne à vérifier un indice précis de l'énoncé (frein à l'impulsivité) et valorise immédiatement chaque micro-étape réussie."
+  },
+  {
+    id: 'anxiete',
+    label: 'Anxiété scolaire / Peur de la page blanche — Zéro pression et amorce fournie',
+    shortDesc: 'Sécurité psychologique absolue, questions présentées sans enjeu et amorce (« Coup de pouce ») fournie.',
+    promptRule: "ADAPTATION ANXIÉTÉ SCOLAIRE & PEUR DE L'ÉCHEC : Supprime toute pression d'évaluation. Présente chaque question comme un simple essai sans enjeu où l'erreur est normale et utile. Fournis systématiquement le début du raisonnement ou un indice rassurant (« Coup de pouce ») pour éviter la sidération devant la page blanche."
+  },
+  {
+    id: 'tsa',
+    label: 'Trouble du Spectre de l’Autisme (TSA / Asperger) — Langage 100 % explicite et prévisible',
+    shortDesc: 'Langage 100 % explicite, zéro second degré ni métaphore floue, structure invariable et prévisible.',
+    promptRule: "ADAPTATION TSA (TROUBLE DU SPECTRE DE L'AUTISME) : Utilise un langage 100 % explicite et littéral. Bannis totalement le second degré, l'ironie, les métaphores abstraites et les sous-entendus. Garde une structure de réponse strictement identique et prévisible à chaque échange, et formule des consignes fermées sans aucune ambiguïté."
+  },
+  {
+    id: 'top',
+    label: 'Trouble de l’Opposition (TOP) / Frustration face à l’erreur — Choix entre 2 pistes',
+    shortDesc: 'Posture de partenaire sans impératif (« On regarde ensemble »), choix entre 2 approches et valorisation de l’essai.',
+    promptRule: "ADAPTATION TROUBLE OPPOSITIONNEL (TOP) & REJET DE L'AUTORITÉ : Adopte une posture de partenaire (« On regarde ensemble ») et jamais de donneur d'ordres. N'utilise jamais d'impératif sec ni de formules directives (« Il faut », « Tu dois »). Propose systématiquement un choix entre 2 pistes ou 2 approches pour laisser à l'élève le contrôle de son apprentissage. Ne dis jamais brutalement « C'est faux », mais valorise la logique de son essai avant d'ajuster."
+  },
+  {
     id: 'hpi',
-    label: 'Haut Potentiel (HPI) avec intolérance à la répétition / Ennui rapide',
-    shortDesc: 'Zéro rabâchage, validation immédiate de l’intuition, explication du « pourquoi » profond et défi d’efficacité.',
+    label: 'Haut Potentiel (HPI) — Zéro répétition inutile, expliquer le « pourquoi » profond',
+    shortDesc: 'Zéro rabâchage, validation immédiate de l’intuition, explication du « pourquoi » profond et défi de précision.',
     promptRule: "ADAPTATION PROFIL HPI (INTOLÉRANCE À LA RÉPÉTITION) : Évite tout rabâchage infantile qui génère de l'ennui ou de l'irritation. Valide immédiatement son intuition rapide, explique le « pourquoi » logique profond de la règle, et transforme la rédaction des étapes en un défi de précision rapide pour sécuriser tous les points."
   }
 ];
@@ -868,7 +878,7 @@ export default function App() {
   const [customSubjectName, setCustomSubjectName] = useState('');
   const [selectedCursus, setSelectedCursus] = useState('cycle_4');
   const [selectedNiveau, setSelectedNiveau] = useState('Troisième (3e — Fin de Cycle 4 / Objectif Brevet DNB)');
-  const [selectedProfile, setSelectedProfile] = useState('standard');
+  const [selectedProfile, setSelectedProfile] = useState('bases');
   const [selectedCycleScaffold, setSelectedCycleScaffold] = useState('c4_demonstration');
   const [selectedCycleEval, setSelectedCycleEval] = useState('c4_eval_dnb');
   const [selectedNeuroBehavior, setSelectedNeuroBehavior] = useState('aucun');
@@ -1067,35 +1077,35 @@ AFFICHAGE PROPRE ET LISIBLE :
       setSelectedNiveau('CE1 (Cours Élémentaire 1re année — 7/8 ans)');
       setSelectedCycleScaffold('c2_manip');
       setSelectedCycleEval('c2_eval_cahier');
-      setSelectedProfile('standard');
+      setSelectedProfile('bases');
     } else if (preset === 'cycle3_cm2_6e') {
       setSelectedSubjectId('mathematiques');
       setSelectedCursus('cycle_3');
       setSelectedNiveau('Sixième - 6e (Fin de Cycle 3 / Entrée au Collège — 11/12 ans)');
       setSelectedCycleScaffold('c3_barres');
       setSelectedCycleEval('c3_eval_6e');
-      setSelectedProfile('standard');
+      setSelectedProfile('bases');
     } else if (preset === 'cycle4_3e_brevet') {
       setSelectedSubjectId('mathematiques');
       setSelectedCursus('cycle_4');
       setSelectedNiveau('Troisième (3e — Fin de Cycle 4 / Objectif Brevet DNB)');
       setSelectedCycleScaffold('c4_demonstration');
       setSelectedCycleEval('c4_eval_dnb');
-      setSelectedProfile('standard');
+      setSelectedProfile('bases');
     } else if (preset === 'seconde_svt') {
       setSelectedSubjectId('svt');
       setSelectedCursus('lycee_general');
       setSelectedNiveau('Seconde Générale et Technologique');
       setSelectedCycleScaffold('lycee_auto_demo');
       setSelectedCycleEval('lycee_eval_matiere');
-      setSelectedProfile('standard');
+      setSelectedProfile('bases');
     } else if (preset === 'term_maths') {
       setSelectedSubjectId('mathematiques');
       setSelectedCursus('lycee_general');
       setSelectedNiveau('Terminale Générale (Spécialité / Tronc commun)');
       setSelectedCycleScaffold('lycee_auto_demo');
       setSelectedCycleEval('lycee_eval_matiere');
-      setSelectedProfile('standard');
+      setSelectedProfile('perfectionnement');
     }
   };
 
@@ -1133,7 +1143,7 @@ AFFICHAGE PROPRE ET LISIBLE :
             </div>
             <h2 className="text-2xl sm:text-4xl font-bold tracking-tight leading-tight text-[#0F172A]">
               Configurez votre tuteur IA{' '}
-              <span className="bg-[#FBBF24] text-[#0F172A] px-3 py-1 rounded-2xl border-2 border-[#0F172A] shadow-[3px_3px_0px_0px_#0F172A] inline-block transform -rotate-1">
+              <span className="bg-[#FBBF24] text-[#0F172A] px-3 py-1 ml-2 rounded-2xl border-2 border-[#0F172A] shadow-[3px_3px_0px_0px_#0F172A] inline-block transform -rotate-1">
                 personnalisé
               </span>{' '}
             </h2>
@@ -1385,7 +1395,7 @@ AFFICHAGE PROPRE ET LISIBLE :
                   <span className="bg-[#0F172A] text-[#38BDF8] font-mono-code text-xs px-2 py-0.5 rounded-lg">
                     03
                   </span>
-                  Profil de l'Enfant & Options
+                  Profil de l'Élève & Adaptations
                 </h2>
               </div>
 
@@ -1413,20 +1423,26 @@ AFFICHAGE PROPRE ET LISIBLE :
                         )}
                       </div>
                       <p
-                        className={`text-[11px] mt-1 font-medium ${isSelected ? 'text-[#0F172A]/85' : 'text-slate-700'
+                        className={`text-[11px] mt-1 font-medium italic ${isSelected ? 'text-[#0F172A]/90' : 'text-slate-700'
                           }`}
                       >
                         {prof.desc}
                       </p>
+                      <div
+                        className={`text-[10px] mt-1.5 font-mono-code ${isSelected ? 'text-[#0F172A]/80 font-bold' : 'text-slate-600'
+                          }`}
+                      >
+                        {prof.bulletSummary}
+                      </div>
                     </button>
                   );
                 })}
               </div>
 
-              {/* Menu déroulant des troubles neuro-développementaux ou du comportement */}
+              {/* Menu déroulant des besoins éducatifs particuliers */}
               <div className="pt-2">
                 <label className="block text-xs font-bold text-[#0F172A] mb-1.5">
-                  Adaptation aux troubles autistiques, neuro-développementaux ou du comportement (optionnel) :
+                  Adaptation à un besoin éducatif particulier (optionnel) :
                 </label>
                 <select
                   value={selectedNeuroBehavior}
