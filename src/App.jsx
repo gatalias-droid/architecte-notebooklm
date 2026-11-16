@@ -904,7 +904,7 @@ AFFICHAGE PROPRE ET LISIBLE :
             </div>
             <h2 className="text-2xl sm:text-4xl font-bold tracking-tight leading-tight text-[#0F172A]">
               Configurez votre tuteur IA{' '}
-              <span className="bg-[#4F46E5] text-white px-3 py-1 rounded-2xl border-2 border-[#0F172A] shadow-[3px_3px_0px_0px_#0F172A] inline-block transform -rotate-1">
+              <span className="bg-[#059669] text-white px-3 py-1 rounded-2xl border-2 border-[#0F172A] shadow-[3px_3px_0px_0px_#0F172A] inline-block transform -rotate-1">
                 personnalisé
               </span>{' '}
             </h2>
@@ -956,14 +956,14 @@ AFFICHAGE PROPRE ET LISIBLE :
                         onClick={() => handleCursusChange(cBtn.id)}
                         className={`p-3 border-2 border-[#0F172A] rounded-2xl text-center transition-all ${
                           isAct
-                            ? 'bg-[#4F46E5] text-white shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
-                            : 'bg-white text-[#0F172A] hover:bg-[#EEF2FF] shadow-[2px_2px_0px_0px_#0F172A]'
+                            ? 'bg-[#059669] text-white shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
+                            : 'bg-white text-[#0F172A] hover:bg-[#ECFDF5] shadow-[2px_2px_0px_0px_#0F172A]'
                         }`}
                       >
                         <div className="text-xs font-bold">{cBtn.title}</div>
                         <div
                           className={`text-[10px] mt-0.5 font-mono-code ${
-                            isAct ? 'text-indigo-100' : 'text-slate-600'
+                            isAct ? 'text-emerald-100' : 'text-slate-600'
                           }`}
                         >
                           {cBtn.sub}
@@ -991,8 +991,8 @@ AFFICHAGE PROPRE ET LISIBLE :
                         }}
                         className={`px-4 py-2.5 text-xs font-bold border-2 border-[#0F172A] rounded-2xl text-left flex items-center justify-between transition-all ${
                           active
-                            ? 'bg-[#4F46E5] text-white shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
-                            : 'bg-white text-[#0F172A] hover:bg-[#EEF2FF] shadow-[2px_2px_0px_0px_#0F172A]'
+                            ? 'bg-[#059669] text-white shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
+                            : 'bg-white text-[#0F172A] hover:bg-[#ECFDF5] shadow-[2px_2px_0px_0px_#0F172A]'
                         }`}
                       >
                         <span>{niv}</span>
@@ -1036,8 +1036,8 @@ AFFICHAGE PROPRE ET LISIBLE :
                       }}
                       className={`flex items-center gap-2.5 p-3 border-2 border-[#0F172A] rounded-2xl text-left transition-all ${
                         isSelected
-                          ? 'bg-[#4F46E5] text-white shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
-                          : 'bg-white text-[#0F172A] hover:bg-[#EEF2FF] shadow-[2px_2px_0px_0px_#0F172A]'
+                          ? 'bg-[#059669] text-white shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
+                          : 'bg-white text-[#0F172A] hover:bg-[#ECFDF5] shadow-[2px_2px_0px_0px_#0F172A]'
                       }`}
                     >
                       <span className="text-xl shrink-0 bg-white border border-[#0F172A] w-10 h-10 rounded-xl flex items-center justify-center">
@@ -1049,7 +1049,7 @@ AFFICHAGE PROPRE ET LISIBLE :
                         </div>
                         <div
                           className={`text-[10px] truncate font-mono-code ${
-                            isSelected ? 'text-indigo-100' : 'text-neutral-500'
+                            isSelected ? 'text-emerald-100' : 'text-neutral-500'
                           }`}
                         >
                           {subj.category}
@@ -1101,8 +1101,8 @@ AFFICHAGE PROPRE ET LISIBLE :
                       }}
                       className={`w-full p-3.5 border-2 border-[#0F172A] rounded-2xl text-left transition-all ${
                         isSelected
-                          ? 'bg-[#4F46E5] text-white shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
-                          : 'bg-white text-[#0F172A] hover:bg-[#EEF2FF] shadow-[2px_2px_0px_0px_#0F172A]'
+                          ? 'bg-[#059669] text-white shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
+                          : 'bg-white text-[#0F172A] hover:bg-[#ECFDF5] shadow-[2px_2px_0px_0px_#0F172A]'
                       }`}
                     >
                       <div className="flex items-center justify-between">
@@ -1115,7 +1115,7 @@ AFFICHAGE PROPRE ET LISIBLE :
                       </div>
                       <p
                         className={`text-[11px] mt-1 font-medium ${
-                          isSelected ? 'text-indigo-100' : 'text-slate-700'
+                          isSelected ? 'text-emerald-100' : 'text-slate-700'
                         }`}
                       >
                         {prof.desc}
@@ -1136,7 +1136,7 @@ AFFICHAGE PROPRE ET LISIBLE :
                     setSelectedNeuroBehavior(e.target.value);
                     setManualOverride(null);
                   }}
-                  className="w-full px-3.5 py-2.5 text-xs font-bold bg-white border-2 border-[#0F172A] rounded-2xl shadow-[3px_3px_0px_0px_#0F172A] text-[#0F172A] focus:outline-none focus:bg-[#E0E7FF] cursor-pointer"
+                  className="w-full px-3.5 py-2.5 text-xs font-bold bg-white border-2 border-[#0F172A] rounded-2xl shadow-[3px_3px_0px_0px_#0F172A] text-[#0F172A] focus:outline-none focus:bg-[#ECFDF5] cursor-pointer"
                 >
                   {NEURO_BEHAVIOR_OPTIONS.map((opt) => (
                     <option key={opt.id} value={opt.id}>
@@ -1145,8 +1145,8 @@ AFFICHAGE PROPRE ET LISIBLE :
                   ))}
                 </select>
                 {currentNeuroBehaviorObj && currentNeuroBehaviorObj.shortDesc && (
-                  <div className="mt-2.5 p-3 bg-[#EEF2FF] border-2 border-[#0F172A] rounded-xl text-[11px] font-medium text-[#0F172A] flex items-start gap-2">
-                    <span className="bg-[#4F46E5] text-white font-mono-code text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0">
+                  <div className="mt-2.5 p-3 bg-[#ECFDF5] border-2 border-[#0F172A] rounded-xl text-[11px] font-medium text-[#0F172A] flex items-start gap-2">
+                    <span className="bg-[#059669] text-white font-mono-code text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0">
                       ACTIF
                     </span>
                     <span>{currentNeuroBehaviorObj.shortDesc}</span>
@@ -1192,8 +1192,8 @@ AFFICHAGE PROPRE ET LISIBLE :
                     onClick={() => setActiveTab(tab.id)}
                     className={`py-3 px-3 border-[2.5px] border-[#0F172A] rounded-2xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 transition-all ${
                       isActive
-                        ? 'bg-[#4F46E5] text-white shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
-                        : 'bg-white text-[#0F172A] hover:bg-[#EEF2FF] shadow-[3px_3px_0px_0px_#0F172A]'
+                        ? 'bg-[#059669] text-white shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
+                        : 'bg-white text-[#0F172A] hover:bg-[#ECFDF5] shadow-[3px_3px_0px_0px_#0F172A]'
                     }`}
                   >
                     <TabIcon className="w-4 h-4 shrink-0" />
@@ -1327,7 +1327,7 @@ AFFICHAGE PROPRE ET LISIBLE :
                     </div>
 
                     <div className="p-4 bg-white border-2 border-[#0F172A] rounded-2xl shadow-[3px_3px_0px_0px_#0F172A]">
-                      <span className="inline-block font-mono-code text-[10px] font-bold uppercase bg-[#4F46E5] text-white border border-[#0F172A] px-2 py-0.5 rounded-full mb-2">
+                      <span className="inline-block font-mono-code text-[10px] font-bold uppercase bg-[#059669] text-white border border-[#0F172A] px-2 py-0.5 rounded-full mb-2">
                         UNICODE PUR
                       </span>
                       <div className="text-xs font-bold text-[#0F172A] flex items-center gap-1.5 mb-1">
