@@ -872,14 +872,11 @@ AFFICHAGE PROPRE ET LISIBLE :
 
   return (
     <div className="min-h-screen text-[#0F172A] selection:bg-[#0F172A] selection:text-[#38BDF8] pb-20">
-      {/* Liseré supérieur signature */}
-      <div className="h-2 bg-[#4F46E5]" />
-
       {/* En-tête flottant néobrutaliste tout en rondeur */}
       <header className="sticky top-3 z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-[#0F172A] text-white border-[2.5px] border-[#0F172A] rounded-3xl shadow-[5px_5px_0px_0px_#0F172A] px-4 sm:px-6 py-3.5 flex flex-col md:flex-row md:items-center md:justify-between gap-3 backdrop-blur-sm">
           <div className="flex items-center gap-3">
-            <div className="w-11 h-11 bg-[#059669] text-white border-2 border-white rounded-2xl flex items-center justify-center shadow-[3px_3px_0px_0px_#4F46E5] shrink-0">
+            <div className="w-11 h-11 bg-[#059669] text-white border-2 border-white rounded-2xl flex items-center justify-center shadow-[3px_3px_0px_0px_#0F172A] shrink-0">
               <GraduationCap className="w-6 h-6 stroke-[2.5]" />
             </div>
             <div>
@@ -959,14 +956,14 @@ AFFICHAGE PROPRE ET LISIBLE :
                         onClick={() => handleCursusChange(cBtn.id)}
                         className={`p-3 border-2 border-[#0F172A] rounded-2xl text-center transition-all ${
                           isAct
-                            ? 'bg-[#0F172A] text-[#38BDF8] shadow-[3px_3px_0px_0px_#4F46E5] -translate-x-[1px] -translate-y-[1px]'
-                            : 'bg-white text-[#0F172A] hover:bg-[#E0E7FF] shadow-[2px_2px_0px_0px_#0F172A]'
+                            ? 'bg-[#4F46E5] text-white shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
+                            : 'bg-white text-[#0F172A] hover:bg-[#EEF2FF] shadow-[2px_2px_0px_0px_#0F172A]'
                         }`}
                       >
                         <div className="text-xs font-bold">{cBtn.title}</div>
                         <div
                           className={`text-[10px] mt-0.5 font-mono-code ${
-                            isAct ? 'text-white' : 'text-slate-600'
+                            isAct ? 'text-indigo-100' : 'text-slate-600'
                           }`}
                         >
                           {cBtn.sub}
@@ -994,8 +991,8 @@ AFFICHAGE PROPRE ET LISIBLE :
                         }}
                         className={`px-4 py-2.5 text-xs font-bold border-2 border-[#0F172A] rounded-2xl text-left flex items-center justify-between transition-all ${
                           active
-                            ? 'bg-[#10B981] text-white shadow-[3px_3px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
-                            : 'bg-white text-[#0F172A] hover:bg-[#E0E7FF] shadow-[2px_2px_0px_0px_#0F172A]'
+                            ? 'bg-[#4F46E5] text-white shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
+                            : 'bg-white text-[#0F172A] hover:bg-[#EEF2FF] shadow-[2px_2px_0px_0px_#0F172A]'
                         }`}
                       >
                         <span>{niv}</span>
@@ -1039,8 +1036,8 @@ AFFICHAGE PROPRE ET LISIBLE :
                       }}
                       className={`flex items-center gap-2.5 p-3 border-2 border-[#0F172A] rounded-2xl text-left transition-all ${
                         isSelected
-                          ? 'bg-[#0F172A] text-white shadow-[4px_4px_0px_0px_#F2C230] -translate-x-[1px] -translate-y-[1px]'
-                          : 'bg-white text-[#0F172A] hover:bg-[#E0E7FF] shadow-[2px_2px_0px_0px_#0F172A]'
+                          ? 'bg-[#4F46E5] text-white shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
+                          : 'bg-white text-[#0F172A] hover:bg-[#EEF2FF] shadow-[2px_2px_0px_0px_#0F172A]'
                       }`}
                     >
                       <span className="text-xl shrink-0 bg-white border border-[#0F172A] w-10 h-10 rounded-xl flex items-center justify-center">
@@ -1052,7 +1049,7 @@ AFFICHAGE PROPRE ET LISIBLE :
                         </div>
                         <div
                           className={`text-[10px] truncate font-mono-code ${
-                            isSelected ? 'text-[#38BDF8]' : 'text-neutral-500'
+                            isSelected ? 'text-indigo-100' : 'text-neutral-500'
                           }`}
                         >
                           {subj.category}
@@ -1105,7 +1102,7 @@ AFFICHAGE PROPRE ET LISIBLE :
                       className={`w-full p-3.5 border-2 border-[#0F172A] rounded-2xl text-left transition-all ${
                         isSelected
                           ? 'bg-[#4F46E5] text-white shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
-                          : 'bg-white text-[#0F172A] hover:bg-[#E0E7FF] shadow-[2px_2px_0px_0px_#0F172A]'
+                          : 'bg-white text-[#0F172A] hover:bg-[#EEF2FF] shadow-[2px_2px_0px_0px_#0F172A]'
                       }`}
                     >
                       <div className="flex items-center justify-between">
@@ -1118,7 +1115,7 @@ AFFICHAGE PROPRE ET LISIBLE :
                       </div>
                       <p
                         className={`text-[11px] mt-1 font-medium ${
-                          isSelected ? 'text-white' : 'text-slate-700'
+                          isSelected ? 'text-indigo-100' : 'text-slate-700'
                         }`}
                       >
                         {prof.desc}
@@ -1182,39 +1179,28 @@ AFFICHAGE PROPRE ET LISIBLE :
             
             {/* Navigation par onglets façon dossiers brutalistes arrondis */}
             <div className="grid grid-cols-3 gap-2.5">
-              <button
-                onClick={() => setActiveTab('prompt')}
-                className={`py-3 px-3 border-[2.5px] border-[#0F172A] rounded-2xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 transition-all ${
-                  activeTab === 'prompt'
-                    ? 'bg-[#0F172A] text-[#38BDF8] shadow-[4px_4px_0px_0px_#059669] -translate-y-0.5'
-                    : 'bg-white text-[#0F172A] hover:bg-[#E0E7FF] shadow-[4px_4px_0px_0px_#0F172A]'
-                }`}
-              >
-                <Sparkles className="w-4 h-4 shrink-0" />
-                <span className="truncate">1. Prompt Système</span>
-              </button>
-              <button
-                onClick={() => setActiveTab('simulation')}
-                className={`py-3 px-3 border-[2.5px] border-[#0F172A] rounded-2xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 transition-all ${
-                  activeTab === 'simulation'
-                    ? 'bg-[#0F172A] text-[#10B981] shadow-[4px_4px_0px_0px_#10B981] -translate-y-0.5'
-                    : 'bg-white text-[#0F172A] hover:bg-[#E0E7FF] shadow-[4px_4px_0px_0px_#0F172A]'
-                }`}
-              >
-                <Eye className="w-4 h-4 shrink-0" />
-                <span className="truncate">2. Aperçu Dialogue</span>
-              </button>
-              <button
-                onClick={() => setActiveTab('guide')}
-                className={`py-3 px-3 border-[2.5px] border-[#0F172A] rounded-2xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 transition-all ${
-                  activeTab === 'guide'
-                    ? 'bg-[#0F172A] text-white shadow-[4px_4px_0px_0px_#7C3AED] -translate-y-0.5'
-                    : 'bg-white text-[#0F172A] hover:bg-[#E0E7FF] shadow-[4px_4px_0px_0px_#0F172A]'
-                }`}
-              >
-                <Layers className="w-4 h-4 shrink-0" />
-                <span className="truncate">3. Mode d'Emploi</span>
-              </button>
+              {[
+                { id: 'prompt', label: '1. Prompt Système', icon: Sparkles },
+                { id: 'simulation', label: '2. Aperçu Dialogue', icon: Eye },
+                { id: 'guide', label: "3. Mode d'Emploi", icon: Layers }
+              ].map((tab) => {
+                const isActive = activeTab === tab.id;
+                const TabIcon = tab.icon;
+                return (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActiveTab(tab.id)}
+                    className={`py-3 px-3 border-[2.5px] border-[#0F172A] rounded-2xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 transition-all ${
+                      isActive
+                        ? 'bg-[#4F46E5] text-white shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
+                        : 'bg-white text-[#0F172A] hover:bg-[#EEF2FF] shadow-[3px_3px_0px_0px_#0F172A]'
+                    }`}
+                  >
+                    <TabIcon className="w-4 h-4 shrink-0" />
+                    <span className="truncate">{tab.label}</span>
+                  </button>
+                );
+              })}
             </div>
 
             {/* ONGLET 1 : LE PROMPT SYSTÈME PRÊT À COPIER (Style fenêtre OS Brutaliste arrondie) */}
@@ -1389,7 +1375,7 @@ AFFICHAGE PROPRE ET LISIBLE :
                   <div className="space-y-4">
                     {/* Message 1 : Élève */}
                     <div className="flex justify-end">
-                      <div className="max-w-[85%] bg-[#0F172A] text-white px-4 py-3 border-2 border-[#0F172A] rounded-2xl rounded-tr-sm shadow-[4px_4px_0px_0px_#F2C230] text-xs sm:text-sm">
+                      <div className="max-w-[85%] bg-[#0F172A] text-white px-4 py-3 border-2 border-[#0F172A] rounded-2xl rounded-tr-sm shadow-[4px_4px_0px_0px_#0F172A] text-xs sm:text-sm">
                         <div className="font-mono-code text-[10px] uppercase tracking-wider text-[#38BDF8] font-bold mb-1">
                           👦 Élève ({selectedNiveau})
                         </div>
@@ -1416,7 +1402,7 @@ AFFICHAGE PROPRE ET LISIBLE :
 
                     {/* Message 3 : Réponse rapide de l'élève */}
                     <div className="flex justify-end">
-                      <div className="max-w-[85%] bg-[#0F172A] text-white px-4 py-3 border-2 border-[#0F172A] rounded-2xl rounded-tr-sm shadow-[4px_4px_0px_0px_#F2C230] text-xs sm:text-sm">
+                      <div className="max-w-[85%] bg-[#0F172A] text-white px-4 py-3 border-2 border-[#0F172A] rounded-2xl rounded-tr-sm shadow-[4px_4px_0px_0px_#0F172A] text-xs sm:text-sm">
                         <div className="font-mono-code text-[10px] uppercase tracking-wider text-[#38BDF8] font-bold mb-1">
                           👦 Élève
                         </div>
