@@ -205,12 +205,6 @@ const CURSUS_OPTIONS = [
     label: 'Lycée — Voie Professionnelle (Bac Pro / CAP)',
     examName: 'du Baccalauréat Professionnel et des CCF',
     isSchoolCycle: false
-  },
-  {
-    id: 'post_bac',
-    label: 'Enseignement Supérieur (BTS, BUT, Licence, CPGE)',
-    examName: 'des examens du supérieur et concours',
-    isSchoolCycle: false
   }
 ];
 
@@ -257,7 +251,7 @@ const NIVEAUX_BY_CURSUS = {
 const CYCLE_SPECIFIC_CONFIG = {
   cycle_2: {
     badge: 'Cycle 2 • 6 à 9 ans',
-    title: 'Personnalisation Cycle 2 (Apprentissages fondamentaux)',
+    title: 'Personnalisation Cycle 2',
     cognitiveBase: "CALIBRATION COGNITIVE CYCLE 2 (6-9 ANS) : Utilise un vocabulaire très simple, concret et adapté à un jeune enfant d'école élémentaire. Tes phrases doivent être très courtes (10 à 15 mots maximum par phrase). Pars toujours d'une manipulation concrète d'objets du quotidien (billes, paquets de 10, jetons, pièces de monnaie, parts de gâteau) avant d'écrire les symboles.",
     subjectNameOverrides: {
       svt: 'Questionner le monde (Le vivant, la matière et les objets)',
@@ -320,7 +314,7 @@ const CYCLE_SPECIFIC_CONFIG = {
   },
   cycle_3: {
     badge: 'Cycle 3 • 9 à 12 ans',
-    title: 'Personnalisation Cycle 3 (Consolidation : CM1, CM2, 6e)',
+    title: 'Personnalisation Cycle 3',
     cognitiveBase: "CALIBRATION COGNITIVE CYCLE 3 (9-12 ANS) : Fais le pont entre la manipulation concrète et le raisonnement structuré. Utilise des représentations visuelles claires (schéma en barres pour les problèmes, partage de bandes pour les fractions et nombres décimaux, tableaux de proportionnalité) avant d'introduire les règles formelles.",
     subjectNameOverrides: {
       svt: 'Sciences et Technologie (Le vivant, la matière, la Terre)',
@@ -382,7 +376,7 @@ const CYCLE_SPECIFIC_CONFIG = {
   },
   cycle_4: {
     badge: 'Cycle 4 • 12 à 15 ans (5e, 4e, 3e)',
-    title: 'Personnalisation Cycle 4 (Approfondissements & Objectif Brevet)',
+    title: 'Personnalisation Cycle 4',
     cognitiveBase: "CALIBRATION COGNITIVE CYCLE 4 (5e, 4e, 3e) : Accompagne le passage du numérique au littéral et de l'observation à la démonstration structurée. L'élève doit comprendre le sens concret d'une règle avant d'appliquer le formalisme exigé au collège et au Diplôme National du Brevet (DNB).",
     subjectNameOverrides: {
       francais_philo: 'Français (Analyse de texte, Grammaire, Dictée & Rédaction Brevet)',
@@ -443,7 +437,7 @@ const CYCLE_SPECIFIC_CONFIG = {
   },
   lycee_general: {
     badge: 'Lycée Général • 2de, 1re, Term',
-    title: 'Personnalisation Lycée Général (2de, 1re, Terminale)',
+    title: 'Personnalisation Lycée Général',
     cognitiveBase: "CALIBRATION COGNITIVE LYCÉE GÉNÉRAL (2de, 1re, Terminale) : Combine l'acquisition rapide d'automatismes techniques (calculatoires, méthodologiques ou analytiques) avec la rigueur conceptuelle et rédactionnelle exigée aux épreuves du Baccalauréat Général.",
     subjectNameOverrides: {},
     scaffoldingModes: [
@@ -786,7 +780,7 @@ AFFICHAGE PROPRE ET LISIBLE :
                 <span className="block text-xs font-bold text-[#0F172A] mb-2">
                   Sélection rapide des Cycles (École, Collège & Lycée Général) :
                 </span>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-4">
+                <div className="grid grid-cols-2 gap-2.5 mb-4">
                   {[
                     { id: 'cycle_2', title: 'Cycle 2', sub: 'CP • CE1 • CE2' },
                     { id: 'cycle_3', title: 'Cycle 3', sub: 'CM1 • CM2 • 6e' },
@@ -879,7 +873,7 @@ AFFICHAGE PROPRE ET LISIBLE :
                 {/* Choix du levier d'étayage cognitif du cycle */}
                 <div>
                   <label className="block text-xs font-bold text-[#0F172A] mb-2 uppercase tracking-wide">
-                    A. Méthode d'explication & de manipulation (Hong Kong / Singapour) :
+                    A. Méthode d'explication & de manipulation :
                   </label>
                   <div className="space-y-2.5">
                     {currentCycleConfig.scaffoldingModes.map((mode) => {
