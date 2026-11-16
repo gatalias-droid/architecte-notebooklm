@@ -258,10 +258,11 @@ const CYCLE_SPECIFIC_CONFIG = {
     title: 'Personnalisation Cycle 2',
     cognitiveBase: "CALIBRATION COGNITIVE CYCLE 2 (6-9 ANS) : Utilise un vocabulaire très simple, concret et adapté à un jeune enfant d'école élémentaire. Tes phrases doivent être très courtes (10 à 15 mots maximum par phrase). Pars toujours d'une manipulation concrète d'objets du quotidien (billes, paquets de 10, jetons, pièces de monnaie, parts de gâteau) avant d'écrire les symboles.",
     subjectNameOverrides: {
+      francais_philo: 'Français (Lecture, Écriture & Orthographe)',
+      mathematiques: 'Mathématiques (Nombres, Calcul & Géométrie)',
       svt: 'Questionner le monde (Le vivant, la matière et les objets)',
       physique_chimie: 'Questionner le monde (La matière et les objets techniques)',
       histoire_geo: 'Questionner l’espace et le temps',
-      francais_philo: 'Français (Lecture, Écriture, Grammaire et Orthographe)',
       nsi_info: 'Initiation au repérage et au codage de déplacements'
     },
     scaffoldingModes: [
@@ -321,9 +322,10 @@ const CYCLE_SPECIFIC_CONFIG = {
     title: 'Personnalisation Cycle 3',
     cognitiveBase: "CALIBRATION COGNITIVE CYCLE 3 (9-12 ANS) : Fais le pont entre la manipulation concrète et le raisonnement structuré. Utilise des représentations visuelles claires (schéma en barres pour les problèmes, partage de bandes pour les fractions et nombres décimaux, tableaux de proportionnalité) avant d'introduire les règles formelles.",
     subjectNameOverrides: {
+      francais_philo: 'Français (Étude de la langue, Lecture & Rédaction)',
+      mathematiques: 'Mathématiques (Nombres, Calcul, Fractions & Problèmes)',
       svt: 'Sciences et Technologie (Le vivant, la matière, la Terre)',
       physique_chimie: 'Sciences et Technologie (Matière, mouvement, énergie, signal)',
-      francais_philo: 'Français (Étude de la langue, Lecture et Rédaction)',
       nsi_info: 'Initiation à l’algorithmique et au codage (Scratch / Logique)'
     },
     scaffoldingModes: [
@@ -687,12 +689,29 @@ export default function App() {
   const [activeTab, setActiveTab] = useState('prompt'); // 'prompt' | 'simulation' | 'guide'
   const [manualOverride, setManualOverride] = useState(null);
 
+  // Détection des niveaux de l'école élémentaire (CP, CE1, CE2, CM1, CM2)
+  const isPrimaire =
+    selectedCursus === 'cycle_2' ||
+    (selectedCursus === 'cycle_3' && !selectedNiveau.includes('Sixième'));
+
+  // Sécurité anti-désynchronisation : bascule automatique sur 'francais_philo' si l'utilisateur arrive en primaire avec une matière secondaire
+  const effectiveSubjectId =
+    isPrimaire && selectedSubjectId !== 'mathematiques' && selectedSubjectId !== 'francais_philo'
+      ? 'francais_philo'
+      : selectedSubjectId;
+
   // Changement de cursus -> mise à jour automatique du niveau et des options de cycle
   const handleCursusChange = (newCursusId) => {
     setSelectedCursus(newCursusId);
     const defaultLevels = NIVEAUX_BY_CURSUS[newCursusId];
+    let newNiv = selectedNiveau;
     if (defaultLevels && defaultLevels.length > 0) {
-      setSelectedNiveau(defaultLevels[defaultLevels.length - 1]);
+      newNiv = defaultLevels[defaultLevels.length - 1];
+      setSelectedNiveau(newNiv);
+    }
+    const willBePrimaire = newCursusId === 'cycle_2' || (newCursusId === 'cycle_3' && !newNiv.includes('Sixième'));
+    if (willBePrimaire && selectedSubjectId !== 'mathematiques' && selectedSubjectId !== 'francais_philo') {
+      setSelectedSubjectId('francais_philo');
     }
     const cycleCfg = CYCLE_SPECIFIC_CONFIG[newCursusId];
     if (cycleCfg) {
@@ -702,7 +721,25 @@ export default function App() {
     setManualOverride(null);
   };
 
-  const currentSubject = SUBJECTS_CONFIG[selectedSubjectId];
+  const handleNiveauChange = (niv) => {
+    setSelectedNiveau(niv);
+    const willBePrimaire = selectedCursus === 'cycle_2' || (selectedCursus === 'cycle_3' && !niv.includes('Sixième'));
+    if (willBePrimaire && selectedSubjectId !== 'mathematiques' && selectedSubjectId !== 'francais_philo') {
+      setSelectedSubjectId('francais_philo');
+    }
+    setManualOverride(null);
+  };
+
+  // Filtrage exclusif des matières : Français et Mathématiques pour le primaire (CP à CM2)
+  const availableSubjectsList = useMemo(() => {
+    const all = Object.values(SUBJECTS_CONFIG);
+    if (isPrimaire) {
+      return all.filter((s) => s.id === 'francais_philo' || s.id === 'mathematiques');
+    }
+    return all;
+  }, [isPrimaire]);
+
+  const currentSubject = SUBJECTS_CONFIG[effectiveSubjectId] || SUBJECTS_CONFIG.mathematiques;
   const CurrentSubjectIcon = currentSubject.icon;
   const currentCursusObj = CURSUS_OPTIONS.find((c) => c.id === selectedCursus) || CURSUS_OPTIONS[0];
   const currentProfileObj = STUDENT_PROFILES.find((p) => p.id === selectedProfile) || STUDENT_PROFILES[0];
@@ -712,9 +749,9 @@ export default function App() {
 
   // Adaptation automatique de l'intitulé de matière pour les Cycles 2, 3 et 4
   const defaultAdaptedSubjectName =
-    currentCycleConfig && currentCycleConfig.subjectNameOverrides[selectedSubjectId]
-      ? currentCycleConfig.subjectNameOverrides[selectedSubjectId]
-      : currentSubject.name;
+    currentCycleConfig && currentCycleConfig.subjectNameOverrides[effectiveSubjectId]
+      ? currentCycleConfig.subjectNameOverrides[effectiveSubjectId]
+      : (isPrimaire && effectiveSubjectId === 'francais_philo' ? 'Français' : currentSubject.name);
 
   const effectiveSubjectName =
     customSubjectName.trim() !== '' ? customSubjectName.trim() : defaultAdaptedSubjectName;
@@ -795,12 +832,12 @@ AFFICHAGE PROPRE ET LISIBLE :
   const activeSimulation = useMemo(() => {
     if (currentCycleConfig && currentCycleConfig.simulationsBySubject) {
       return (
-        currentCycleConfig.simulationsBySubject[selectedSubjectId] ||
+        currentCycleConfig.simulationsBySubject[effectiveSubjectId] ||
         currentCycleConfig.simulationsBySubject.default
       );
     }
     return currentSubject.sampleSimulation;
-  }, [currentCycleConfig, selectedSubjectId, currentSubject]);
+  }, [currentCycleConfig, effectiveSubjectId, currentSubject]);
 
   const displayedPrompt = manualOverride !== null ? manualOverride : generatedPrompt;
   const charCount = displayedPrompt.length;
@@ -982,10 +1019,7 @@ AFFICHAGE PROPRE ET LISIBLE :
                     return (
                       <button
                         key={niv}
-                        onClick={() => {
-                          setSelectedNiveau(niv);
-                          setManualOverride(null);
-                        }}
+                        onClick={() => handleNiveauChange(niv)}
                         className={`px-4 py-2.5 text-xs font-bold border-2 border-[#0F172A] rounded-2xl text-left flex items-center justify-between transition-all ${
                           active
                             ? 'bg-[#FBBF24] text-[#0F172A] shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
@@ -1017,12 +1051,15 @@ AFFICHAGE PROPRE ET LISIBLE :
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                {Object.values(SUBJECTS_CONFIG).map((subj) => {
-                  const isSelected = selectedSubjectId === subj.id;
+                {availableSubjectsList.map((subj) => {
+                  const isSelected = effectiveSubjectId === subj.id;
                   const adaptedTitle =
                     currentCycleConfig && currentCycleConfig.subjectNameOverrides[subj.id]
                       ? currentCycleConfig.subjectNameOverrides[subj.id]
-                      : subj.name;
+                      : (isPrimaire && subj.id === 'francais_philo' ? 'Français' : subj.name);
+                  const adaptedCategory = isPrimaire
+                    ? (subj.id === 'francais_philo' ? 'Lecture, Écriture & Grammaire' : 'Nombres, Calcul & Problèmes')
+                    : subj.category;
                   const SubjectIcon = subj.icon;
                   return (
                     <button
@@ -1031,7 +1068,7 @@ AFFICHAGE PROPRE ET LISIBLE :
                         setSelectedSubjectId(subj.id);
                         setManualOverride(null);
                       }}
-                      className={`flex items-center gap-2.5 p-3 border-2 border-[#0F172A] rounded-2xl text-left transition-all ${
+                      className={`flex items-center gap-2.5 p-3.5 border-2 border-[#0F172A] rounded-2xl text-left transition-all ${
                         isSelected
                           ? 'bg-[#FBBF24] text-[#0F172A] shadow-[4px_4px_0px_0px_#0F172A] -translate-x-[1px] -translate-y-[1px]'
                           : 'bg-white text-[#0F172A] hover:bg-[#FEF9C3] shadow-[2px_2px_0px_0px_#0F172A]'
@@ -1049,7 +1086,7 @@ AFFICHAGE PROPRE ET LISIBLE :
                             isSelected ? 'text-[#0F172A]/80 font-bold' : 'text-neutral-500'
                           }`}
                         >
-                          {subj.category}
+                          {adaptedCategory}
                         </div>
                       </div>
                     </button>
